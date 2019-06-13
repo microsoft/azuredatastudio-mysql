@@ -1,0 +1,424 @@
+{
+  "name": "azuredatastudio-mysql",
+  "displayName": "MySQL",
+  "version": "0.1.0",
+  "publisher": "Microsoft",
+  "description": "MySQL extension for Azure Data Studio",
+  "aiKey": "",
+  "icon": "images/extension-icon.png",
+  "repository": {
+    "url": "https://github.com/microsoft/azuredatastudio-mysql"
+  },
+  "license": "MIT",
+  "activationEvents": [
+    "onCommand:extension.activateExtension"
+  ],
+  "engines": {
+    "vscode": "*",
+    "azdata": "*"
+  },
+  "main": "./out/main",
+  "extensionDependencies": [
+    "vscode.sql"
+  ],
+  "scripts": {
+    "compile": "gulp build",
+    "package": "gulp package:online",
+    "package-offline": "gulp package:offline",
+    "postinstall": "node ./node_modules/vscode/bin/install && node ./node_modules/azdata/bin/install"
+  },
+  "contributes": {
+    "commands": [
+      {
+          "command": "extension.activateExtension",
+          "title": "Activate MySQL Extension"
+      }
+    ],
+    "languages": [
+      {
+        "id": "sql",
+        "extensions": [
+          ".sql"
+        ],
+        "aliases": [
+          "SQL"
+        ]
+      }
+    ],
+    "outputChannels": [
+      "PGSQL"
+    ],
+    "snippets": [
+      {
+        "language": "sql",
+        "path": "./snippets/pgsql.json"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "PGSQL configuration",
+      "properties": {
+        "pgsql.logDebugInfo": {
+          "type": "boolean",
+          "default": false,
+          "description": "[Optional] Log debug output to the VS Code console (Help -> Toggle Developer Tools)"
+        },
+        "pgsql.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "[Optional] Enable PostgreSQL support (currently in development)"
+        },
+        "pgsql.debugSourcePath": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null,
+          "description": "[Optional] Path to the source directory of the PostgreSQL Tools Service, for debugging"
+        },
+        "pgsql.useDebugSource": {
+          "type": "boolean",
+          "default": false,
+          "description": "[Optional] Enable running the PGSQL extension via the path set in pgsql.debugSourcePath"
+        },
+        "pgsql.enableStartupDebugging": {
+          "type": "boolean",
+          "default": false,
+          "description": "[Optional] Whether to make the PostgreSQL Tools Service wait for a debugger to attach when starting"
+        },
+        "pgsql.debugServerPort": {
+          "type": "number",
+          "default": 3000,
+          "description": "[Optional] The port to run the PostgreSQL Tools Service remote debugger on (default 3000)"
+        },
+        "pgsql.defaultDatabase": {
+          "type": "string",
+          "default": "postgres",
+          "description": "The default database to use when creating a new PostgreSQL connection"
+        },
+        "pgsql.format.keywordCase": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "[Optional] Changes how keywords are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.",
+          "default": null,
+          "enum": [
+            null,
+            "upper",
+            "lower",
+            "capitalize"
+          ]
+        },
+        "pgsql.format.identifierCase": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "[Optional] Changes how identifiers are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.",
+          "default": null,
+          "enum": [
+            null,
+            "upper",
+            "lower",
+            "capitalize"
+          ]
+        },
+        "pgsql.format.stripComments": {
+          "type": "boolean",
+          "default": false,
+          "description": "[Optional] If true comments are removed from the statements"
+        },
+        "pgsql.format.reindent": {
+          "type": "boolean",
+          "default": true,
+          "description": "[Optional] If true the indentations of the statements are changed."
+        }
+      }
+    },
+    "connectionProvider": {
+      "protocolVersion": "1.0",
+      "providerName": "PGSQL",
+      "providerId": "PGSQL",
+      "displayName": "PostgreSQL",
+      "connectionOptions": [
+        {
+          "specialValueType": "connectionName",
+          "isIdentity": true,
+          "name": "connectionName",
+          "displayName": "Name (optional)",
+          "description": "Custom name of the connection",
+          "groupName": "Source",
+          "valueType": "string",
+          "defaultValue": null,
+          "objectType": null,
+          "categoryValues": null,
+          "isRequired": false,
+          "isArray": false
+        },
+        {
+          "name": "host",
+          "displayName": "Server name",
+          "description": "Name of the PostgreSQL instance",
+          "valueType": "string",
+          "specialValueType": "serverName",
+          "isIdentity": true,
+          "isRequired": true,
+          "groupName": "Source",
+          "defaultValue": null,
+          "objectType": null,
+          "categoryValues": null,
+          "isArray": false
+        },
+        {
+          "name": "dbname",
+          "displayName": "Database name",
+          "description": "The name of the initial catalog or database int the data source",
+          "valueType": "string",
+          "specialValueType": "databaseName",
+          "isIdentity": true,
+          "isRequired": false,
+          "groupName": "Source",
+          "defaultValue": "postgres"
+        },
+        {
+          "name": "user",
+          "displayName": "User name",
+          "description": "Indicates the user ID to be used when connecting to the data source",
+          "valueType": "string",
+          "specialValueType": "userName",
+          "isIdentity": true,
+          "isRequired": true,
+          "groupName": "Security"
+        },
+        {
+          "name": "password",
+          "displayName": "Password",
+          "description": "Indicates the password to be used when connecting to the data source",
+          "valueType": "password",
+          "specialValueType": "password",
+          "isIdentity": true,
+          "isRequired": true,
+          "groupName": "Security"
+        },
+        {
+          "name": "hostaddr",
+          "displayName": "Host IP address",
+          "description": "IP address of the server",
+          "valueType": "string",
+          "groupName": "Server",
+          "defaultValue": null
+        },
+        {
+          "name": "port",
+          "displayName": "Port",
+          "description": "Port number for the server",
+          "valueType": "number",
+          "groupName": "Server",
+          "defaultValue": null
+        },
+        {
+          "name": "connectTimeout",
+          "displayName": "Connect timeout",
+          "description": "Seconds to wait before timing out when connecting",
+          "valueType": "number",
+          "groupName": "Client",
+          "defaultValue": "15"
+        },
+        {
+          "name": "clientEncoding",
+          "displayName": "Client encoding",
+          "description": "The client encoding for the connection",
+          "valueType": "string",
+          "groupName": "Client",
+          "defaultValue": null
+        },
+        {
+          "name": "options",
+          "displayName": "Command-line options",
+          "description": "Command-line options to send to the server when the connection starts",
+          "valueType": "string",
+          "groupName": "Server",
+          "defaultValue": null
+        },
+        {
+          "name": "applicationName",
+          "displayName": "Application name",
+          "description": "Value for the 'application_name' configuration parameter",
+          "valueType": "string",
+          "groupName": "Client",
+          "specialValueType": "appName"
+        },
+        {
+          "name": "sslmode",
+          "displayName": "SSL mode",
+          "description": "The SSL mode to use when connecting",
+          "valueType": "category",
+          "groupName": "SSL",
+          "categoryValues": [
+            {
+              "displayName": "Disable",
+              "name": "disable"
+            },
+            {
+              "displayName": "Allow",
+              "name": "allow"
+            },
+            {
+              "displayName": "Prefer",
+              "name": "prefer"
+            },
+            {
+              "displayName": "Require",
+              "name": "require"
+            },
+            {
+              "displayName": "Verify-CA",
+              "name": "verify-ca"
+            },
+            {
+              "displayName": "Verify-Full",
+              "name": "verify-full"
+            }
+          ],
+          "defaultValue": "prefer"
+        },
+        {
+          "name": "sslcompression",
+          "displayName": "Use SSL compression",
+          "description": "Whether to compress SSL connections",
+          "valueType": "boolean",
+          "groupName": "SSL"
+        },
+        {
+          "name": "sslcert",
+          "displayName": "SSL certificate filename",
+          "description": "The filename of the SSL certificate to use",
+          "valueType": "string",
+          "groupName": "SSL",
+          "defaultValue": null
+        },
+        {
+          "name": "sslkey",
+          "displayName": "SSL key filename",
+          "description": "The filename of the key to use for the SSL certificate",
+          "valueType": "string",
+          "groupName": "SSL",
+          "defaultValue": null
+        },
+        {
+          "name": "sslrootcert",
+          "displayName": "SSL root certificate filename",
+          "description": "The filename of the SSL root CA certificate to use",
+          "valueType": "string",
+          "groupName": "SSL",
+          "defaultValue": null
+        },
+        {
+          "name": "sslcrl",
+          "displayName": "SSL CRL filename",
+          "description": "The filename of the SSL certificate revocation list to use",
+          "valueType": "string",
+          "groupName": "SSL",
+          "defaultValue": null
+        },
+        {
+          "name": "requirepeer",
+          "displayName": "Require peer",
+          "description": "The required username of the server process",
+          "valueType": "string",
+          "groupName": "Server",
+          "defaultValue": null
+        },
+        {
+          "name": "service",
+          "displayName": "Service name",
+          "description": "The service name in pg_service.conf to use for connection parameters",
+          "valueType": "string",
+          "groupName": "Client",
+          "defaultValue": null
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "applicationinsights": "1.0.1",
+    "azdata": "^1.0.0",
+    "crypto": "^1.0.1",
+    "dataprotocol-client": "github:Microsoft/sqlops-dataprotocolclient#0.3.0",
+    "decompress": "4.2.0 ",
+    "diagnostic-channel": "0.2.0",
+    "diagnostic-channel-publishers": "0.2.1",
+    "eventemitter2": "5.0.1 ",
+    "http-proxy-agent": "2.1.0 ",
+    "https-proxy-agent": "2.2.1 ",
+    "mkdirp": "0.5.1 ",
+    "opener": "^1.4.3",
+    "readable-stream": "2.3.0",
+    "service-downloader": "github:anthonydresser/service-downloader#0.1.5",
+    "tmp": "0.0.33 ",
+    "vscode-extension-telemetry": "0.0.18",
+    "vscode-jsonrpc": "3.5.0",
+    "vscode-languageclient": "3.5.0",
+    "vscode-languageserver-protocol": "3.5.0",
+    "vscode-languageserver-types": "3.5.0",
+    "zone.js": "0.7.6"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.53",
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.15",
+    "decache": "^4.1.0",
+    "del": "^2.2.1",
+    "glob": "7.1.2",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-chmod": "2.0.0",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.0",
+    "gulp-filter": "^5.0.0",
+    "gulp-gunzip": "1.0.0",
+    "gulp-install": "^0.6.0",
+    "gulp-istanbul-report": "0.0.1",
+    "gulp-json-editor": "^2.2.1",
+    "gulp-remote-src": "0.4.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-shell": "^0.5.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tslint": "^6.0.2",
+    "gulp-typescript": "^3.1.4",
+    "gulp-uglify": "^2.0.0",
+    "gulp-untar": "0.0.6",
+    "gulp-vinyl-zip": "2.1.0",
+    "istanbul": "^0.4.5",
+    "jasmine-core": "~2.4.1",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-htmlfile-reporter": "^0.3.4",
+    "karma-jasmine": "^1.0.2",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-junit-reporter": "^1.1.0",
+    "karma-remap-istanbul": "^0.2.1",
+    "mocha": "4.1.0",
+    "pm-mocha-jenkins-reporter": "^0.2.6",
+    "remap-istanbul": "^0.6.4",
+    "request": "2.85.0",
+    "source-map-support": "0.5.4",
+    "systemjs-builder": "^0.15.32",
+    "tslint": "^3.14.0",
+    "typemoq": "^1.7.0",
+    "typescript": "^2.8.1",
+    "uglify-js": "mishoo/UglifyJS2#harmony-v2.8.22",
+    "url-parse": "1.2.0",
+    "vscode": "1.0.1",
+    "vscode-nls-dev": "https://github.com/Raymondd/vscode-nls-dev/releases/download/2.0.2/build.tar.gz",
+    "xmldom": "^0.1.27",
+    "yargs": "https://registry.npmjs.org/yargs/-/yargs-3.32.0.tgz"
+  },
+  "resolutions": {
+    "vscode-jsonrpc": "3.5.0",
+    "vscode-languageclient": "3.5.0",
+    "vscode-languageserver-protocol": "3.5.0",
+    "vscode-languageserver-types": "3.5.0"
+  }
+}
