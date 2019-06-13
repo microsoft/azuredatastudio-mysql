@@ -20,19 +20,14 @@ const outputChannel = vscode.window.createOutputChannel(Constants.serviceName);
 const statusView = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
 
 export async function activate(context: vscode.ExtensionContext) {
-	// lets make sure we support this platform first
-	console.log('Congratulations, your extension "prac-ext" is now active!');
 
-    // The command has been defined in the package.json file
-    // Now provide the implementation of the command with  registerCommand
-    // The commandId parameter must match the command field in package.json
-    context.subscriptions.push(vscode.commands.registerCommand('extension.sayHello', () => {
-        // The code you place here will be executed every time your command is executed
-
-        // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World!');
+	// For debugging purposes, specifying a command to activate the extension
+    context.subscriptions.push(vscode.commands.registerCommand('extension.activateExtension', () => {
+        // Display a message box to the developer when the extension is activated
+        vscode.window.showInformationMessage('MySQL Extension activated!');
 	}));
 
+	// lets make sure we support this platform first
 	let supported = await Utils.verifyPlatform();
 
 	if (!supported) {
