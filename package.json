@@ -46,7 +46,7 @@
       }
     ],
     "outputChannels": [
-      "PGSQL", "MYSQL"
+      "PGSQL", "MySQL"
     ],
     "snippets": [
       {
@@ -54,7 +54,8 @@
         "path": "./snippets/pgsql.json"
       }
     ],
-    "configuration": {
+    "configuration": [
+      {
       "type": "object",
       "title": "PGSQL configuration",
       "properties": {
@@ -135,8 +136,296 @@
           "description": "[Optional] If true the indentations of the statements are changed."
         }
       }
-    },
-    "connectionProvider": {
+      },
+      {
+      "type": "object",
+      "title": "MySQL configuration",
+      "properties": {
+        "mysql.logDebugInfo": {
+          "type": "boolean",
+          "default": false,
+          "description": "[Optional] Log debug output to the VS Code console (Help -> Toggle Developer Tools)"
+        },
+        "mysql.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "[Optional] Enable MySQL support (currently in development)"
+        },
+        "mysql.debugSourcePath": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null,
+          "description": "[Optional] Path to the source directory of the MySQL Tools Service, for debugging"
+        },
+        "mysql.useDebugSource": {
+          "type": "boolean",
+          "default": false,
+          "description": "[Optional] Enable running the MySQL extension via the path set in mysql.debugSourcePath"
+        },
+        "mysql.enableStartupDebugging": {
+          "type": "boolean",
+          "default": false,
+          "description": "[Optional] Whether to make the MySQL Tools Service wait for a debugger to attach when starting"
+        },
+        "mysql.debugServerPort": {
+          "type": "number",
+          "default": 3000,
+          "description": "[Optional] The port to run the MySQL Tools Service remote debugger on (default 3000)"
+        },
+        "mysql.defaultDatabase": {
+          "type": "string",
+          "default": null,
+          "description": "The default database to use when creating a new MySQL connection"
+        },
+        "mysql.format.keywordCase": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "[Optional] Changes how keywords are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.",
+          "default": null,
+          "enum": [
+            null,
+            "upper",
+            "lower",
+            "capitalize"
+          ]
+        },
+        "mysql.format.identifierCase": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "[Optional] Changes how identifiers are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.",
+          "default": null,
+          "enum": [
+            null,
+            "upper",
+            "lower",
+            "capitalize"
+          ]
+        },
+        "mysql.format.stripComments": {
+          "type": "boolean",
+          "default": false,
+          "description": "[Optional] If true comments are removed from the statements"
+        },
+        "mysql.format.reindent": {
+          "type": "boolean",
+          "default": true,
+          "description": "[Optional] If true the indentations of the statements are changed."
+        }
+      }
+      }
+    ],
+    "connectionProvider": [
+      {
+        "protocolVersion": "1.0",
+        "providerName": "MySQL",
+        "providerId": "MySQL",
+        "displayName": "MySQL",
+        "connectionOptions": [
+          {
+            "specialValueType": "connectionName",
+            "isIdentity": true,
+            "name": "connectionName",
+            "displayName": "Name (optional)",
+            "description": "Custom name of the connection",
+            "groupName": "Source",
+            "valueType": "string",
+            "defaultValue": null,
+            "objectType": null,
+            "categoryValues": null,
+            "isRequired": false,
+            "isArray": false
+          },
+          {
+            "name": "host",
+            "displayName": "Server name",
+            "description": "Name of the MySQL instance",
+            "valueType": "string",
+            "specialValueType": "serverName",
+            "isIdentity": true,
+            "isRequired": true,
+            "groupName": "Source",
+            "defaultValue": null,
+            "objectType": null,
+            "categoryValues": null,
+            "isArray": false
+          },
+          {
+            "name": "dbname",
+            "displayName": "Database name",
+            "description": "The name of the initial catalog or database in the data source",
+            "valueType": "string",
+            "specialValueType": "databaseName",
+            "isIdentity": true,
+            "isRequired": false,
+            "groupName": "Source",
+            "defaultValue": null
+          },
+          {
+            "name": "user",
+            "displayName": "User name",
+            "description": "Indicates the user ID to be used when connecting to the data source",
+            "valueType": "string",
+            "specialValueType": "userName",
+            "isIdentity": true,
+            "isRequired": true,
+            "groupName": "Security"
+          },
+          {
+            "name": "password",
+            "displayName": "Password",
+            "description": "Indicates the password to be used when connecting to the data source",
+            "valueType": "password",
+            "specialValueType": "password",
+            "isIdentity": true,
+            "isRequired": true,
+            "groupName": "Security"
+          },
+          {
+            "name": "hostaddr",
+            "displayName": "Host IP address",
+            "description": "IP address of the server",
+            "valueType": "string",
+            "groupName": "Server",
+            "defaultValue": null
+          },
+          {
+            "name": "port",
+            "displayName": "Port",
+            "description": "Port number for the server",
+            "valueType": "number",
+            "groupName": "Server",
+            "defaultValue": null
+          },
+          {
+            "name": "connectTimeout",
+            "displayName": "Connect timeout",
+            "description": "Seconds to wait before timing out when connecting",
+            "valueType": "number",
+            "groupName": "Client",
+            "defaultValue": "15"
+          },
+          {
+            "name": "clientEncoding",
+            "displayName": "Client encoding",
+            "description": "The client encoding for the connection",
+            "valueType": "string",
+            "groupName": "Client",
+            "defaultValue": null
+          },
+          {
+            "name": "options",
+            "displayName": "Command-line options",
+            "description": "Command-line options to send to the server when the connection starts",
+            "valueType": "string",
+            "groupName": "Server",
+            "defaultValue": null
+          },
+          {
+            "name": "applicationName",
+            "displayName": "Application name",
+            "description": "Value for the 'application_name' configuration parameter",
+            "valueType": "string",
+            "groupName": "Client",
+            "specialValueType": "appName"
+          },
+          {
+            "name": "sslmode",
+            "displayName": "SSL mode",
+            "description": "The SSL mode to use when connecting",
+            "valueType": "category",
+            "groupName": "SSL",
+            "categoryValues": [
+              {
+                "displayName": "Disable",
+                "name": "disable"
+              },
+              {
+                "displayName": "Allow",
+                "name": "allow"
+              },
+              {
+                "displayName": "Prefer",
+                "name": "prefer"
+              },
+              {
+                "displayName": "Require",
+                "name": "require"
+              },
+              {
+                "displayName": "Verify-CA",
+                "name": "verify-ca"
+              },
+              {
+                "displayName": "Verify-Full",
+                "name": "verify-full"
+              }
+            ],
+            "defaultValue": "prefer"
+          },
+          {
+            "name": "sslcompression",
+            "displayName": "Use SSL compression",
+            "description": "Whether to compress SSL connections",
+            "valueType": "boolean",
+            "groupName": "SSL"
+          },
+          {
+            "name": "sslcert",
+            "displayName": "SSL certificate filename",
+            "description": "The filename of the SSL certificate to use",
+            "valueType": "string",
+            "groupName": "SSL",
+            "defaultValue": null
+          },
+          {
+            "name": "sslkey",
+            "displayName": "SSL key filename",
+            "description": "The filename of the key to use for the SSL certificate",
+            "valueType": "string",
+            "groupName": "SSL",
+            "defaultValue": null
+          },
+          {
+            "name": "sslrootcert",
+            "displayName": "SSL root certificate filename",
+            "description": "The filename of the SSL root CA certificate to use",
+            "valueType": "string",
+            "groupName": "SSL",
+            "defaultValue": null
+          },
+          {
+            "name": "sslcrl",
+            "displayName": "SSL CRL filename",
+            "description": "The filename of the SSL certificate revocation list to use",
+            "valueType": "string",
+            "groupName": "SSL",
+            "defaultValue": null
+          },
+          {
+            "name": "requirepeer",
+            "displayName": "Require peer",
+            "description": "The required username of the server process",
+            "valueType": "string",
+            "groupName": "Server",
+            "defaultValue": null
+          },
+          {
+            "name": "service",
+            "displayName": "Service name",
+            "description": "The service name in to use for connection parameters",
+            "valueType": "string",
+            "groupName": "Client",
+            "defaultValue": null
+          }
+        ]
+      },
+      {
       "protocolVersion": "1.0",
       "providerName": "PGSQL",
       "providerId": "PGSQL",
@@ -339,7 +628,8 @@
           "defaultValue": null
         }
       ]
-    }
+      }
+    ]
   },
   "dependencies": {
     "applicationinsights": "1.0.1",
