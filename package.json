@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "publisher": "Microsoft",
   "description": "MySQL extension for Azure Data Studio",
-  "aiKey": "AIF-5574968e-856d-40d2-af67-c89a14e76412",
   "icon": "images/extension-icon.png",
   "repository": {
     "url": "https://github.com/microsoft/azuredatastudio-mysql"
@@ -46,112 +45,29 @@
       }
     ],
     "outputChannels": [
-      "PGSQL", "MySQL"
+      "MySQL"
     ],
     "snippets": [
       {
         "language": "sql",
-        "path": "./snippets/pgsql.json"
+        "path": "./snippets/mysql.json"
       }
     ],
-    "configuration": [
-      {
-      "type": "object",
-      "title": "PGSQL configuration",
-      "properties": {
-        "pgsql.logDebugInfo": {
-          "type": "boolean",
-          "default": false,
-          "description": "[Optional] Log debug output to the VS Code console (Help -> Toggle Developer Tools)"
-        },
-        "pgsql.enabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "[Optional] Enable PostgreSQL support (currently in development)"
-        },
-        "pgsql.debugSourcePath": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "default": null,
-          "description": "[Optional] Path to the source directory of the PostgreSQL Tools Service, for debugging"
-        },
-        "pgsql.useDebugSource": {
-          "type": "boolean",
-          "default": false,
-          "description": "[Optional] Enable running the PGSQL extension via the path set in pgsql.debugSourcePath"
-        },
-        "pgsql.enableStartupDebugging": {
-          "type": "boolean",
-          "default": false,
-          "description": "[Optional] Whether to make the PostgreSQL Tools Service wait for a debugger to attach when starting"
-        },
-        "pgsql.debugServerPort": {
-          "type": "number",
-          "default": 3000,
-          "description": "[Optional] The port to run the PostgreSQL Tools Service remote debugger on (default 3000)"
-        },
-        "pgsql.defaultDatabase": {
-          "type": "string",
-          "default": "postgres",
-          "description": "The default database to use when creating a new PostgreSQL connection"
-        },
-        "pgsql.format.keywordCase": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "[Optional] Changes how keywords are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.",
-          "default": null,
-          "enum": [
-            null,
-            "upper",
-            "lower",
-            "capitalize"
-          ]
-        },
-        "pgsql.format.identifierCase": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "[Optional] Changes how identifiers are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.",
-          "default": null,
-          "enum": [
-            null,
-            "upper",
-            "lower",
-            "capitalize"
-          ]
-        },
-        "pgsql.format.stripComments": {
-          "type": "boolean",
-          "default": false,
-          "description": "[Optional] If true comments are removed from the statements"
-        },
-        "pgsql.format.reindent": {
-          "type": "boolean",
-          "default": true,
-          "description": "[Optional] If true the indentations of the statements are changed."
-        }
-      }
-      },
-      {
+    "configuration": [{
       "type": "object",
       "title": "MySQL configuration",
       "properties": {
-        "mysql.logDebugInfo": {
+        "MySQL.logDebugInfo": {
           "type": "boolean",
           "default": false,
           "description": "[Optional] Log debug output to the VS Code console (Help -> Toggle Developer Tools)"
         },
-        "mysql.enabled": {
+        "MySQL.enabled": {
           "type": "boolean",
           "default": true,
           "description": "[Optional] Enable MySQL support (currently in development)"
         },
-        "mysql.debugSourcePath": {
+        "MySQL.debugSourcePath": {
           "type": [
             "string",
             "null"
@@ -159,27 +75,27 @@
           "default": null,
           "description": "[Optional] Path to the source directory of the MySQL Tools Service, for debugging"
         },
-        "mysql.useDebugSource": {
+        "MySQL.useDebugSource": {
           "type": "boolean",
           "default": false,
-          "description": "[Optional] Enable running the MySQL extension via the path set in mysql.debugSourcePath"
+          "description": "[Optional] Enable running the MySQL extension via the path set in MySQL.debugSourcePath"
         },
-        "mysql.enableStartupDebugging": {
+        "MySQL.enableStartupDebugging": {
           "type": "boolean",
           "default": false,
           "description": "[Optional] Whether to make the MySQL Tools Service wait for a debugger to attach when starting"
         },
-        "mysql.debugServerPort": {
+        "MySQL.debugServerPort": {
           "type": "number",
           "default": 3000,
           "description": "[Optional] The port to run the MySQL Tools Service remote debugger on (default 3000)"
         },
-        "mysql.defaultDatabase": {
+        "MySQL.defaultDatabase": {
           "type": "string",
           "default": null,
           "description": "The default database to use when creating a new MySQL connection"
         },
-        "mysql.format.keywordCase": {
+        "MySQL.format.keywordCase": {
           "type": [
             "string",
             "null"
@@ -193,7 +109,7 @@
             "capitalize"
           ]
         },
-        "mysql.format.identifierCase": {
+        "MySQL.format.identifierCase": {
           "type": [
             "string",
             "null"
@@ -207,12 +123,12 @@
             "capitalize"
           ]
         },
-        "mysql.format.stripComments": {
+        "MySQL.format.stripComments": {
           "type": "boolean",
           "default": false,
           "description": "[Optional] If true comments are removed from the statements"
         },
-        "mysql.format.reindent": {
+        "MySQL.format.reindent": {
           "type": "boolean",
           "default": true,
           "description": "[Optional] If true the indentations of the statements are changed."
@@ -220,8 +136,7 @@
       }
       }
     ],
-    "connectionProvider": [
-      {
+    "connectionProvider": [{
         "protocolVersion": "1.0",
         "providerName": "MySQL",
         "providerId": "MySQL",
@@ -424,210 +339,6 @@
             "defaultValue": null
           }
         ]
-      },
-      {
-      "protocolVersion": "1.0",
-      "providerName": "PGSQL",
-      "providerId": "PGSQL",
-      "displayName": "PostgreSQL",
-      "connectionOptions": [
-        {
-          "specialValueType": "connectionName",
-          "isIdentity": true,
-          "name": "connectionName",
-          "displayName": "Name (optional)",
-          "description": "Custom name of the connection",
-          "groupName": "Source",
-          "valueType": "string",
-          "defaultValue": null,
-          "objectType": null,
-          "categoryValues": null,
-          "isRequired": false,
-          "isArray": false
-        },
-        {
-          "name": "host",
-          "displayName": "Server name",
-          "description": "Name of the PostgreSQL instance",
-          "valueType": "string",
-          "specialValueType": "serverName",
-          "isIdentity": true,
-          "isRequired": true,
-          "groupName": "Source",
-          "defaultValue": null,
-          "objectType": null,
-          "categoryValues": null,
-          "isArray": false
-        },
-        {
-          "name": "dbname",
-          "displayName": "Database name",
-          "description": "The name of the initial catalog or database int the data source",
-          "valueType": "string",
-          "specialValueType": "databaseName",
-          "isIdentity": true,
-          "isRequired": false,
-          "groupName": "Source",
-          "defaultValue": "postgres"
-        },
-        {
-          "name": "user",
-          "displayName": "User name",
-          "description": "Indicates the user ID to be used when connecting to the data source",
-          "valueType": "string",
-          "specialValueType": "userName",
-          "isIdentity": true,
-          "isRequired": true,
-          "groupName": "Security"
-        },
-        {
-          "name": "password",
-          "displayName": "Password",
-          "description": "Indicates the password to be used when connecting to the data source",
-          "valueType": "password",
-          "specialValueType": "password",
-          "isIdentity": true,
-          "isRequired": true,
-          "groupName": "Security"
-        },
-        {
-          "name": "hostaddr",
-          "displayName": "Host IP address",
-          "description": "IP address of the server",
-          "valueType": "string",
-          "groupName": "Server",
-          "defaultValue": null
-        },
-        {
-          "name": "port",
-          "displayName": "Port",
-          "description": "Port number for the server",
-          "valueType": "number",
-          "groupName": "Server",
-          "defaultValue": null
-        },
-        {
-          "name": "connectTimeout",
-          "displayName": "Connect timeout",
-          "description": "Seconds to wait before timing out when connecting",
-          "valueType": "number",
-          "groupName": "Client",
-          "defaultValue": "15"
-        },
-        {
-          "name": "clientEncoding",
-          "displayName": "Client encoding",
-          "description": "The client encoding for the connection",
-          "valueType": "string",
-          "groupName": "Client",
-          "defaultValue": null
-        },
-        {
-          "name": "options",
-          "displayName": "Command-line options",
-          "description": "Command-line options to send to the server when the connection starts",
-          "valueType": "string",
-          "groupName": "Server",
-          "defaultValue": null
-        },
-        {
-          "name": "applicationName",
-          "displayName": "Application name",
-          "description": "Value for the 'application_name' configuration parameter",
-          "valueType": "string",
-          "groupName": "Client",
-          "specialValueType": "appName"
-        },
-        {
-          "name": "sslmode",
-          "displayName": "SSL mode",
-          "description": "The SSL mode to use when connecting",
-          "valueType": "category",
-          "groupName": "SSL",
-          "categoryValues": [
-            {
-              "displayName": "Disable",
-              "name": "disable"
-            },
-            {
-              "displayName": "Allow",
-              "name": "allow"
-            },
-            {
-              "displayName": "Prefer",
-              "name": "prefer"
-            },
-            {
-              "displayName": "Require",
-              "name": "require"
-            },
-            {
-              "displayName": "Verify-CA",
-              "name": "verify-ca"
-            },
-            {
-              "displayName": "Verify-Full",
-              "name": "verify-full"
-            }
-          ],
-          "defaultValue": "prefer"
-        },
-        {
-          "name": "sslcompression",
-          "displayName": "Use SSL compression",
-          "description": "Whether to compress SSL connections",
-          "valueType": "boolean",
-          "groupName": "SSL"
-        },
-        {
-          "name": "sslcert",
-          "displayName": "SSL certificate filename",
-          "description": "The filename of the SSL certificate to use",
-          "valueType": "string",
-          "groupName": "SSL",
-          "defaultValue": null
-        },
-        {
-          "name": "sslkey",
-          "displayName": "SSL key filename",
-          "description": "The filename of the key to use for the SSL certificate",
-          "valueType": "string",
-          "groupName": "SSL",
-          "defaultValue": null
-        },
-        {
-          "name": "sslrootcert",
-          "displayName": "SSL root certificate filename",
-          "description": "The filename of the SSL root CA certificate to use",
-          "valueType": "string",
-          "groupName": "SSL",
-          "defaultValue": null
-        },
-        {
-          "name": "sslcrl",
-          "displayName": "SSL CRL filename",
-          "description": "The filename of the SSL certificate revocation list to use",
-          "valueType": "string",
-          "groupName": "SSL",
-          "defaultValue": null
-        },
-        {
-          "name": "requirepeer",
-          "displayName": "Require peer",
-          "description": "The required username of the server process",
-          "valueType": "string",
-          "groupName": "Server",
-          "defaultValue": null
-        },
-        {
-          "name": "service",
-          "displayName": "Service name",
-          "description": "The service name in pg_service.conf to use for connection parameters",
-          "valueType": "string",
-          "groupName": "Client",
-          "defaultValue": null
-        }
-      ]
       }
     ]
   },

@@ -11,7 +11,7 @@ export enum BuiltInCommands {
 }
 
 export enum ContextKeys {
-	ISCLOUD = 'pgsql:iscloud'
+	ISCLOUD = 'mysql:iscloud'
 }
 
 const isCloudEditions = [
@@ -33,7 +33,7 @@ export default class ContextProvider {
 
 	public onDashboardOpen(e: azdata.DashboardDocument): void {
 		let iscloud: boolean;
-		if (e.profile.providerName.toLowerCase() === 'pgsql' && e.serverInfo.engineEditionId) {
+		if (e.profile.providerName.toLowerCase() === 'mysql' && e.serverInfo.engineEditionId) {
 			if (isCloudEditions.some(i => i === e.serverInfo.engineEditionId)) {
 				iscloud = true;
 			} else {
