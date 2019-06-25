@@ -51,7 +51,7 @@ export async function activate(context: vscode.ExtensionContext) {
 		errorHandler: new LanguageClientErrorHandler(),
 		documentSelector: ['sql'],
 		synchronize: {
-			configurationSection: 'mysql'
+			configurationSection: 'MySQL'
 		},
 	};
 
@@ -92,7 +92,7 @@ function generateServerOptions(executablePath: string): ServerOptions {
 	let serverArgs = [];
 	let serverCommand: string = executablePath;
 
-	let config = vscode.workspace.getConfiguration("mysql");
+	let config = vscode.workspace.getConfiguration("MySQL");
 	if (config) {
 		// Override the server path with the local debug path if enabled
 
@@ -110,7 +110,7 @@ function generateServerOptions(executablePath: string): ServerOptions {
 			serverArgs = [filePath, debuggingArg];
 		}
 
-		let logFileLocation = path.join(Utils.getDefaultLogLocation(), "mysql");
+		let logFileLocation = path.join(Utils.getDefaultLogLocation(), "MySQL");
 
 		serverArgs.push('--log-dir=' + logFileLocation);
 		serverArgs.push(logFileLocation);
