@@ -11,7 +11,7 @@
   },
   "license": "MIT",
   "activationEvents": [
-    "onCommand:extension.activateExtension"
+    "*"
   ],
   "engines": {
     "vscode": "*",
@@ -28,12 +28,6 @@
     "postinstall": "node ./node_modules/vscode/bin/install && node ./node_modules/azdata/bin/install"
   },
   "contributes": {
-    "commands": [
-      {
-        "command": "extension.activateExtension",
-        "title": "Activate MySQL Extension"
-      }
-    ],
     "languages": [
       {
         "id": "sql",
@@ -160,7 +154,7 @@
           {
             "name": "host",
             "displayName": "Server name",
-            "description": "Name of the MySQL instance",
+            "description": "Name of the MySQL server",
             "valueType": "string",
             "specialValueType": "serverName",
             "isIdentity": true,
@@ -172,7 +166,7 @@
             "isArray": false
           },
           {
-            "name": "dbname",
+            "name": "database",
             "displayName": "Database name",
             "description": "The name of the initial catalog or database in the data source",
             "valueType": "string",
@@ -203,9 +197,9 @@
             "groupName": "Security"
           },
           {
-            "name": "hostaddr",
+            "name": "bind_address",
             "displayName": "Host IP address",
-            "description": "IP address of the server",
+            "description": "IP address of the host server",
             "valueType": "string",
             "groupName": "Server",
             "defaultValue": null
@@ -219,39 +213,47 @@
             "defaultValue": null
           },
           {
-            "name": "connectTimeout",
+            "name": "connect_timeout",
             "displayName": "Connect timeout",
             "description": "Seconds to wait before timing out when connecting",
             "valueType": "number",
             "groupName": "Client",
-            "defaultValue": "15"
+            "defaultValue": "10"
           },
           {
-            "name": "clientEncoding",
-            "displayName": "Client encoding",
-            "description": "The client encoding for the connection",
-            "valueType": "string",
+            "name": "read_timeout",
+            "displayName": "Read timeout",
+            "description": "Seconds to wait when reading from the connection",
+            "valueType": "number",
             "groupName": "Client",
-            "defaultValue": null
+            "defaultValue": "0"
           },
           {
-            "name": "options",
-            "displayName": "Command-line options",
-            "description": "Command-line options to send to the server when the connection starts",
+            "name": "write_timeout",
+            "displayName": "Write timeout",
+            "description": "Seconds to wait when writing to the connection",
+            "valueType": "number",
+            "groupName": "Client",
+            "defaultValue": "0"
+          },
+          {
+            "name": "client_flag",
+            "displayName": "Capability flags",
+            "description": "Custom flags to send to the MySQL server",
             "valueType": "string",
             "groupName": "Server",
             "defaultValue": null
           },
           {
-            "name": "applicationName",
-            "displayName": "Application name",
-            "description": "Value for the 'application_name' configuration parameter",
+            "name": "sql_mode",
+            "displayName": "SQL_MODE",
+            "description": "Default SQL_MODE to use",
             "valueType": "string",
-            "groupName": "Client",
-            "specialValueType": "appName"
+            "groupName": "Server",
+            "defaultValue": null
           },
           {
-            "name": "sslmode",
+            "name": "ssl",
             "displayName": "SSL mode",
             "description": "The SSL mode to use when connecting",
             "valueType": "category",
@@ -266,77 +268,42 @@
                 "name": "allow"
               },
               {
-                "displayName": "Prefer",
-                "name": "prefer"
-              },
-              {
                 "displayName": "Require",
                 "name": "require"
-              },
-              {
-                "displayName": "Verify-CA",
-                "name": "verify-ca"
-              },
-              {
-                "displayName": "Verify-Full",
-                "name": "verify-full"
               }
             ],
-            "defaultValue": "prefer"
+            "defaultValue": "allow"
           },
           {
-            "name": "sslcompression",
-            "displayName": "Use SSL compression",
-            "description": "Whether to compress SSL connections",
-            "valueType": "boolean",
-            "groupName": "SSL"
-          },
-          {
-            "name": "sslcert",
-            "displayName": "SSL certificate filename",
-            "description": "The filename of the SSL certificate to use",
+            "name": "ssl.key",
+            "displayName": "SSL key",
+            "description": "The path name of the client private key to use for the SSL certificate",
             "valueType": "string",
             "groupName": "SSL",
             "defaultValue": null
           },
           {
-            "name": "sslkey",
-            "displayName": "SSL key filename",
-            "description": "The filename of the key to use for the SSL certificate",
+            "name": "ssl.cert",
+            "displayName": "SSL certificate",
+            "description": "The path name of the SSL client certificate file",
             "valueType": "string",
             "groupName": "SSL",
             "defaultValue": null
           },
           {
-            "name": "sslrootcert",
+            "name": "ssl.ca",
             "displayName": "SSL root certificate filename",
-            "description": "The filename of the SSL root CA certificate to use",
+            "description": "The path name of the SSL root CA certificate",
             "valueType": "string",
             "groupName": "SSL",
             "defaultValue": null
           },
           {
-            "name": "sslcrl",
-            "displayName": "SSL CRL filename",
-            "description": "The filename of the SSL certificate revocation list to use",
+            "name": "ssl.cipher",
+            "displayName": "SSL cipher",
+            "description": "Comma-seperated list of allowed ciphers for SSL encryption",
             "valueType": "string",
             "groupName": "SSL",
-            "defaultValue": null
-          },
-          {
-            "name": "requirepeer",
-            "displayName": "Require peer",
-            "description": "The required username of the server process",
-            "valueType": "string",
-            "groupName": "Server",
-            "defaultValue": null
-          },
-          {
-            "name": "service",
-            "displayName": "Service name",
-            "description": "The service name in to use for connection parameters",
-            "valueType": "string",
-            "groupName": "Client",
             "defaultValue": null
           }
         ]

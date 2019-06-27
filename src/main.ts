@@ -21,12 +21,6 @@ const statusView = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.L
 
 export async function activate(context: vscode.ExtensionContext) {
 
-	// For debugging purposes, specifying a command to activate the extension
-    context.subscriptions.push(vscode.commands.registerCommand('extension.activateExtension', () => {
-        // Display a message box to the developer when the extension is activated
-        vscode.window.showInformationMessage('MySQL Extension activated!');
-	}));
-
 	// lets make sure we support this platform first
 	let supported = await Utils.verifyPlatform();
 
