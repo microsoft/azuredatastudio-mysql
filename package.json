@@ -42,12 +42,6 @@
     "outputChannels": [
       "MySQL"
     ],
-    "snippets": [
-      {
-        "language": "sql",
-        "path": "./snippets/mysql.json"
-      }
-    ],
     "configuration": [{
       "type": "object",
       "title": "MySQL configuration",
