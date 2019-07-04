@@ -114,10 +114,9 @@ function generateServerOptions(executablePath: string): ServerOptions {
 		if (logDebugInfo) {
 			serverArgs.push('--enable-logging');
 		}
-
-		serverArgs.push('provider=' + Constants.providerId)
 	}
 
+	serverArgs.push('provider=' + Constants.providerId);
 	// run the service host
 	return  {  command: serverCommand, args: serverArgs, transport: TransportKind.stdio  };
 }
