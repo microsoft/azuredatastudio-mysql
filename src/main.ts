@@ -45,7 +45,7 @@ export async function activate(context: vscode.ExtensionContext) {
 		errorHandler: new LanguageClientErrorHandler(),
 		documentSelector: ['sql'],
 		synchronize: {
-			configurationSection: 'MySQL'
+			configurationSection: Constants.providerId
 		},
 	};
 
