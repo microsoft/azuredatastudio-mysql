@@ -45,7 +45,7 @@ export async function activate(context: vscode.ExtensionContext) {
 		errorHandler: new LanguageClientErrorHandler(),
 		documentSelector: ['sql'],
 		synchronize: {
-			configurationSection: 'MySQL'
+			configurationSection: Constants.providerId
 		},
 	};
 
@@ -57,7 +57,7 @@ export async function activate(context: vscode.ExtensionContext) {
 		const processStart = Date.now();
 		languageClient.onReady().then(() => {
 			const processEnd = Date.now();
-			statusView.text = 'MySQL service started';
+			statusView.text = Constants.providerId + ' service started';
 			setTimeout(() => {
 				statusView.hide();
 			}, 1500);
@@ -69,11 +69,11 @@ export async function activate(context: vscode.ExtensionContext) {
 			});
 		});
 		statusView.show();
-		statusView.text = 'Starting MySQL service';
+		statusView.text = 'Starting ' + Constants.providerId +  ' service';
 		languageClient.start();
 	}, e => {
 		Telemetry.sendTelemetryEvent('ServiceInitializingFailed');
-		vscode.window.showErrorMessage('Failed to start MySQL tools service');
+		vscode.window.showErrorMessage('Failed to start ' + Constants.providerId + ' tools service');
 	});
 
 	let contextProvider = new ContextProvider();
@@ -86,7 +86,7 @@ function generateServerOptions(executablePath: string): ServerOptions {
 	let serverArgs = [];
 	let serverCommand: string = executablePath;
 
-	let config = vscode.workspace.getConfiguration("MySQL");
+	let config = vscode.workspace.getConfiguration(Constants.providerId);
 	if (config) {
 		// Override the server path with the local debug path if enabled
 
@@ -104,7 +104,7 @@ function generateServerOptions(executablePath: string): ServerOptions {
 			serverArgs = [filePath, debuggingArg];
 		}
 
-		let logFileLocation = path.join(Utils.getDefaultLogLocation(), "MySQL");
+		let logFileLocation = path.join(Utils.getDefaultLogLocation(), Constants.providerId);
 
 		serverArgs.push('--log-dir=' + logFileLocation);
 		serverArgs.push(logFileLocation);
@@ -116,6 +116,7 @@ function generateServerOptions(executablePath: string): ServerOptions {
 		}
 	}
 
+	serverArgs.push('provider=' + Constants.providerId);
 	// run the service host
 	return  {  command: serverCommand, args: serverArgs, transport: TransportKind.stdio  };
 }

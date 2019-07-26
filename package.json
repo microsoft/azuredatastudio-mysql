@@ -160,7 +160,7 @@
             "isArray": false
           },
           {
-            "name": "database",
+            "name": "dbname",
             "displayName": "Database name",
             "description": "The name of the initial catalog or database in the data source",
             "valueType": "string",
@@ -191,7 +191,7 @@
             "groupName": "Security"
           },
           {
-            "name": "bind_address",
+            "name": "bindAddress",
             "displayName": "Host IP address",
             "description": "IP address of the host server",
             "valueType": "string",
@@ -207,7 +207,7 @@
             "defaultValue": null
           },
           {
-            "name": "connect_timeout",
+            "name": "connectTimeout",
             "displayName": "Connect timeout",
             "description": "Seconds to wait before timing out when connecting",
             "valueType": "number",
@@ -215,7 +215,7 @@
             "defaultValue": "10"
           },
           {
-            "name": "read_timeout",
+            "name": "readTimeout",
             "displayName": "Read timeout",
             "description": "Seconds to wait when reading from the connection",
             "valueType": "number",
@@ -223,7 +223,7 @@
             "defaultValue": "0"
           },
           {
-            "name": "write_timeout",
+            "name": "writeTimeout",
             "displayName": "Write timeout",
             "description": "Seconds to wait when writing to the connection",
             "valueType": "number",
@@ -231,7 +231,7 @@
             "defaultValue": "0"
           },
           {
-            "name": "client_flag",
+            "name": "clientFlag",
             "displayName": "Capability flags",
             "description": "Custom flags to send to the MySQL server",
             "valueType": "string",
@@ -239,7 +239,7 @@
             "defaultValue": null
           },
           {
-            "name": "sql_mode",
+            "name": "sqlMode",
             "displayName": "SQL_MODE",
             "description": "Default SQL_MODE to use",
             "valueType": "string",
