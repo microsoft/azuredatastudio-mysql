@@ -24,6 +24,22 @@
             "timeout": 25000
         },
         {
+            "name": "(Insiders) MySQL Extension",
+            "type": "sqlopsExtensionHost",
+            "request": "launch",
+            "runtimeExecutable": "azuredatastudio-insiders",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}"
+            ],
+            "outFiles": [
+                "${workspaceFolder}/out/**/*.js"
+            ],
+            "stopOnEntry": false,
+            "sourceMaps": true,
+            "preLaunchTask": "",
+            "timeout": 25000
+        },
+        {
             "name": "MySQL Extension Tests",
             "type": "sqlopsExtensionHost",
             "request": "launch",
