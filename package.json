@@ -42,7 +42,8 @@
     "outputChannels": [
       "MySQL"
     ],
-    "configuration": [{
+    "configuration":
+    {
       "type": "object",
       "title": "MySQL configuration",
       "properties": {
@@ -123,13 +124,12 @@
           "description": "[Optional] If true the indentations of the statements are changed."
         }
       }
-      }
-    ],
-    "connectionProvider": [{
+    },
+    "connectionProvider": {
         "protocolVersion": "1.0",
         "providerName": "MySQL",
         "providerId": "MySQL",
-        "displayName": "MySQL",
+        "displayName": "MySQL/MariaDB",
         "connectionOptions": [
           {
             "specialValueType": "connectionName",
@@ -220,7 +220,7 @@
             "description": "Seconds to wait when reading from the connection",
             "valueType": "number",
             "groupName": "Client",
-            "defaultValue": "0"
+            "defaultValue": ""
           },
           {
             "name": "writeTimeout",
@@ -228,7 +228,7 @@
             "description": "Seconds to wait when writing to the connection",
             "valueType": "number",
             "groupName": "Client",
-            "defaultValue": "0"
+            "defaultValue": ""
           },
           {
             "name": "clientFlag",
@@ -302,7 +302,6 @@
           }
         ]
       }
-    ]
   },
   "dependencies": {
     "applicationinsights": "1.0.1",
