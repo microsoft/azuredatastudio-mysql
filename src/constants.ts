@@ -6,6 +6,6 @@
 
 export const serviceName = 'ossdbToolsService';
 export const providerId = 'MySQL';
-export const serviceCrashMessage = 'PG SQL Tools Service component exited unexpectedly. Please restart Azure Data Studio.';
+export const serviceCrashMessage = 'Oss DB Tools Service component exited unexpectedly. Please restart Azure Data Studio.';
 export const serviceCrashButton = 'View Known Issues';
 export const serviceCrashLink = 'https://github.com/microsoft/pgtoolsservice/issues?q=is%3Aopen+is%3Aissue+label%3Aknown-issues';
