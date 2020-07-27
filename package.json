@@ -82,7 +82,7 @@
         },
         "MySQL.defaultDatabase": {
           "type": "string",
-          "default": null,
+          "default": "",
           "description": "The default database to use when creating a new MySQL connection"
         },
         "MySQL.format.keywordCase": {
