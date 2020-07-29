@@ -11,7 +11,7 @@ To complete this quickstart, you need Azure Data Studio and access to a MySQL se
 
 ## Install the MySQL extension for Azure Data Studio
 1. Select the Extensions Icon to view the available extensions.
-![extension manager icon]
+   ![extension manager icon]
 
 2. Search for the **MySQL** extension and select it to view its details. Click **Install** to add the extension.
 
