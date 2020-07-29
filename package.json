@@ -36,7 +36,6 @@
         "title": "Databases",
         "group": "home",
         "when": "connectionProvider == 'MySQL' && !mysql:iscloud",
-        "icon": "./src/dashboard/browser/media/database_colored.svg",
         "container": {
           "widgets-container": [
             {
