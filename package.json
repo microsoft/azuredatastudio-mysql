@@ -35,7 +35,7 @@
         "provider": "MySQL",
         "title": "Databases",
         "group": "home",
-        "when": "connectionProvider == 'MySQL' && !mysql:iscloud",
+        "when": "connectionProvider == 'MySQL' && !mysql:iscloud && dashboardContext == 'server'",
         "container": {
           "widgets-container": [
             {
@@ -120,7 +120,7 @@
             null,
             "upper",
             "lower",
-            "capitalize"
+            "auto"
           ]
         },
         "MySQL.format.identifierCase": {
@@ -134,7 +134,7 @@
             null,
             "upper",
             "lower",
-            "capitalize"
+            "auto"
           ]
         },
         "MySQL.format.stripComments": {
