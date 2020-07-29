@@ -114,7 +114,7 @@
             "string",
             "null"
           ],
-          "description": "[Optional] Changes how keywords are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.",
+          "description": "[Optional] Changes how keywords are formatted. Allowed values are 'upper', 'lower' and 'auto'.",
           "default": null,
           "enum": [
             null,
@@ -128,7 +128,7 @@
             "string",
             "null"
           ],
-          "description": "[Optional] Changes how identifiers are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.",
+          "description": "[Optional] Changes how identifiers are formatted. Allowed values are 'upper', 'lower' and 'auto'.",
           "default": null,
           "enum": [
             null,
