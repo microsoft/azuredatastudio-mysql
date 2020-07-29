@@ -130,6 +130,7 @@
         "providerName": "MySQL",
         "providerId": "MySQL",
         "displayName": "MySQL/MariaDB",
+        "azureResource": "OssRdbms",
         "connectionOptions": [
           {
             "specialValueType": "connectionName",
