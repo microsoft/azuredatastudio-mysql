@@ -87,9 +87,9 @@ After the query completes, right-click **Databases** and select **Refresh** to s
 
    ```sql
    -- Drop the table if it already exists
-   DROP TABLE IF EXISTS customers;
+   DROP TABLE IF EXISTS tutorialdb.customers;
    -- Create a new table called 'customers'
-   CREATE TABLE customers(
+   CREATE TABLE tutorialdb.customers(
        customer_id SERIAL PRIMARY KEY,
        name VARCHAR (50) NOT NULL,
        location VARCHAR (50) NOT NULL,
@@ -103,7 +103,7 @@ Paste the following snippet into the query window and click **Run**:
 
    ```sql
    -- Insert rows into table 'customers'
-   INSERT INTO customers
+   INSERT INTO tutorialdb.customers
        (customer_id, name, location, email)
     VALUES
       ( 1, 'Orlando', 'Australia', ''),
@@ -118,7 +118,7 @@ Paste the following snippet into the query window and click **Run**:
 
    ```sql
    -- Select rows from table 'customers'
-   SELECT * FROM customers;
+   SELECT * FROM tutorialdb.customers;
    ```
 
 2. The results of the query are displayed:
