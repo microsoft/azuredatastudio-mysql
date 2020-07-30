@@ -130,6 +130,7 @@
         "providerName": "MySQL",
         "providerId": "MySQL",
         "displayName": "MySQL/MariaDB",
+        "azureResource": "OssRdbms",
         "connectionOptions": [
           {
             "specialValueType": "connectionName",
@@ -157,6 +158,29 @@
             "defaultValue": null,
             "objectType": null,
             "categoryValues": null,
+            "isArray": false
+          },
+          {
+            "specialValueType": "authType",
+            "isIdentity": true,
+            "name": "authenticationType",
+            "displayName": "Authentication type",
+            "description": "How to authenticate with server",
+            "groupName": "Security",
+            "valueType": "category",
+            "defaultValue": "SqlLogin",
+            "objectType": null,
+            "categoryValues": [
+              {
+                "displayName": "Password",
+                "name": "SqlLogin"
+              },
+              {
+                "displayName": "Azure Active Directory",
+                "name": "AzureMFAAndUser"
+              }
+            ],
+            "isRequired": true,
             "isArray": false
           },
           {
