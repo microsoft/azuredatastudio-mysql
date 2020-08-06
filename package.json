@@ -114,13 +114,13 @@
             "string",
             "null"
           ],
-          "description": "[Optional] Changes how keywords are formatted. Allowed values are 'upper', 'lower' and 'auto'.",
+          "description": "[Optional] Changes how keywords are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.",
           "default": null,
           "enum": [
             null,
             "upper",
             "lower",
-            "auto"
+            "capitalize"
           ]
         },
         "MySQL.format.identifierCase": {
@@ -128,13 +128,13 @@
             "string",
             "null"
           ],
-          "description": "[Optional] Changes how identifiers are formatted. Allowed values are 'upper', 'lower' and 'auto'.",
+          "description": "[Optional] Changes how identifiers are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.",
           "default": null,
           "enum": [
             null,
             "upper",
             "lower",
-            "auto"
+            "capitalize"
           ]
         },
         "MySQL.format.stripComments": {
