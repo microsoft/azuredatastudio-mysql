@@ -1,6 +1,6 @@
 {
-	"downloadUrl": "https://github.com/sasank-chaganty/sqltoolsfilehost/releases/download/{#version#}/pgsqltoolsservice-{#fileName#}",
-	"version": "v0.0.1",
+	"downloadUrl": "https://github.com/microsoft/pgtoolsservice/releases/download/{#version#}/pgsqltoolsservice-{#fileName#}",
+	"version": "v0.0.1-alpha",
 	"downloadFileNames": {
 		"Windows_64": "win-x64.zip",
 		"Windows_86": "win-x86.zip",
