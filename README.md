@@ -7,8 +7,6 @@ Connect, query, and manage MySQL databases with Azure Data Studio, a modern data
 * Query authoring and editing with Intellisense, syntax highlighting and code snippets
 * View query results and save to csv, JSON, xml, or Excel
 * Integrated terminal for Bash, PowerShell, and cmd.exe
-* Go to Definition and Peek Definition for examining the DDL of objects
-* Edit data through editable view of tables
 * Source control integration with Git
 * Customize dashboards and insight widgets using SQL
 * Server groups for organizing connections
