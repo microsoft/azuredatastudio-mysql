@@ -159,11 +159,6 @@
             "field": "isCloud",
             "operator": "!=",
             "value": true
-            },
-            {
-              "field": "engineEditionId",
-              "operator": "!=",
-              "value": "11"
             }
           ],
           "databaseProperties": [
@@ -192,7 +187,7 @@
           ]
         },
         {
-          "flavor": "on_prem",
+          "flavor": "cloud",
           "condition": {
             "field": "isCloud",
             "operator": "==",
