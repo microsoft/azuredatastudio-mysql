@@ -35,7 +35,7 @@
         "provider": "MySQL",
         "title": "Databases",
         "group": "home",
-        "when": "connectionProvider == 'MySQL' && !mysql:iscloud && dashboardContext == 'server'",
+        "when": "dashboardContext == 'server'",
         "container": {
           "widgets-container": [
             {
