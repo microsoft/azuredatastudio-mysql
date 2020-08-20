@@ -153,46 +153,7 @@
       "provider": "MySQL",
       "flavors": [
         {
-          "flavor": "on_prem",
-          "condition": [
-            {
-            "field": "isCloud",
-            "operator": "!=",
-            "value": true
-            }
-          ],
-          "databaseProperties": [
-            {
-              "displayName": "Database",
-              "value": "dbname"
-            },
-            {
-              "displayName": "Current User",
-              "value": "owner"
-            },
-            {
-              "displayName": "Size (MB)",
-              "value": "size"
-            }
-          ],
-          "serverProperties": [
-            {
-              "displayName": "Server",
-              "value": "server"
-            },
-            {
-              "displayName": "Version",
-              "value": "serverVersion"
-            }
-          ]
-        },
-        {
-          "flavor": "cloud",
-          "condition": {
-            "field": "isCloud",
-            "operator": "==",
-            "value": true
-          },
+          "flavor": "mysql",
           "databaseProperties": [
             {
               "displayName": "Database",
