@@ -371,7 +371,7 @@
     "typemoq": "^1.7.0",
     "typescript": "^2.8.1",
     "uglify-js": "mishoo/UglifyJS2#harmony-v2.8.22",
-    "url-parse": "1.2.0",
+    "url-parse": "1.5.2",
     "vscode": "1.0.1",
     "vscode-nls-dev": "https://github.com/Raymondd/vscode-nls-dev/releases/download/2.0.2/build.tar.gz",
     "xmldom": "^0.1.27",
