@@ -28,30 +28,6 @@
     "postinstall": "node ./node_modules/vscode/bin/install && node ./node_modules/azdata/bin/install"
   },
   "contributes": {
-    "dashboard.tabs": [
-      {
-        "id": "database",
-        "description": "Databases",
-        "provider": "MySQL",
-        "title": "Databases",
-        "group": "home",
-        "when": "dashboardContext == 'server'",
-        "container": {
-          "widgets-container": [
-            {
-              "gridItemConfig": {
-                "sizex": 3,
-                "sizey": 2
-              },
-              "widget": {
-                "explorer-widget": {}
-              },
-              "hideHeader": true
-            }
-          ]
-        }
-      }
-    ],
     "languages": [
       {
         "id": "sql",
@@ -148,38 +124,6 @@
           "description": "[Optional] If true the indentations of the statements are changed."
         }
       }
-    },
-    "dashboard": {
-      "provider": "MySQL",
-      "flavors": [
-        {
-          "flavor": "mysql",
-          "databaseProperties": [
-            {
-              "displayName": "Database",
-              "value": "dbname"
-            },
-            {
-              "displayName": "Current User",
-              "value": "owner"
-            },
-            {
-              "displayName": "Size (MB)",
-              "value": "size"
-            }
-          ],
-          "serverProperties": [
-            {
-              "displayName": "Server",
-              "value": "server"
-            },
-            {
-              "displayName": "Version",
-              "value": "serverVersion"
-            }
-          ]
-        }
-      ]
     },
     "connectionProvider": {
         "protocolVersion": "1.0",
