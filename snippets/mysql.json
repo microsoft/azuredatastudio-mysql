@@ -1,0 +1,26 @@
+{
+	"Create a new Database": {
+		"prefix": "mysqlCreateDatabase",
+		"body": [
+			"-- Create a new database called '${1:DatabaseName}'",
+			"CREATE DATABASE ${1:DatabaseName}"
+		],
+		"description": "Create a new MySQL Database"
+	},
+	"List databases": {
+		"prefix": "mysqlListDatabases",
+		"body": [
+			"-- Get a list of databases",
+			"SHOW DATABASES"
+		],
+		"description": "List MySQL databases"
+	},
+    "Drop a database": {
+		"prefix": "mysqlDropDatabase",
+		"body": [
+			"-- Drop a database called '${1:DatabaseName}'",
+			"DROP DATABASE ${1:DatabaseName}"
+		],
+		"description": "Drop a MySQL database"
+	}
+}

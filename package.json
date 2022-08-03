@@ -39,6 +39,12 @@
         ]
       }
     ],
+    "snippets": [
+      {
+        "language": "sql",
+        "path": "./snippets/mysql.json"
+      }
+    ],
     "outputChannels": [
       "MySQL"
     ],
