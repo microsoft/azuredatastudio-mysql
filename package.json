@@ -211,7 +211,7 @@
             "description": "Port number for the server",
             "valueType": "number",
             "groupName": "Server",
-            "defaultValue": null
+            "defaultValue": 3306
           },
           {
             "name": "connectTimeout",
@@ -219,7 +219,7 @@
             "description": "Seconds to wait before timing out when connecting",
             "valueType": "number",
             "groupName": "Client",
-            "defaultValue": "10"
+            "defaultValue": 10
           },
           {
             "name": "readTimeout",
