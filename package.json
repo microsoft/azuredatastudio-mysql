@@ -28,6 +28,13 @@
     "postinstall": "node ./node_modules/vscode/bin/install && node ./node_modules/azdata/bin/install"
   },
   "contributes": {
+    "grammars": [
+      {
+        "injectTo": [ "source.sql" ],
+        "scopeName": "source.mysql-injection.sql",
+        "path": "./syntaxes/mysql-injection.json"
+      }
+    ],
     "languages": [
       {
         "id": "sql",
