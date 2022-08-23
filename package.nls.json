@@ -57,5 +57,13 @@
 	"mysql.connectionOptions.ssl.ca.displayName": "SSL root certificate filename",
 	"mysql.connectionOptions.ssl.ca.description": "The path name of the SSL root CA certificate",
 	"mysql.connectionOptions.ssl.cipher.displayName": "SSL cipher",
-	"mysql.connectionOptions.ssl.cipher.description": "Comma-seperated list of allowed ciphers for SSL encryption"
+	"mysql.connectionOptions.ssl.cipher.description": "Comma-seperated list of allowed ciphers for SSL encryption",
+	"mysql.resourceDeployment.displayName" : "Azure Database for MySQL",
+	"mysql.resourceDeployment.description" : "Create an Azure Database for MySQL flexible server - a fully managed MySQL database as a service on Azure.",
+	"mysql.resourceDeployment.okButtonText" : "Create in Azure portal",
+	"mysql.resourceDeployment.agreements.template" : "I accept the {0} and {1}.",
+	"mysql.resourceDeployment.helpTexts.template" : "Azure Database for MySQL Flexible Server is a relational database service powered by the MySQL community edition. It's a fully managed database as a service offering that can handle mission-critical workloads with predictable performance and dynamic scalability. Additionally, it is designed for more granular control and flexibility over database management functions and configuration settings. {0}",
+	"microsoft.azure.termsOfUse" : "Microsoft Azure terms of use",
+	"microsoft.privacy.statement" : "Microsoft Privacy Statement",
+	"learnMore" : "Learn More."
 }
