@@ -315,7 +315,60 @@
             "defaultValue": null
           }
         ]
-      }
+      },
+      "resourceDeploymentTypes": [
+        {
+          "name": "mysql-azure-database",
+          "displayName": "%mysql.resourceDeployment.displayName%",
+          "description": "%mysql.resourceDeployment.description%",
+          "platforms": "*",
+          "icon": "./images/extension-icon.png",
+          "tags": [
+            "Azure Database for MySQL",
+            "Cloud"
+          ],
+          "okButtonText": [
+            {
+              "value": "%mysql.resourceDeployment.okButtonText%"
+            }
+          ],
+          "providers": [
+            {
+              "name": "mysql-azure-database-server",
+              "webPageUrl": "https://portal.azure.com/#create/Microsoft.MySQLFlexibleServer",
+              "requiredTools" : [
+              ]
+            }
+          ],
+          "agreements": [
+            {
+              "template": "%mysql.resourceDeployment.agreements.template%",
+              "links": [
+                {
+                  "text": "%microsoft.azure.termsOfUse%",
+                  "url": "https://azure.microsoft.com/support/legal/"
+                },
+                {
+                  "text": "%microsoft.privacy.statement%",
+                  "url": "https://privacy.microsoft.com/privacystatement"
+                }
+              ],
+              "when": "true"
+            }
+          ],
+          "helpTexts": [
+            {
+              "template": "%mysql.resourceDeployment.helpTexts.template%",
+              "links": [
+                {
+                  "text": "%learnMore%",
+                  "url": "https://docs.microsoft.com/azure/mysql/flexible-server/overview"
+                }
+              ]
+            }
+          ]
+        }
+      ]
   },
   "dependencies": {
     "applicationinsights": "1.0.1",
