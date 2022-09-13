@@ -144,6 +144,16 @@
         "providerId": "MySQL",
         "displayName": "%mysql.provider.displayName%",
         "azureResource": "OssRdbms",
+        "iconPath": [
+          {
+            "id": "mysql",
+            "path": {
+              "light": "./images/light/mysql.svg",
+              "dark": "./images/dark/mysql_inverse.svg"
+            },
+            "default": true
+          }
+        ],
         "connectionOptions": [
           {
             "specialValueType": "connectionName",
