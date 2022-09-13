@@ -272,15 +272,19 @@
                 "name": "disable"
               },
               {
-                "displayName": "Allow",
-                "name": "allow"
-              },
-              {
                 "displayName": "Require",
                 "name": "require"
+              },
+              {
+                "displayName": "Verify-CA",
+                "name": "verify_ca"
+              },
+              {
+                "displayName": "Verify-Identity",
+                "name": "verify_identity"
               }
             ],
-            "defaultValue": "allow"
+            "defaultValue": "require"
           },
           {
             "name": "ssl.key",
