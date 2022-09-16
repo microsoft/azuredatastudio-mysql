@@ -29,20 +29,16 @@ To complete this quickstart, you need Azure Data Studio and access to a MySQL se
 3. In the dialog that pops up, go to **Connection type** and select **MySQL** from the drop-down.
 
 
-4. Fill in the remaining fields to authenticate using:
-   1) **SQL Login**: Select **Password** in the 'Authentication type' dropdown. Provide the server name, user name, and password for your MySQL server.
-   2) **Azure Active Directory**: Select **Azure Active Directory** in the 'Authentication type' dropdown. Provide the server name, user name, and your Microsoft account
+4. Fill in the remaining fields to authenticate :
 
    ![New Connection Screen]
 
    | Setting       | Example value | Description |
    | ------------ | ------------------ | ------------------------------------------------- |
    | **Server name** | localhost | The fully qualified server name |
-   | **Authentication Type** | Password | Choice of logging into server with SQL Login (Password) or Azure Active Directory |
    | **User name** | mysql | The user name you want to log in with. |
-   | **Password (SQL Login)** | *password* | The password for the account you are logging in with. |
-   | **Password** | *Check* | Check this box if you don't want to enter the password each time you connect. |
-   | **Account (AAD Login)** | user@microsoft.com | The Microsoft account you are logging in with. |
+   | **Password** | *password* | The password for the account you are logging in with. |
+   | **Remember Password** | *Check* | Check this box if you don't want to enter the password each time you connect. |
    | **Database name** | \<Default\> | Fill this if you want the connection to specify a database. |
    | **Server group** | \<Default\> | This option lets you assign this connection to a specific server group you create. |
    | **Name (optional)** | *leave blank* | This option lets you specify a friendly name for your server. |
@@ -136,6 +132,7 @@ Learn about the [scenarios available] for MySQL in Azure Data Studio.
 
 [extension manager icon]:https://user-images.githubusercontent.com/20936410/88838718-d0640b00-d18e-11ea-9f63-226c8acd030e.png
 [New Connection Icon]:https://user-images.githubusercontent.com/20936410/88839725-49b02d80-d190-11ea-8d51-5d57e551e888.png
-[New Connection Screen]:https://user-images.githubusercontent.com/20936410/88841636-1327e200-d193-11ea-969b-0e0c977c6467.PNG
+[New Connection Screen]:https://user-images.githubusercontent.com/102506628/190592429-d456c3f0-a28b-4ea3-b016-f86277e01e7c.PNG
 [Change Context]:https://user-images.githubusercontent.com/20936410/88843628-4ddf4980-d196-11ea-8ad0-485bda63cc06.png
 [View Results]:https://user-images.githubusercontent.com/20936410/88843661-5afc3880-d196-11ea-892f-6f9f662f455a.png
+
