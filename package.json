@@ -3,7 +3,7 @@
   "displayName": "MySQL",
   "version": "0.1.0",
   "publisher": "Microsoft",
-  "description": "MySQL extension for Azure Data Studio",
+  "description": "%mysql.description%",
   "aiKey": "AIF-5574968e-856d-40d2-af67-c89a14e76412",
   "icon": "images/extension-icon.png",
   "repository": {
@@ -14,7 +14,7 @@
     "*"
   ],
   "engines": {
-    "vscode": "*",
+    "vscode": ">=1.39.0",
     "azdata": "*"
   },
   "main": "./out/main",
@@ -28,6 +28,13 @@
     "postinstall": "node ./node_modules/vscode/bin/install && node ./node_modules/azdata/bin/install"
   },
   "contributes": {
+    "grammars": [
+      {
+        "injectTo": [ "source.sql" ],
+        "scopeName": "source.mysql-injection.sql",
+        "path": "./syntaxes/mysql-injection.json"
+      }
+    ],
     "languages": [
       {
         "id": "sql",
@@ -39,23 +46,29 @@
         ]
       }
     ],
+    "snippets": [
+      {
+        "language": "sql",
+        "path": "./snippets/mysql.json"
+      }
+    ],
     "outputChannels": [
       "MySQL"
     ],
     "configuration":
     {
       "type": "object",
-      "title": "MySQL configuration",
+      "title": "%mysql.configuration.title%",
       "properties": {
         "MySQL.logDebugInfo": {
           "type": "boolean",
           "default": false,
-          "description": "[Optional] Log debug output to the VS Code console (Help -> Toggle Developer Tools)"
+          "description": "%mysql.logDebugInfo.description%"
         },
         "MySQL.enabled": {
           "type": "boolean",
           "default": true,
-          "description": "[Optional] Enable MySQL support (currently in development)"
+          "description": "%mysql.enabled.description%"
         },
         "MySQL.debugSourcePath": {
           "type": [
@@ -63,34 +76,34 @@
             "null"
           ],
           "default": null,
-          "description": "[Optional] Path to the source directory of the MySQL Tools Service, for debugging"
+          "description": "%mysql.debugSourcePath.description%"
         },
         "MySQL.useDebugSource": {
           "type": "boolean",
           "default": false,
-          "description": "[Optional] Enable running the MySQL extension via the path set in MySQL.debugSourcePath"
+          "description": "%mysql.useDebugSource.description%"
         },
         "MySQL.enableStartupDebugging": {
           "type": "boolean",
           "default": false,
-          "description": "[Optional] Whether to make the MySQL Tools Service wait for a debugger to attach when starting"
+          "description": "%mysql.enableStartupDebugging.description%"
         },
         "MySQL.debugServerPort": {
           "type": "number",
           "default": 3000,
-          "description": "[Optional] The port to run the MySQL Tools Service remote debugger on (default 3000)"
+          "description": "%mysql.debugServerPort.description%"
         },
         "MySQL.defaultDatabase": {
           "type": "string",
-          "default": null,
-          "description": "The default database to use when creating a new MySQL connection"
+          "default": "",
+          "description": "%mysql.defaultDatabase.description%"
         },
         "MySQL.format.keywordCase": {
           "type": [
             "string",
             "null"
           ],
-          "description": "[Optional] Changes how keywords are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.",
+          "description": "%mysql.format.keywordCase.description%",
           "default": null,
           "enum": [
             null,
@@ -104,7 +117,7 @@
             "string",
             "null"
           ],
-          "description": "[Optional] Changes how identifiers are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.",
+          "description": "%mysql.format.identifierCase.description%",
           "default": null,
           "enum": [
             null,
@@ -116,12 +129,12 @@
         "MySQL.format.stripComments": {
           "type": "boolean",
           "default": false,
-          "description": "[Optional] If true comments are removed from the statements"
+          "description": "%mysql.format.stripComments.description%"
         },
         "MySQL.format.reindent": {
           "type": "boolean",
           "default": true,
-          "description": "[Optional] If true the indentations of the statements are changed."
+          "description": "%mysql.format.reindent.description%"
         }
       }
     },
@@ -129,15 +142,26 @@
         "protocolVersion": "1.0",
         "providerName": "MySQL",
         "providerId": "MySQL",
-        "displayName": "MySQL/MariaDB",
+        "displayName": "%mysql.provider.displayName%",
+        "azureResource": "OssRdbms",
+        "iconPath": [
+          {
+            "id": "mysql",
+            "path": {
+              "light": "./images/light/mysql.svg",
+              "dark": "./images/dark/mysql_inverse.svg"
+            },
+            "default": true
+          }
+        ],
         "connectionOptions": [
           {
             "specialValueType": "connectionName",
             "isIdentity": true,
             "name": "connectionName",
-            "displayName": "Name (optional)",
-            "description": "Custom name of the connection",
-            "groupName": "Source",
+            "displayName": "%mysql.connectionOptions.connectionName.displayName%",
+            "description": "%mysql.connectionOptions.connectionName.description%",
+            "groupName": "%mysql.connectionOptions.groupName.source%",
             "valueType": "string",
             "defaultValue": null,
             "objectType": null,
@@ -147,13 +171,13 @@
           },
           {
             "name": "host",
-            "displayName": "Server name",
-            "description": "Name of the MySQL server",
+            "displayName": "%mysql.connectionOptions.host.displayName%",
+            "description": "%mysql.connectionOptions.host.description%",
             "valueType": "string",
             "specialValueType": "serverName",
             "isIdentity": true,
             "isRequired": true,
-            "groupName": "Source",
+            "groupName": "%mysql.connectionOptions.groupName.source%",
             "defaultValue": null,
             "objectType": null,
             "categoryValues": null,
@@ -161,147 +185,204 @@
           },
           {
             "name": "dbname",
-            "displayName": "Database name",
-            "description": "The name of the initial catalog or database in the data source",
+            "displayName": "%mysql.connectionOptions.dbname.displayName%",
+            "description": "%mysql.connectionOptions.dbname.description%",
             "valueType": "string",
             "specialValueType": "databaseName",
             "isIdentity": true,
             "isRequired": false,
-            "groupName": "Source",
+            "groupName": "%mysql.connectionOptions.groupName.source%",
             "defaultValue": null
           },
           {
             "name": "user",
-            "displayName": "User name",
-            "description": "Indicates the user ID to be used when connecting to the data source",
+            "displayName": "%mysql.connectionOptions.user.displayName%",
+            "description": "%mysql.connectionOptions.user.description%",
             "valueType": "string",
             "specialValueType": "userName",
             "isIdentity": true,
             "isRequired": true,
-            "groupName": "Security"
+            "groupName": "%mysql.connectionOptions.groupName.security%"
           },
           {
             "name": "password",
-            "displayName": "Password",
-            "description": "Indicates the password to be used when connecting to the data source",
+            "displayName": "%mysql.connectionOptions.password.displayName%",
+            "description": "%mysql.connectionOptions.password.description%",
             "valueType": "password",
             "specialValueType": "password",
             "isIdentity": true,
             "isRequired": true,
-            "groupName": "Security"
+            "groupName": "%mysql.connectionOptions.groupName.security%"
           },
           {
             "name": "bindAddress",
-            "displayName": "Host IP address",
-            "description": "IP address of the host server",
+            "displayName": "%mysql.connectionOptions.bindAddress.displayName%",
+            "description": "%mysql.connectionOptions.bindAddress.description%",
             "valueType": "string",
-            "groupName": "Server",
+            "groupName": "%mysql.connectionOptions.groupName.server%",
             "defaultValue": null
           },
           {
             "name": "port",
-            "displayName": "Port",
-            "description": "Port number for the server",
+            "displayName": "%mysql.connectionOptions.port.displayName%",
+            "description": "%mysql.connectionOptions.port.description%",
             "valueType": "number",
-            "groupName": "Server",
-            "defaultValue": null
+            "groupName": "%mysql.connectionOptions.groupName.server%",
+            "defaultValue": 3306
           },
           {
             "name": "connectTimeout",
-            "displayName": "Connect timeout",
-            "description": "Seconds to wait before timing out when connecting",
+            "displayName": "%mysql.connectionOptions.connectTimeout.displayName%",
+            "description": "%mysql.connectionOptions.connectTimeout.description%",
             "valueType": "number",
-            "groupName": "Client",
-            "defaultValue": "10"
+            "groupName": "%mysql.connectionOptions.groupName.client%",
+            "defaultValue": 10
           },
           {
             "name": "readTimeout",
-            "displayName": "Read timeout",
-            "description": "Seconds to wait when reading from the connection",
+            "displayName": "%mysql.connectionOptions.readTimeout.displayName%",
+            "description": "%mysql.connectionOptions.readTimeout.description%",
             "valueType": "number",
-            "groupName": "Client",
+            "groupName": "%mysql.connectionOptions.groupName.client%",
             "defaultValue": ""
           },
           {
             "name": "writeTimeout",
-            "displayName": "Write timeout",
-            "description": "Seconds to wait when writing to the connection",
+            "displayName": "%mysql.connectionOptions.writeTimeout.displayName%",
+            "description": "%mysql.connectionOptions.writeTimeout.description%",
             "valueType": "number",
-            "groupName": "Client",
+            "groupName": "%mysql.connectionOptions.groupName.client%",
             "defaultValue": ""
           },
           {
             "name": "clientFlag",
-            "displayName": "Capability flags",
-            "description": "Custom flags to send to the MySQL server",
+            "displayName": "%mysql.connectionOptions.clientFlag.displayName%",
+            "description": "%mysql.connectionOptions.clientFlag.description%",
             "valueType": "string",
-            "groupName": "Server",
+            "groupName": "%mysql.connectionOptions.groupName.server%",
             "defaultValue": null
           },
           {
             "name": "sqlMode",
-            "displayName": "SQL_MODE",
-            "description": "Default SQL_MODE to use",
+            "displayName": "%mysql.connectionOptions.sqlMode.displayName%",
+            "description": "%mysql.connectionOptions.sqlMode.description%",
             "valueType": "string",
-            "groupName": "Server",
+            "groupName": "%mysql.connectionOptions.groupName.server%",
             "defaultValue": null
           },
           {
             "name": "ssl",
-            "displayName": "SSL mode",
-            "description": "The SSL mode to use when connecting",
+            "displayName": "%mysql.connectionOptions.ssl.displayName%",
+            "description": "%mysql.connectionOptions.ssl.description%",
             "valueType": "category",
-            "groupName": "SSL",
+            "groupName": "%mysql.connectionOptions.groupName.ssl%",
             "categoryValues": [
               {
                 "displayName": "Disable",
                 "name": "disable"
               },
               {
-                "displayName": "Allow",
-                "name": "allow"
-              },
-              {
                 "displayName": "Require",
                 "name": "require"
+              },
+              {
+                "displayName": "Verify-CA",
+                "name": "verify_ca"
+              },
+              {
+                "displayName": "Verify-Identity",
+                "name": "verify_identity"
               }
             ],
-            "defaultValue": "allow"
+            "defaultValue": "require"
           },
           {
             "name": "ssl.key",
-            "displayName": "SSL key",
-            "description": "The path name of the client private key to use for the SSL certificate",
+            "displayName": "%mysql.connectionOptions.ssl.key.displayName%",
+            "description": "%mysql.connectionOptions.ssl.key.description%",
             "valueType": "string",
-            "groupName": "SSL",
+            "groupName": "%mysql.connectionOptions.groupName.ssl%",
             "defaultValue": null
           },
           {
             "name": "ssl.cert",
-            "displayName": "SSL certificate",
-            "description": "The path name of the SSL client certificate file",
+            "displayName": "%mysql.connectionOptions.ssl.cert.displayName%",
+            "description": "%mysql.connectionOptions.ssl.cert.description%",
             "valueType": "string",
-            "groupName": "SSL",
+            "groupName": "%mysql.connectionOptions.groupName.ssl%",
             "defaultValue": null
           },
           {
             "name": "ssl.ca",
-            "displayName": "SSL root certificate filename",
-            "description": "The path name of the SSL root CA certificate",
+            "displayName": "%mysql.connectionOptions.ssl.ca.displayName%",
+            "description": "%mysql.connectionOptions.ssl.ca.description%",
             "valueType": "string",
-            "groupName": "SSL",
+            "groupName": "%mysql.connectionOptions.groupName.ssl%",
             "defaultValue": null
           },
           {
             "name": "ssl.cipher",
-            "displayName": "SSL cipher",
-            "description": "Comma-seperated list of allowed ciphers for SSL encryption",
+            "displayName": "%mysql.connectionOptions.ssl.cipher.displayName%",
+            "description": "%mysql.connectionOptions.ssl.cipher.description%",
             "valueType": "string",
-            "groupName": "SSL",
+            "groupName": "%mysql.connectionOptions.groupName.ssl%",
             "defaultValue": null
           }
         ]
-      }
+      },
+      "resourceDeploymentTypes": [
+        {
+          "name": "mysql-azure-database",
+          "displayName": "%mysql.resourceDeployment.displayName%",
+          "description": "%mysql.resourceDeployment.description%",
+          "platforms": "*",
+          "icon": "./images/extension-icon.png",
+          "tags": [
+            "Azure Database for MySQL",
+            "Cloud"
+          ],
+          "okButtonText": [
+            {
+              "value": "%mysql.resourceDeployment.okButtonText%"
+            }
+          ],
+          "providers": [
+            {
+              "name": "mysql-azure-database-server",
+              "webPageUrl": "https://portal.azure.com/#create/Microsoft.MySQLFlexibleServer",
+              "requiredTools" : [
+              ]
+            }
+          ],
+          "agreements": [
+            {
+              "template": "%mysql.resourceDeployment.agreements.template%",
+              "links": [
+                {
+                  "text": "%microsoft.azure.termsOfUse%",
+                  "url": "https://azure.microsoft.com/support/legal/"
+                },
+                {
+                  "text": "%microsoft.privacy.statement%",
+                  "url": "https://privacy.microsoft.com/privacystatement"
+                }
+              ],
+              "when": "true"
+            }
+          ],
+          "helpTexts": [
+            {
+              "template": "%mysql.resourceDeployment.helpTexts.template%",
+              "links": [
+                {
+                  "text": "%learnMore%",
+                  "url": "https://docs.microsoft.com/azure/mysql/flexible-server/overview"
+                }
+              ]
+            }
+          ]
+        }
+      ]
   },
   "dependencies": {
     "applicationinsights": "1.0.1",
@@ -372,7 +453,7 @@
     "typescript": "^2.8.1",
     "uglify-js": "mishoo/UglifyJS2#harmony-v2.8.22",
     "url-parse": "1.2.0",
-    "vscode": "1.0.1",
+    "vscode": "^1.1.33",
     "vscode-nls-dev": "https://github.com/Raymondd/vscode-nls-dev/releases/download/2.0.2/build.tar.gz",
     "xmldom": "^0.1.27",
     "yargs": "https://registry.npmjs.org/yargs/-/yargs-3.32.0.tgz"
