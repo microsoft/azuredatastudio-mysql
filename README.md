@@ -50,4 +50,4 @@ This extension is [licensed under the MIT License]. Please see the [third-party 
 [Code of Conduct FAQ]:https://opensource.microsoft.com/codeofconduct/faq/
 [opencode@microsoft.com]:mailto:opencode@microsoft.com
 
-[Connection Dialog]:https://user-images.githubusercontent.com/20936410/88841636-1327e200-d193-11ea-969b-0e0c977c6467.PNG
+[Connection Dialog]:https://user-images.githubusercontent.com/102506628/190592429-d456c3f0-a28b-4ea3-b016-f86277e01e7c.PNG
