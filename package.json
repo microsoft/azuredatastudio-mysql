@@ -389,23 +389,11 @@
     "azdata": "^1.0.0",
     "crypto": "^1.0.1",
     "dataprotocol-client": "github:Microsoft/sqlops-dataprotocolclient#0.3.0",
-    "decompress": "4.2.0 ",
-    "diagnostic-channel": "0.2.0",
-    "diagnostic-channel-publishers": "0.2.1",
-    "eventemitter2": "5.0.1 ",
-    "http-proxy-agent": "2.1.0 ",
-    "https-proxy-agent": "2.2.1 ",
-    "mkdirp": "0.5.1 ",
     "opener": "^1.4.3",
-    "readable-stream": "2.3.0",
     "service-downloader": "github:anthonydresser/service-downloader#0.1.5",
     "tmp": "0.0.33 ",
     "vscode-extension-telemetry": "0.0.18",
-    "vscode-jsonrpc": "3.5.0",
-    "vscode-languageclient": "3.5.0",
-    "vscode-languageserver-protocol": "3.5.0",
-    "vscode-languageserver-types": "3.5.0",
-    "zone.js": "0.7.6"
+    "vscode-languageclient": "3.5.0"
   },
   "devDependencies": {
     "@types/node": "^8.0.53",
@@ -457,11 +445,5 @@
     "vscode-nls-dev": "https://github.com/Raymondd/vscode-nls-dev/releases/download/2.0.2/build.tar.gz",
     "xmldom": "^0.1.27",
     "yargs": "https://registry.npmjs.org/yargs/-/yargs-3.32.0.tgz"
-  },
-  "resolutions": {
-    "vscode-jsonrpc": "3.5.0",
-    "vscode-languageclient": "3.5.0",
-    "vscode-languageserver-protocol": "3.5.0",
-    "vscode-languageserver-types": "3.5.0"
   }
 }
