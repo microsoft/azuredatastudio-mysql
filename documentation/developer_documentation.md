@@ -14,8 +14,8 @@ git clone https://github.com/Microsoft/azuredatastudio-mysql
 ### Installing Prerequisites
 
 - [Git](https://git-scm.com)
-- [Node.JS](https://nodejs.org/en/about/releases/) `= v8.11.1`
-- [NPM](https://www.npmjs.com/get-npm) `= v4.2.0`
+- [Node.JS](https://nodejs.org/en/about/releases/) `= v16.17.0`
+- [NPM](https://www.npmjs.com/get-npm) `= v8.15.0`
 - [Yarn](https://yarnpkg.com/en/), install by opening a Powershell window after installing Node and running `npm i -g yarn`
 - [Gulp](https://gulpjs.org/getting-started.html), install using `npm install --global gulp-cli`
 
