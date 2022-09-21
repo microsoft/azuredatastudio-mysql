@@ -425,6 +425,7 @@
     "hosted-git-info": "^2.8.9",
     "yargs-parser": "^5.0.1",
     "bl": "^1.2.3",
-    "https-proxy-agent": "^2.2.3"
+    "https-proxy-agent": "^2.2.3",
+    "lodash": "^4.17.21"
   }
 }
