@@ -23,5 +23,5 @@
 		}
 	},
 	"scopeName": "source.mysql-injection.sql",
-	"injectionSelector": "L:source.sql"
+	"injectionSelector": "L:source.sql -comment"
 }
