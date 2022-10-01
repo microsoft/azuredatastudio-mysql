@@ -387,10 +387,11 @@
     "crypto": "^1.0.1",
     "dataprotocol-client": "github:Microsoft/sqlops-dataprotocolclient#0.3.0",
     "opener": "^1.5.2",
-    "service-downloader": "github:anthonydresser/service-downloader#0.1.5",
+    "@microsoft/ads-service-downloader": "1.0.2",
     "tmp": "0.2.1 ",
     "vscode-extension-telemetry": "0.4.2",
-    "vscode-languageclient": "5.2.1"
+    "vscode-languageclient": "5.2.1",
+    "eventemitter2": "^5.0.1"
   },
   "devDependencies": {
     "@types/node": "^13.11.0",
