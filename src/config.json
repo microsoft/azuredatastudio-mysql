@@ -6,7 +6,7 @@
 		"Windows_86": "win-x86.zip",
 		"OSX": "osx.tar.gz",
 		"Linux": "linux-x64.tar.gz",
-		"Ubuntu22": "ubuntu22-x64.tar.gz"
+		"Ubuntu_22": "ubuntu22-x64.tar.gz"
 	},
 	"installDirectory": "ossdbtoolsservice/{#platform#}/{#version#}",
 	"executableFiles": [
