@@ -1,5 +1,5 @@
 {
-	"downloadUrl": "https://github.com/microsoft/pgtoolsservice/releases/download/{#version#}/pgsqltoolsservice-{#fileName#}",
+	"downloadUrl": "https://github.com/microsoft/pgtoolsservice/releases/download/{#version#}/mysqltoolsservice-{#fileName#}",
 	"version": "v1.5.0",
 	"downloadFileNames": {
 		"Windows_64": "win-x64.zip",
@@ -9,7 +9,7 @@
 	},
 	"installDirectory": "ossdbtoolsservice/{#platform#}/{#version#}",
 	"executableFiles": [
-		"pgsqltoolsservice/ossdbtoolsservice_main",
-		"pgsqltoolsservice/ossdbtoolsservice_main.exe"
+		"mysqltoolsservice/ossdbtoolsservice_main",
+		"mysqltoolsservice/ossdbtoolsservice_main.exe"
 	]
 }
