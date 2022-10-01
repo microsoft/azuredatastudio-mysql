@@ -128,7 +128,7 @@ function generateHandleServerProviderEvent() {
 		statusView.show();
 		switch (e) {
 			case Events.INSTALL_START:
-				outputChannel.appendLine(`Installing ${Constants.serviceName} service to ${args[0]}`);
+				outputChannel.appendLine(`Installing ${Constants.serviceName} to ${args[0]}`);
 				statusView.text = 'Installing Service';
 				break;
 			case Events.INSTALL_END:
