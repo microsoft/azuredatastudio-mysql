@@ -18,7 +18,7 @@
 	"mysql.format.identifierCase.description": "[Optional] Changes how identifiers are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.",
 	"mysql.format.stripComments.description": "[Optional] If true comments are removed from the statements",
 	"mysql.format.reindent.description": "[Optional] If true the indentations of the statements are changed.",
-	"mysql.provider.displayName": "MySQL/MariaDB",
+	"mysql.provider.displayName": "MySQL",
 	"mysql.connectionOptions.groupName.source": "Source",
 	"mysql.connectionOptions.groupName.security": "Security",
 	"mysql.connectionOptions.groupName.server": "Server",
