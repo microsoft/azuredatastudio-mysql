@@ -83,9 +83,9 @@ After the query completes, right-click **Databases** and select **Refresh** to s
 
    ```sql
    -- Drop the table if it already exists
-   DROP TABLE IF EXISTS tutorialdb.customers;
+   DROP TABLE IF EXISTS customers;
    -- Create a new table called 'customers'
-   CREATE TABLE tutorialdb.customers(
+   CREATE TABLE customers(
        customer_id SERIAL PRIMARY KEY,
        name VARCHAR (50) NOT NULL,
        location VARCHAR (50) NOT NULL,
@@ -99,7 +99,7 @@ Paste the following snippet into the query window and click **Run**:
 
    ```sql
    -- Insert rows into table 'customers'
-   INSERT INTO tutorialdb.customers
+   INSERT INTO customers
        (customer_id, name, location, email)
     VALUES
       ( 1, 'Orlando', 'Australia', ''),
@@ -114,7 +114,7 @@ Paste the following snippet into the query window and click **Run**:
 
    ```sql
    -- Select rows from table 'customers'
-   SELECT * FROM tutorialdb.customers;
+   SELECT * FROM customers;
    ```
 
 2. The results of the query are displayed:
@@ -132,7 +132,6 @@ Learn about the [scenarios available] for MySQL in Azure Data Studio.
 
 [extension manager icon]:https://user-images.githubusercontent.com/20936410/88838718-d0640b00-d18e-11ea-9f63-226c8acd030e.png
 [New Connection Icon]:https://user-images.githubusercontent.com/20936410/88839725-49b02d80-d190-11ea-8d51-5d57e551e888.png
-[New Connection Screen]:https://user-images.githubusercontent.com/102506628/190592429-d456c3f0-a28b-4ea3-b016-f86277e01e7c.PNG
-[Change Context]:https://user-images.githubusercontent.com/20936410/88843628-4ddf4980-d196-11ea-8ad0-485bda63cc06.png
-[View Results]:https://user-images.githubusercontent.com/20936410/88843661-5afc3880-d196-11ea-892f-6f9f662f455a.png
-
+[New Connection Screen]:https://user-images.githubusercontent.com/102506628/193454179-2aa2c9c6-808a-4ef3-a00f-1500cae5037d.png
+[Change Context]:https://user-images.githubusercontent.com/102506628/193454241-d50169e6-88a6-4874-b78f-de9f3fd21b71.PNG
+[View Results]:https://user-images.githubusercontent.com/102506628/193454261-aaed735f-0fb6-4f2d-b494-33923fac99d0.PNG
