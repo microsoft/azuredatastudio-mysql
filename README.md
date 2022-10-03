@@ -26,6 +26,8 @@ If you don't already have Azure Data Studio installed, see its [install instruct
 
 3. Select **Install**. Once installed, select **Reload** to activate the extension in Azure Data Studio.
 
+**Note**: The extension is currently available in Azure Data Studio insider build only. To use the extension with Azure Data Studio general availability (GA) release, follow the **Offline Installation** instructions below.
+
 ## Offline Installation
 
 The extension will download and install a required OSSDB Tools Service package during activation. For machines with no Internet access, you can still use the extension by choosing the
