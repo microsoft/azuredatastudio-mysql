@@ -1,6 +1,6 @@
 {
 	"downloadUrl": "https://github.com/microsoft/pgtoolsservice/releases/download/{#version#}/mysqltoolsservice-{#fileName#}",
-	"version": "v1.5.0",
+	"version": "v1.6.0-mysql",
 	"downloadFileNames": {
 		"Windows_64": "win-x64.zip",
 		"Windows_86": "win-x86.zip",
