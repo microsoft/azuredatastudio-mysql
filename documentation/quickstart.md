@@ -19,7 +19,7 @@ To complete this quickstart, you need Azure Data Studio, the MySQL extension for
 
 3. Select **Install** to add the extension. Once installed, select **Reload** to enable the extension in Azure Data Studio (only required when installing an extension for the first time).
 
-**Note**: The extension is currently available in Azure Data Studio (ADS) insider build only. It will be available in the next ADS stable build soon.
+**Note**: The extension is currently available in [Azure Data Studio (ADS) insider build](https://learn.microsoft.com/sql/azure-data-studio/download-azure-data-studio#download-the-insiders-build-of-azure-data-studio) only. It will be available in the next ADS stable build soon.
 
 ## Connect to MySQL
 
