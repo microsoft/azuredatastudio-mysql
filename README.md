@@ -26,8 +26,6 @@ If you don't already have Azure Data Studio installed, see its [install instruct
 
 3. Select **Install**. Once installed, select **Reload** to activate the extension in Azure Data Studio.
 
-**Note**: The extension is currently available in [Azure Data Studio (ADS) insider build](https://learn.microsoft.com/sql/azure-data-studio/download-azure-data-studio#download-the-insiders-build-of-azure-data-studio) only. It will be available in the next ADS stable build soon.
-
 ## Offline Installation
 
 The extension will download and install a required MySQL Tools Service package during activation. For machines with no Internet access, you can still use the extension by choosing the
