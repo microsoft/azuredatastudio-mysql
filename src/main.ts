@@ -9,11 +9,13 @@ import * as path from 'path';
 import { SqlOpsDataClient, ClientOptions } from 'dataprotocol-client';
 import { IConfig, ServerProvider, Events } from '@microsoft/ads-service-downloader';
 import { ServerOptions, TransportKind } from 'vscode-languageclient';
+import { AppContext } from './appContext';
 
 import * as Constants from './constants';
 import ContextProvider from './contextProvider';
 import * as Utils from './utils';
 import { Telemetry, LanguageClientErrorHandler } from './telemetry';
+import { registerDbDesignerCommands } from './dbDesigner/dbDesigner';
 
 const baseConfig = require('./config.json');
 const outputChannel = vscode.window.createOutputChannel(Constants.serviceName);
@@ -33,6 +35,8 @@ export async function activate(context: vscode.ExtensionContext) {
 	config.installDirectory = path.join(__dirname, config.installDirectory);
 	config.proxy = vscode.workspace.getConfiguration('http').get('proxy');
 	config.strictSSL = vscode.workspace.getConfiguration('http').get('proxyStrictSSL') || true;
+
+	let appContext = new AppContext(context);
 
 	let languageClient: SqlOpsDataClient;
 
@@ -70,6 +74,7 @@ export async function activate(context: vscode.ExtensionContext) {
 		});
 		statusView.show();
 		statusView.text = 'Starting ' + Constants.providerId +  ' service';
+		registerDbDesignerCommands(languageClient, appContext);
 		languageClient.start();
 	}, e => {
 		Telemetry.sendTelemetryEvent('ServiceInitializingFailed');

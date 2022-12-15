@@ -35,6 +35,22 @@
         "path": "./syntaxes/mysql-injection.json"
       }
     ],
+    "commands": [
+      {
+        "command": "mySql.createDatabase",
+        "title": "%mysql.createDatabase%",
+        "category": "%mysql.createDatabase%",
+        "icon": "images/new-database.svg"
+      }
+    ],
+    "menus":{
+      "dashboard/toolbar": [
+        {
+          "command": "mySql.createDatabase",
+          "when": "connectionProvider == 'MySQL' && dashboardContext == 'server'"
+        }
+      ]
+    },
     "languages": [
       {
         "id": "sql",
@@ -383,7 +399,8 @@
     "tmp": "0.2.1 ",
     "vscode-extension-telemetry": "0.4.2",
     "vscode-languageclient": "5.2.1",
-    "eventemitter2": "^5.0.1"
+    "eventemitter2": "^5.0.1",
+    "vscode-nls": "^4.1.1"
   },
   "devDependencies": {
     "@types/node": "^13.11.0",
