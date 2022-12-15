@@ -1,10 +1,11 @@
 {
   "name": "azuredatastudio-mysql",
   "displayName": "MySQL",
-  "version": "0.1.0",
+  "version": "0.2.4",
   "publisher": "Microsoft",
   "description": "%mysql.description%",
   "aiKey": "AIF-5574968e-856d-40d2-af67-c89a14e76412",
+  "preview": true,
   "icon": "images/extension-icon.png",
   "repository": {
     "url": "https://github.com/microsoft/azuredatastudio-mysql"
@@ -14,8 +15,8 @@
     "*"
   ],
   "engines": {
-    "vscode": ">=1.39.0",
-    "azdata": "*"
+    "vscode": "*",
+    "azdata": ">=1.40.0"
   },
   "main": "./out/main",
   "extensionDependencies": [
@@ -24,8 +25,7 @@
   "scripts": {
     "compile": "gulp build",
     "package": "gulp package:online",
-    "package-offline": "gulp package:offline",
-    "postinstall": "node ./node_modules/vscode/bin/install && node ./node_modules/azdata/bin/install"
+    "package-offline": "gulp package:offline"
   },
   "contributes": {
     "grammars": [
@@ -160,6 +160,16 @@
         "providerId": "MySQL",
         "displayName": "%mysql.provider.displayName%",
         "azureResource": "OssRdbms",
+        "iconPath": [
+          {
+            "id": "mysql",
+            "path": {
+              "light": "./images/light/mysql.svg",
+              "dark": "./images/dark/mysql_inverse.svg"
+            },
+            "default": true
+          }
+        ],
         "connectionOptions": [
           {
             "specialValueType": "connectionName",
@@ -288,15 +298,19 @@
                 "name": "disable"
               },
               {
-                "displayName": "Allow",
-                "name": "allow"
-              },
-              {
                 "displayName": "Require",
                 "name": "require"
+              },
+              {
+                "displayName": "Verify-CA",
+                "name": "verify_ca"
+              },
+              {
+                "displayName": "Verify-Identity",
+                "name": "verify_identity"
               }
             ],
-            "defaultValue": "allow"
+            "defaultValue": "require"
           },
           {
             "name": "ssl.key",
@@ -387,84 +401,49 @@
       ]
   },
   "dependencies": {
-    "applicationinsights": "1.0.1",
-    "azdata": "^1.0.0",
     "crypto": "^1.0.1",
     "dataprotocol-client": "github:Microsoft/sqlops-dataprotocolclient#0.3.0",
-    "decompress": "4.2.0 ",
-    "diagnostic-channel": "0.2.0",
-    "diagnostic-channel-publishers": "0.2.1",
-    "eventemitter2": "5.0.1 ",
-    "http-proxy-agent": "2.1.0 ",
-    "https-proxy-agent": "2.2.1 ",
-    "mkdirp": "0.5.1 ",
-    "opener": "^1.4.3",
-    "readable-stream": "2.3.0",
-    "service-downloader": "github:anthonydresser/service-downloader#0.1.5",
-    "tmp": "0.0.33 ",
-    "vscode-extension-telemetry": "0.0.18",
-    "vscode-jsonrpc": "3.5.0",
-    "vscode-languageclient": "3.5.0",
-    "vscode-languageserver-protocol": "3.5.0",
-    "vscode-languageserver-types": "3.5.0",
-    "zone.js": "0.7.6",
-    "vscode-nls": "^4.1.1"
+    "opener": "^1.5.2",
+    "@microsoft/ads-service-downloader": "1.0.2",
+    "tmp": "0.2.1 ",
+    "vscode-extension-telemetry": "0.4.2",
+    "vscode-languageclient": "5.2.1",
+    "eventemitter2": "^5.0.1"
   },
   "devDependencies": {
-    "@types/node": "^8.0.53",
-    "chai": "^3.5.0",
-    "coveralls": "^2.11.15",
-    "decache": "^4.1.0",
-    "del": "^2.2.1",
-    "glob": "7.1.2",
-    "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-chmod": "2.0.0",
-    "gulp-clean-css": "^2.0.13",
-    "gulp-concat": "^2.6.0",
-    "gulp-filter": "^5.0.0",
-    "gulp-gunzip": "1.0.0",
-    "gulp-install": "^0.6.0",
-    "gulp-istanbul-report": "0.0.1",
-    "gulp-json-editor": "^2.2.1",
-    "gulp-remote-src": "0.4.3",
-    "gulp-rename": "^1.2.2",
-    "gulp-shell": "^0.5.2",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-tslint": "^6.0.2",
-    "gulp-typescript": "^3.1.4",
-    "gulp-uglify": "^2.0.0",
-    "gulp-untar": "0.0.6",
-    "gulp-vinyl-zip": "2.1.0",
-    "istanbul": "^0.4.5",
-    "jasmine-core": "~2.4.1",
-    "karma": "^1.3.0",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-coverage": "^1.1.1",
-    "karma-htmlfile-reporter": "^0.3.4",
-    "karma-jasmine": "^1.0.2",
-    "karma-jasmine-html-reporter": "^0.2.2",
-    "karma-junit-reporter": "^1.1.0",
-    "karma-remap-istanbul": "^0.2.1",
-    "mocha": "4.1.0",
-    "pm-mocha-jenkins-reporter": "^0.2.6",
-    "remap-istanbul": "^0.6.4",
-    "request": "2.85.0",
-    "source-map-support": "0.5.4",
-    "systemjs-builder": "^0.15.32",
-    "tslint": "^3.14.0",
-    "typemoq": "^1.7.0",
-    "typescript": "^2.8.1",
-    "uglify-js": "mishoo/UglifyJS2#harmony-v2.8.22",
-    "url-parse": "1.2.0",
-    "vscode": "^1.1.33",
-    "vscode-nls-dev": "https://github.com/Raymondd/vscode-nls-dev/releases/download/2.0.2/build.tar.gz",
-    "xmldom": "^0.1.27",
-    "yargs": "https://registry.npmjs.org/yargs/-/yargs-3.32.0.tgz"
+    "@types/node": "^13.11.0",
+    "@types/vscode": "^1.39.0",
+    "@types/azdata": "1.38.0",
+    "del": "^6.1.1",
+    "gulp": "github:gulpjs/gulp#4.0.2",
+    "gulp-json-editor": "^2.5.6",
+    "gulp-rename": "^2.0.0",
+    "gulp-shell": "^0.8.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-tslint": "^8.1.4",
+    "gulp-typescript": "^5.0.1",
+    "typescript": "^4.8.3",
+    "tslint": "^6.1.3",
+    "vscode-nls-dev": "https://github.com/Raymondd/vscode-nls-dev/releases/download/2.0.2/build.tar.gz"
   },
   "resolutions": {
-    "vscode-jsonrpc": "3.5.0",
-    "vscode-languageclient": "3.5.0",
-    "vscode-languageserver-protocol": "3.5.0",
-    "vscode-languageserver-types": "3.5.0"
+    "gulp-cli": "^2.3.0",
+    "decompress": "^4.2.1",
+    "set-value": "^2.0.1",
+    "mixin-deep": "^1.3.2",
+    "ansi-regex": "^3.0.1",
+    "glob-parent": "^5.1.2",
+    "y18n": "^3.2.2",
+    "ini": "^1.3.6",
+    "kind-of": "^6.0.3",
+    "minimatch": "^3.0.2",
+    "minimist": "^1.2.3",
+    "copy-props": "^2.0.5",
+    "path-parse": "^1.0.7",
+    "hosted-git-info": "^2.8.9",
+    "yargs-parser": "^5.0.1",
+    "bl": "^1.2.3",
+    "https-proxy-agent": "^2.2.3",
+    "lodash.template": "^4.5.0"
   }
 }
