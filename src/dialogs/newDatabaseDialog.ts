@@ -131,7 +131,7 @@ export class NewDatabaseDialog {
 			width: '110px'
 		}).component();
 
-		const databaseNameRow = view.modelBuilder.flexContainer().withItems([databaseNameLabel, this.databaseNameTextBox], { flex: '0 0 auto', CSSStyles: { 'margin-right': '10px', 'margin-bottom': '-5px', 'margin-top': '-10px' } }).withLayout({ flexFlow: 'row', alignItems: 'center' }).component();
+		const databaseNameRow = view.modelBuilder.flexContainer().withItems([databaseNameLabel, this.databaseNameTextBox], { flex: '0 0 auto', CSSStyles: { 'margin-right': '10px', 'margin-top': '-10px' } }).withLayout({ flexFlow: 'row', alignItems: 'center' }).component();
 
 		return databaseNameRow;
 	}
@@ -152,7 +152,7 @@ export class NewDatabaseDialog {
 
 		const databaseCharsetLabel = view.modelBuilder.text().withProps({
 			value: DatabaseCharsetLabel,
-			requiredIndicator: true,
+			requiredIndicator: false,
 			width: '110px'
 		}).component();
 
@@ -191,7 +191,7 @@ export class NewDatabaseDialog {
 
 		const databaseCollationLabel = view.modelBuilder.text().withProps({
 			value: DatabaseCollationLabel,
-			requiredIndicator: true,
+			requiredIndicator: false,
 			width: '110px'
 		}).component();
 
