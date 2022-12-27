@@ -4,7 +4,6 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as azdata from 'azdata';
-import { AppContext } from '../appContext';
 import * as vscode from 'vscode';
 import * as nls from 'vscode-nls';
 import { SqlOpsDataClient } from 'dataprotocol-client';
@@ -19,15 +18,15 @@ const options: vscode.InputBoxOptions = {
     ignoreFocusOut: true
 };
 
-export function registerDbDesignerCommands(client: SqlOpsDataClient, appContext: AppContext) {
+export function registerDbDesignerCommands(client: SqlOpsDataClient) {
 
     vscode.commands.registerCommand('mySql.createDatabase', async (context: azdata.IConnectionProfile) => {
         return createNewDatabaseDialog(context, client);
-	})
+    })
 }
 
 async function createNewDatabaseDialog(profile: azdata.IConnectionProfile, client: SqlOpsDataClient) {
-	let newDatabaseDialog = new NewDatabaseDialog(profile, client);
-	await newDatabaseDialog.openDialog();
-	return newDatabaseDialog;
+    let newDatabaseDialog = new NewDatabaseDialog(profile, client);
+    await newDatabaseDialog.openDialog();
+    return newDatabaseDialog;
 }

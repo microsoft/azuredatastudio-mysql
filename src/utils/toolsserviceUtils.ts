@@ -7,11 +7,11 @@ import * as azdata from "azdata";
 import { SqlOpsDataClient } from "dataprotocol-client";
 import { SimpleExecuteRequest } from "dataprotocol-client/lib/protocol";
 
- export class ToolsServiceUtils {
+export class ToolsServiceUtils {
 
-    public static async runQuery(ownerUri: string, queryString: string, client: SqlOpsDataClient): Promise<azdata.SimpleExecuteResult> {
-        let params : azdata.SimpleExecuteParams = {ownerUri: ownerUri, queryString: queryString}
-        return await client.sendRequest(SimpleExecuteRequest.type, params);
-    }
+  public static async runQuery(ownerUri: string, queryString: string, client: SqlOpsDataClient): Promise<azdata.SimpleExecuteResult> {
+    let params: azdata.SimpleExecuteParams = { ownerUri: ownerUri, queryString: queryString }
+    return await client.sendRequest(SimpleExecuteRequest.type, params);
+  }
 
- }
+}
