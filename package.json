@@ -215,14 +215,6 @@
             "groupName": "%mysql.connectionOptions.groupName.security%"
           },
           {
-            "name": "bindAddress",
-            "displayName": "%mysql.connectionOptions.bindAddress.displayName%",
-            "description": "%mysql.connectionOptions.bindAddress.description%",
-            "valueType": "string",
-            "groupName": "%mysql.connectionOptions.groupName.server%",
-            "defaultValue": null
-          },
-          {
             "name": "port",
             "displayName": "%mysql.connectionOptions.port.displayName%",
             "description": "%mysql.connectionOptions.port.description%",
@@ -237,22 +229,6 @@
             "valueType": "number",
             "groupName": "%mysql.connectionOptions.groupName.client%",
             "defaultValue": 10
-          },
-          {
-            "name": "readTimeout",
-            "displayName": "%mysql.connectionOptions.readTimeout.displayName%",
-            "description": "%mysql.connectionOptions.readTimeout.description%",
-            "valueType": "number",
-            "groupName": "%mysql.connectionOptions.groupName.client%",
-            "defaultValue": ""
-          },
-          {
-            "name": "writeTimeout",
-            "displayName": "%mysql.connectionOptions.writeTimeout.displayName%",
-            "description": "%mysql.connectionOptions.writeTimeout.description%",
-            "valueType": "number",
-            "groupName": "%mysql.connectionOptions.groupName.client%",
-            "defaultValue": ""
           },
           {
             "name": "clientFlag",
@@ -316,14 +292,6 @@
             "name": "ssl.ca",
             "displayName": "%mysql.connectionOptions.ssl.ca.displayName%",
             "description": "%mysql.connectionOptions.ssl.ca.description%",
-            "valueType": "string",
-            "groupName": "%mysql.connectionOptions.groupName.ssl%",
-            "defaultValue": null
-          },
-          {
-            "name": "ssl.cipher",
-            "displayName": "%mysql.connectionOptions.ssl.cipher.displayName%",
-            "description": "%mysql.connectionOptions.ssl.cipher.description%",
             "valueType": "string",
             "groupName": "%mysql.connectionOptions.groupName.ssl%",
             "defaultValue": null
