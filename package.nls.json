@@ -50,8 +50,6 @@
 	"mysql.connectionOptions.ssl.cert.description": "The path of the SSL client certificate file",
 	"mysql.connectionOptions.ssl.ca.displayName": "SSL CA certificate",
 	"mysql.connectionOptions.ssl.ca.description": "The path of the SSL CA certificate file",
-	"mysql.connectionOptions.ssl.cipher.displayName": "SSL cipher",
-	"mysql.connectionOptions.ssl.cipher.description": "Comma-seperated list of allowed ciphers for SSL encryption",
 	"mysql.resourceDeployment.displayName" : "Azure Database for MySQL",
 	"mysql.resourceDeployment.description" : "Create an Azure Database for MySQL flexible server - a fully managed MySQL database as a service on Azure.",
 	"mysql.resourceDeployment.okButtonText" : "Create in Azure portal",
