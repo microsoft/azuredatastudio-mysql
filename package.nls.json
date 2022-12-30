@@ -28,6 +28,8 @@
 	"mysql.connectionOptions.connectionName.description": "Custom name of the connection",
 	"mysql.connectionOptions.host.displayName": "Server name",
 	"mysql.connectionOptions.host.description": "Name of the MySQL server",
+	"mysql.connectionOptions.authenticationType.displayName": "Authentication type",
+	"mysql.connectionOptions.authenticationType.description": "How to authenticate with server",
 	"mysql.connectionOptions.dbname.displayName": "Database name",
 	"mysql.connectionOptions.dbname.description": "The name of the initial catalog or database in the data source",
 	"mysql.connectionOptions.user.displayName": "User name",
