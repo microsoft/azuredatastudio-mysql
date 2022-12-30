@@ -184,6 +184,29 @@
             "isArray": false
           },
           {
+            "specialValueType": "authType",
+            "isIdentity": true,
+            "name": "authenticationType",
+            "displayName": "%mysql.connectionOptions.authenticationType.displayName%",
+            "description": "%mysql.connectionOptions.authenticationType.description%",
+            "groupName": "%mysql.connectionOptions.groupName.security%",
+            "valueType": "category",
+            "defaultValue": "SqlLogin",
+            "objectType": null,
+            "categoryValues": [
+              {
+                "displayName": "Password",
+                "name": "SqlLogin"
+              },
+              {
+                "displayName": "Azure Active Directory",
+                "name": "AzureMFAAndUser"
+              }
+            ],
+            "isRequired": true,
+            "isArray": false
+          },
+          {
             "name": "dbname",
             "displayName": "%mysql.connectionOptions.dbname.displayName%",
             "description": "%mysql.connectionOptions.dbname.description%",
