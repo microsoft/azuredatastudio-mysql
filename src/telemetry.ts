@@ -6,7 +6,7 @@
 'use strict';
 import * as vscode from 'vscode';
 import * as opener from 'opener';
-import TelemetryReporter from 'vscode-extension-telemetry';
+import TelemetryReporter from '@microsoft/ads-extension-telemetry';
 import { PlatformInformation } from '@microsoft/ads-service-downloader/out/platform';
 import { Logger } from '@microsoft/ads-service-downloader/out/logger'
 import { EventEmitter2 as EventEmitter } from 'eventemitter2';
