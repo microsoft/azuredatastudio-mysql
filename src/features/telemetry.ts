@@ -1,8 +1,8 @@
 import { SqlOpsDataClient } from "dataprotocol-client";
 import { ClientCapabilities, StaticFeature } from "vscode-languageclient";
-import * as Utils from './utils';
+import * as Utils from '../utils';
 import * as contracts from './contracts';
-import { Telemetry } from "./telemetry";
+import { Telemetry } from "../telemetry";
 
 export class TelemetryFeature implements StaticFeature {
 
