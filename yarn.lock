@@ -42,6 +42,31 @@
     normalize-path "^2.0.1"
     through2 "^2.0.3"
 
+"@microsoft/1ds-core-js@3.2.8", "@microsoft/1ds-core-js@^3.2.3":
+  version "3.2.8"
+  resolved "https://registry.yarnpkg.com/@microsoft/1ds-core-js/-/1ds-core-js-3.2.8.tgz#1b6b7d9bb858238c818ccf4e4b58ece7aeae5760"
+  integrity sha512-9o9SUAamJiTXIYwpkQDuueYt83uZfXp8zp8YFix1IwVPwC9RmE36T2CX9gXOeq1nDckOuOduYpA8qHvdh5BGfQ==
+  dependencies:
+    "@microsoft/applicationinsights-core-js" "2.8.9"
+    "@microsoft/applicationinsights-shims" "^2.0.2"
+    "@microsoft/dynamicproto-js" "^1.1.7"
+
+"@microsoft/1ds-post-js@^3.2.3":
+  version "3.2.8"
+  resolved "https://registry.yarnpkg.com/@microsoft/1ds-post-js/-/1ds-post-js-3.2.8.tgz#46793842cca161bf7a2a5b6053c349f429e55110"
+  integrity sha512-SjlRoNcXcXBH6WQD/5SkkaCHIVqldH3gDu+bI7YagrOVJ5APxwT1Duw9gm3L1FjFa9S2i81fvJ3EVSKpp9wULA==
+  dependencies:
+    "@microsoft/1ds-core-js" "3.2.8"
+    "@microsoft/applicationinsights-shims" "^2.0.2"
+    "@microsoft/dynamicproto-js" "^1.1.7"
+
+"@microsoft/ads-extension-telemetry@1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@microsoft/ads-extension-telemetry/-/ads-extension-telemetry-1.3.2.tgz#d9cfb4bc7099df73e000b7bafa48bb748db924fe"
+  integrity sha512-TG1TE7FPp5rBA9zYPVjralZut8Bq/b5XCgm0kmkLyoQyn3c9ntmWXFuNQPOXmgbIemg5YY1/7DHKrfNcO/igkQ==
+  dependencies:
+    "@vscode/extension-telemetry" "^0.6.2"
+
 "@microsoft/ads-service-downloader@1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@microsoft/ads-service-downloader/-/ads-service-downloader-1.0.2.tgz#76cc9a44074525ac65a6ea15f8b5ee7eac87efbe"
@@ -55,6 +80,24 @@
     tar "^6.1.11"
     tmp "^0.0.33"
     yauzl "^2.10.0"
+
+"@microsoft/applicationinsights-core-js@2.8.9":
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/@microsoft/applicationinsights-core-js/-/applicationinsights-core-js-2.8.9.tgz#0e5d207acfae6986a6fc97249eeb6117e523bf1b"
+  integrity sha512-HRuIuZ6aOWezcg/G5VyFDDWGL8hDNe/ljPP01J7ImH2kRPEgbtcfPSUMjkamGMefgdq81GZsSoC/NNGTP4pp2w==
+  dependencies:
+    "@microsoft/applicationinsights-shims" "2.0.2"
+    "@microsoft/dynamicproto-js" "^1.1.7"
+
+"@microsoft/applicationinsights-shims@2.0.2", "@microsoft/applicationinsights-shims@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@microsoft/applicationinsights-shims/-/applicationinsights-shims-2.0.2.tgz#92b36a09375e2d9cb2b4203383b05772be837085"
+  integrity sha512-PoHEgsnmcqruLNHZ/amACqdJ6YYQpED0KSRe6J7gIJTtpZC1FfFU9b1fmDKDKtFoUSrPzEh1qzO3kmRZP0betg==
+
+"@microsoft/dynamicproto-js@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@microsoft/dynamicproto-js/-/dynamicproto-js-1.1.7.tgz#ede48dd3f85af14ee369c805e5ed5b84222b9fe2"
+  integrity sha512-SK3D3aVt+5vOOccKPnGaJWB5gQ8FuKfjboUJHedMP7gu54HqSCXX5iFXhktGD8nfJb0Go30eDvs/UDoTnR2kOA==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -77,10 +120,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@types/azdata@1.38.0":
-  version "1.38.0"
-  resolved "https://registry.yarnpkg.com/@types/azdata/-/azdata-1.38.0.tgz#205d8366c28df15d2514dd86fce06a52cd233546"
-  integrity sha512-yXvy8+j2LgWoe7cX33doTDdv/0d7LMDEm3IfrXZ/EU4AwwzjvKqSR/0Ae0CH3o8WOvDm63bws++gxDlmhoLsPg==
+"@types/azdata@1.40.0":
+  version "1.40.0"
+  resolved "https://registry.yarnpkg.com/@types/azdata/-/azdata-1.40.0.tgz#0a454d9261a6eadbb70692515184bcea5bbb9d61"
+  integrity sha512-CGsuH9wY6616UGskR1bMd3KcOTHhh43dQz9ruSji3EmzUG6EYJCE+6D3+UZ6M+Ub73XzDeYXobe/rk+fGkaYlg==
   dependencies:
     "@types/vscode" "*"
 
@@ -98,6 +141,14 @@
   version "1.71.0"
   resolved "https://registry.yarnpkg.com/@types/vscode/-/vscode-1.71.0.tgz#a8d9bb7aca49b0455060e6eb978711b510bdd2e2"
   integrity sha512-nB50bBC9H/x2CpwW9FzRRRDrTZ7G0/POttJojvN/LiVfzTGfLyQIje1L1QRMdFXK9G41k5UJN/1B9S4of7CSzA==
+
+"@vscode/extension-telemetry@^0.6.2":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@vscode/extension-telemetry/-/extension-telemetry-0.6.2.tgz#b86814ee680615730da94220c2b03ea9c3c14a8e"
+  integrity sha512-yb/wxLuaaCRcBAZtDCjNYSisAXz3FWsSqAha5nhHcYxx2ZPdQdWuZqVXGKq0ZpHVndBWWtK6XqtpCN2/HB4S1w==
+  dependencies:
+    "@microsoft/1ds-core-js" "^3.2.3"
+    "@microsoft/1ds-post-js" "^3.2.3"
 
 abbrev@^1.0.0:
   version "1.1.1"
@@ -735,11 +786,11 @@ d@1, d@^1.0.1:
     es5-ext "^0.10.50"
     type "^1.0.1"
 
-"dataprotocol-client@github:Microsoft/sqlops-dataprotocolclient#0.3.0":
-  version "0.3.0"
-  resolved "https://codeload.github.com/Microsoft/sqlops-dataprotocolclient/tar.gz/21487d15a5f753ba885ce1e489abc0af03487544"
+"dataprotocol-client@github:Microsoft/sqlops-dataprotocolclient#1.3.1":
+  version "1.3.1"
+  resolved "https://codeload.github.com/Microsoft/sqlops-dataprotocolclient/tar.gz/2df6982e07c0208c2b8a5f8cd4b3d65944138d15"
   dependencies:
-    vscode-languageclient "3.5.1"
+    vscode-languageclient "5.2.1"
 
 dateformat@^2.0.0:
   version "2.2.0"
@@ -3479,22 +3530,10 @@ vscode-extension-telemetry@0.4.2:
   resolved "https://registry.yarnpkg.com/vscode-extension-telemetry/-/vscode-extension-telemetry-0.4.2.tgz#6ef847a80c9cfc207eb15e3a254f235acebb65a5"
   integrity sha512-y0f51mVoFxHIzULQNCC26TBFIKdEC7uckS3tFoK++OOOl8mU2LlOxgmbd52T/SXoXNg5aI7xqs+4V2ug5ITvKw==
 
-vscode-jsonrpc@3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/vscode-jsonrpc/-/vscode-jsonrpc-3.5.0.tgz#87239d9e166b2d7352245b8a813597804c1d63aa"
-  integrity sha512-LeE9LS1IOIRDZy5Xugrbk2tKeMa64vkRODrXPZbwyn2l/Q0e/jyYq8ze/Lo96sjOFiRe3HHbTVN39Ta8KN2RpA==
-
 vscode-jsonrpc@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/vscode-jsonrpc/-/vscode-jsonrpc-4.0.0.tgz#a7bf74ef3254d0a0c272fab15c82128e378b3be9"
   integrity sha512-perEnXQdQOJMTDFNv+UF3h1Y0z4iSiaN9jIlb0OqIYgosPCZGYh/MCUlkFtV2668PL69lRDO32hmvL2yiidUYg==
-
-vscode-languageclient@3.5.1:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/vscode-languageclient/-/vscode-languageclient-3.5.1.tgz#c78e582459c24e58f88020dfa34065e976186a98"
-  integrity sha512-GTQ+hSq/o4c/y6GYmyP9XNrVoIu0NFZ67KltSkqN+tO0eUNDIlrVNX+3DJzzyLhSsrctuGzuYWm3t87mNAcBmQ==
-  dependencies:
-    vscode-languageserver-protocol "3.5.1"
 
 vscode-languageclient@5.2.1:
   version "5.2.1"
@@ -3512,23 +3551,10 @@ vscode-languageserver-protocol@3.14.1:
     vscode-jsonrpc "^4.0.0"
     vscode-languageserver-types "3.14.0"
 
-vscode-languageserver-protocol@3.5.1:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/vscode-languageserver-protocol/-/vscode-languageserver-protocol-3.5.1.tgz#5144a3a9eeccbd83fe2745bd4ed75fad6cc45f0d"
-  integrity sha512-1fPDIwsAv1difCV+8daOrJEGunClNJWqnUHq/ncWrjhitKWXgGmRCjlwZ3gDUTt54yRcvXz1PXJDaRNvNH6pYA==
-  dependencies:
-    vscode-jsonrpc "3.5.0"
-    vscode-languageserver-types "3.5.0"
-
 vscode-languageserver-types@3.14.0:
   version "3.14.0"
   resolved "https://registry.yarnpkg.com/vscode-languageserver-types/-/vscode-languageserver-types-3.14.0.tgz#d3b5952246d30e5241592b6dde8280e03942e743"
   integrity sha512-lTmS6AlAlMHOvPQemVwo3CezxBp0sNB95KNPkqp3Nxd5VFEnuG1ByM0zlRWos0zjO3ZWtkvhal0COgiV1xIA4A==
-
-vscode-languageserver-types@3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/vscode-languageserver-types/-/vscode-languageserver-types-3.5.0.tgz#e48d79962f0b8e02de955e3f524908e2b19c0374"
-  integrity sha512-D4rUfu/oKYdc9Tmec0nEfedj+uXO2tZHR+eoHs9rE9G/QpRyZaHuug8ZUNGTGdO+ALLGgenL6bRpY8y3J9acHg==
 
 "vscode-nls-dev@https://github.com/Raymondd/vscode-nls-dev/releases/download/2.0.2/build.tar.gz":
   version "2.0.1"

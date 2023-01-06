@@ -14,6 +14,7 @@ import * as Constants from './constants';
 import ContextProvider from './contextProvider';
 import * as Utils from './utils';
 import { Telemetry, LanguageClientErrorHandler } from './telemetry';
+import { TelemetryFeature } from './features/telemetry';
 
 const baseConfig = require('./config.json');
 const outputChannel = vscode.window.createOutputChannel(Constants.serviceName);
@@ -47,6 +48,11 @@ export async function activate(context: vscode.ExtensionContext) {
 		synchronize: {
 			configurationSection: Constants.providerId
 		},
+		features: [
+			// we only want to add new features
+			...SqlOpsDataClient.defaultFeatures,
+			TelemetryFeature
+		]
 	};
 
 	const installationStart = Date.now();
