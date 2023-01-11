@@ -21,21 +21,6 @@ export interface ITelemetryEventMeasures {
 	[key: string]: number;
 }
 
-/**
- * Filters error paths to only include source files. Exported to support testing
- */
-export function FilterErrorPath(line: string): string {
-	if (line) {
-		let values: string[] = line.split('/out/');
-		if (values.length <= 1) {
-			// Didn't match expected format
-			return line;
-		} else {
-			return values[1];
-		}
-	}
-}
-
 export class Telemetry {
 	private static reporter: TelemetryReporter;
 	private static disabled: boolean;
@@ -61,25 +46,6 @@ export class Telemetry {
 			let packageInfo = Utils.getPackageInfo(packageJson);
 			this.reporter = new TelemetryReporter(packageInfo.name, packageInfo.version, packageInfo.aiKey);
 		}
-	}
-
-	/**
-	 * Send a telemetry event for an exception
-	 */
-	public static sendTelemetryEventForException(
-		err: any, methodName: string, extensionConfigName: string): void {
-		let stackArray: string[];
-		let firstLine: string = '';
-		if (err !== undefined && err.stack !== undefined) {
-			stackArray = err.stack.split('\n');
-			if (stackArray !== undefined && stackArray.length >= 2) {
-				firstLine = stackArray[1]; // The fist line is the error message and we don't want to send that telemetry event
-				firstLine = FilterErrorPath(firstLine);
-			}
-		}
-
-		// Only adding the method name and the fist line of the stack trace. We don't add the error message because it might have PII
-		this.sendTelemetryEvent('Exception', { methodName: methodName, errorLine: firstLine });
 	}
 
 	/**
