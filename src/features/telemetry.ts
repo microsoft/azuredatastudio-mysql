@@ -13,8 +13,8 @@ export class TelemetryFeature implements StaticFeature {
     }
 
     initialize(): void {
-        this._client.onNotification(contracts.TelemetryNotification.errorType, e => {
-            Telemetry.sendErrorTelemetry(e.params.view, e.params.action, e.params.errorCode, e.params.errorType, e.params.providerName);
+        this._client.onNotification(contracts.TelemetryErrorNotification.type, e => {
+            Telemetry.sendErrorTelemetry(e.params.view, e.params.name, e.params.errorCode, e.params.errorType, e.params.providerName);
         });
     }
 }

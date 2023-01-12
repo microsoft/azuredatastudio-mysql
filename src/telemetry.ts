@@ -52,7 +52,7 @@ export class Telemetry {
 	 * Send an Error telemetry event
 	 */
 
-	public static sendErrorTelemetry( view: string, action: string, errorcode: string, errortype: string, providername: string ): void {
+	public static sendErrorTelemetry( view: string, name: string, errorcode: string, errortype: string, providername: string ): void {
 		if (typeof this.disabled === 'undefined') {
 			this.disabled = false;
 		}
@@ -63,7 +63,7 @@ export class Telemetry {
 		}
 
 		try {
-			this.reporter.createErrorEvent(view, action, errorcode, errortype).withConnectionInfo({ providerName: providername }).send();
+			this.reporter.createErrorEvent(view, name, errorcode, errortype).withConnectionInfo({ providerName: providername }).send();
 		} catch (telemetryErr) {
 			console.log('Failed to send telemetry event. error: ' + telemetryErr)
 		}

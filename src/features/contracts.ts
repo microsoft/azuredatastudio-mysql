@@ -1,15 +1,14 @@
 import { NotificationType } from "vscode-languageclient";
-import { ITelemetryEventMeasures, ITelemetryEventProperties } from "../telemetry";
 
 // ------------------------------- < Telemetry Sent Event > ------------------------------------
-export namespace TelemetryNotification {
-    export const errorType = new NotificationType<TelemetryErrorParams, void>('telemetry/mysqlerrortelemetry');
+export namespace TelemetryErrorNotification {
+    export const type = new NotificationType<TelemetryErrorParams, void>('telemetry/mysqlerror');
 }
 
 export class TelemetryErrorParams {
     public params: {
         view: string;
-        action: string;
+        name: string;
         errorCode: string;
         errorType: string;
         providerName: string
