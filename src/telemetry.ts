@@ -49,13 +49,31 @@ export class Telemetry {
 	}
 
 	/**
-	 * Send a telemetry event using application insights
+	 * Send an Error telemetry event
 	 */
-	public static sendTelemetryEvent(
-		eventName: string,
-		properties?: ITelemetryEventProperties,
-		measures?: ITelemetryEventMeasures): void {
 
+	public static sendErrorTelemetry( view: string, action: string, errorcode: string, errortype: string, providername: string ): void {
+		if (typeof this.disabled === 'undefined') {
+			this.disabled = false;
+		}
+
+		if (this.disabled || typeof (this.reporter) === 'undefined') {
+			// Don't do anything if telemetry is disabled
+			return;
+		}
+
+		try {
+			this.reporter.createErrorEvent(view, action, errorcode, errortype).withConnectionInfo({ providerName: providername }).send();
+		} catch (telemetryErr) {
+			console.log('Failed to send telemetry event. error: ' + telemetryErr)
+		}
+	}
+
+
+	/**
+	 * Send a Custom telemetry event
+	 */
+	public static sendTelemetryEvent( eventName: string, properties?: ITelemetryEventProperties, measures?: ITelemetryEventMeasures): void {
 		if (typeof this.disabled === 'undefined') {
 			this.disabled = false;
 		}
@@ -74,6 +92,16 @@ export class Telemetry {
 		} catch (telemetryErr) {
 			console.log('Failed to send telemetry event. error: ' + telemetryErr)
 		}
+	}
+
+	/**
+	 * Dispose Telemetry Reporter when extension is deactivated
+	 */
+	public static dispose(): void {
+		if ( typeof this.disable === 'undefined' || this.disable || typeof this.reporter === 'undefined' ) {
+			return
+		}
+		this.reporter.dispose()
 	}
 }
 

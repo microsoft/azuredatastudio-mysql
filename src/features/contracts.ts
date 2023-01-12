@@ -3,14 +3,16 @@ import { ITelemetryEventMeasures, ITelemetryEventProperties } from "../telemetry
 
 // ------------------------------- < Telemetry Sent Event > ------------------------------------
 export namespace TelemetryNotification {
-    export const type = new NotificationType<TelemetryParams, void>('telemetry/mysqlevent');
+    export const errorType = new NotificationType<TelemetryErrorParams, void>('telemetry/mysqlerrortelemetry');
 }
 
-export class TelemetryParams {
+export class TelemetryErrorParams {
     public params: {
-        eventName: string;
-        properties: ITelemetryEventProperties;
-        measures: ITelemetryEventMeasures;
+        view: string;
+        action: string;
+        errorCode: string;
+        errorType: string;
+        providerName: string
     }
 }
 // ------------------------------- </ Telemetry Sent Event > ------------------------------------
