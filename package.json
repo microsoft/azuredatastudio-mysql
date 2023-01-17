@@ -195,11 +195,11 @@
             "objectType": null,
             "categoryValues": [
               {
-                "displayName": "Password",
+                "displayName": "%mysql.connectionOptions.authenticationType.password%",
                 "name": "SqlLogin"
               },
               {
-                "displayName": "Azure Active Directory",
+                "displayName": "%mysql.connectionOptions.authenticationType.azuremfaanduser%",
                 "name": "AzureMFAAndUser"
               }
             ],
@@ -277,19 +277,19 @@
             "groupName": "%mysql.connectionOptions.groupName.ssl%",
             "categoryValues": [
               {
-                "displayName": "Disable",
+                "displayName": "%mysql.connectionOptions.ssl.mode.disable%",
                 "name": "disable"
               },
               {
-                "displayName": "Require",
+                "displayName": "%mysql.connectionOptions.ssl.mode.require%",
                 "name": "require"
               },
               {
-                "displayName": "Verify-CA",
+                "displayName": "%mysql.connectionOptions.ssl.mode.verify_ca%",
                 "name": "verify_ca"
               },
               {
-                "displayName": "Verify-Identity",
+                "displayName": "%mysql.connectionOptions.ssl.mode.verify_identity%",
                 "name": "verify_identity"
               }
             ],
