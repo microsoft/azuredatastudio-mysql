@@ -6,6 +6,7 @@
 
 import * as vscode from 'vscode';
 import * as path from 'path';
+import * as nls from 'vscode-nls';
 import { SqlOpsDataClient, ClientOptions } from 'dataprotocol-client';
 import { IConfig, ServerProvider, Events } from '@microsoft/ads-service-downloader';
 import { ServerOptions, TransportKind } from 'vscode-languageclient';
@@ -16,6 +17,7 @@ import * as Utils from './utils';
 import { Telemetry, LanguageClientErrorHandler } from './telemetry';
 
 const baseConfig = require('./config.json');
+const localize = nls.loadMessageBundle();
 const outputChannel = vscode.window.createOutputChannel(Constants.serviceName);
 const statusView = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
 
@@ -25,7 +27,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	let supported = await Utils.verifyPlatform();
 
 	if (!supported) {
-		vscode.window.showErrorMessage('Unsupported platform');
+		vscode.window.showErrorMessage(localize('unsupportedPlatformMsg', "Unsupported platform"));
 		return;
 	}
 
@@ -57,7 +59,7 @@ export async function activate(context: vscode.ExtensionContext) {
 		const processStart = Date.now();
 		languageClient.onReady().then(() => {
 			const processEnd = Date.now();
-			statusView.text = Constants.providerId + ' service started';
+			statusView.text = localize('serviceStartedStatusMsg', "{0} service started", Constants.providerId);
 			setTimeout(() => {
 				statusView.hide();
 			}, 1500);
@@ -69,11 +71,11 @@ export async function activate(context: vscode.ExtensionContext) {
 			});
 		});
 		statusView.show();
-		statusView.text = 'Starting ' + Constants.providerId +  ' service';
+		statusView.text = localize('startingServiceStatusMsg', "Starting {0} service", Constants.providerId);
 		languageClient.start();
 	}, e => {
 		Telemetry.sendTelemetryEvent('ServiceInitializingFailed');
-		vscode.window.showErrorMessage('Failed to start ' + Constants.providerId + ' tools service');
+		vscode.window.showErrorMessage(localize('failedToStartServiceErrorMsg', "Failed to start {0} tools service", Constants.providerId));
 	});
 
 	let contextProvider = new ContextProvider();
@@ -128,16 +130,16 @@ function generateHandleServerProviderEvent() {
 		statusView.show();
 		switch (e) {
 			case Events.INSTALL_START:
-				outputChannel.appendLine(`Installing ${Constants.serviceName} to ${args[0]}`);
-				statusView.text = 'Installing Service';
+				outputChannel.appendLine(localize('installingServiceChannelMsg', "Installing {0} to {1}", Constants.serviceName, args[0]));
+				statusView.text = localize('installingServiceStatusMsg', "Installing {0}", Constants.serviceName);
 				break;
 			case Events.INSTALL_END:
-				outputChannel.appendLine('Installed');
+				outputChannel.appendLine(localize('installedServiceChannelMsg', "Installed {0}", Constants.serviceName));
 				break;
 			case Events.DOWNLOAD_START:
-				outputChannel.appendLine(`Downloading ${args[0]}`);
-				outputChannel.append(`(${Math.ceil(args[1] / 1024)} KB)`);
-				statusView.text = 'Downloading Service';
+				outputChannel.appendLine(localize('downloadingServiceChannelMsg', "Downloading {0}", args[0]));
+				outputChannel.append(localize('downloadingServiceSizeChannelMsg', "({0} KB)", Math.ceil(args[1] / 1024).toLocaleString(vscode.env.language)));
+				statusView.text = localize('downloadingServiceStatusMsg', "Downloading {0}", Constants.serviceName);
 				break;
 			case Events.DOWNLOAD_PROGRESS:
 				let newDots = Math.ceil(args[0] / 5);
@@ -147,7 +149,7 @@ function generateHandleServerProviderEvent() {
 				}
 				break;
 			case Events.DOWNLOAD_END:
-				outputChannel.appendLine('Done!');
+				outputChannel.appendLine(localize('downloadServiceDoneChannelMsg', "Done!"));
 				break;
 		}
 	};

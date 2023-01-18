@@ -6,6 +6,8 @@
 'use strict';
 import * as vscode from 'vscode';
 import * as opener from 'opener';
+import * as nls from 'vscode-nls';
+
 import TelemetryReporter from 'vscode-extension-telemetry';
 import { PlatformInformation } from '@microsoft/ads-service-downloader/out/platform';
 import { Logger } from '@microsoft/ads-service-downloader/out/logger'
@@ -15,7 +17,9 @@ import { ErrorAction, ErrorHandler, Message, CloseAction } from 'vscode-language
 import * as Utils from './utils';
 import * as Constants from './constants';
 
+const localize = nls.loadMessageBundle()
 const packageJson = require('../package.json');
+const viewKnownIssuesAction = localize('viewKnownIssuesText', "{0}", Constants.serviceCrashButton)
 
 export interface ITelemetryEventProperties {
 	[key: string]: string;
@@ -169,9 +173,9 @@ export class LanguageClientErrorHandler implements ErrorHandler {
 	showOnErrorPrompt(): void {
 		Telemetry.sendTelemetryEvent(Constants.serviceName + 'Crash');
 		vscode.window.showErrorMessage(
-			Constants.serviceCrashMessage,
-			Constants.serviceCrashButton).then(action => {
-				if (action && action === Constants.serviceCrashButton) {
+			localize('serviceCrashMessage', "{0}", Constants.serviceCrashMessage),
+			viewKnownIssuesAction).then(action => {
+				if (action && action === viewKnownIssuesAction) {
 					opener(Constants.serviceCrashLink);
 				}
 			});
