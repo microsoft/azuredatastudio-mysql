@@ -43,11 +43,18 @@
         "icon": "images/new-database.svg"
       }
     ],
-    "menus":{
+    "menus": {
       "dashboard/toolbar": [
         {
           "command": "mySql.createDatabase",
           "when": "connectionProvider == 'MySQL' && dashboardContext == 'server'"
+        }
+      ],
+      "objectExplorer/item/context": [
+        {
+          "command": "mySql.createDatabase",
+          "when": "connectionProvider == MySQL && nodeType =~ /^(Database|Server)$/",
+          "group": "mysqlNewDatabase"
         }
       ]
     },

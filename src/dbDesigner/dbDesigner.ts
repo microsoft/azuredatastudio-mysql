@@ -3,30 +3,19 @@
  *  Licensed under the Source EULA. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as azdata from 'azdata';
 import * as vscode from 'vscode';
-import * as nls from 'vscode-nls';
 import { SqlOpsDataClient } from 'dataprotocol-client';
 import { NewDatabaseDialog } from '../dialogs/newDatabaseDialog';
 
-
-const localize = nls.loadMessageBundle();
-
-const options: vscode.InputBoxOptions = {
-    placeHolder: "request",
-    prompt: `dbName`,
-    ignoreFocusOut: true
-};
-
 export function registerDbDesignerCommands(client: SqlOpsDataClient) {
 
-    vscode.commands.registerCommand('mySql.createDatabase', async (context: azdata.IConnectionProfile) => {
-        return createNewDatabaseDialog(context, client);
+    vscode.commands.registerCommand('mySql.createDatabase', async () => {
+        return createNewDatabaseDialog(client);
     })
 }
 
-async function createNewDatabaseDialog(profile: azdata.IConnectionProfile, client: SqlOpsDataClient) {
-    let newDatabaseDialog = new NewDatabaseDialog(profile, client);
+async function createNewDatabaseDialog(client: SqlOpsDataClient) {
+    let newDatabaseDialog = new NewDatabaseDialog(client);
     await newDatabaseDialog.openDialog();
     return newDatabaseDialog;
 }
