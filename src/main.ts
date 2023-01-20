@@ -14,7 +14,7 @@ import * as Constants from './constants';
 import ContextProvider from './contextProvider';
 import * as Utils from './utils';
 import { Telemetry, LanguageClientErrorHandler } from './telemetry';
-import { registerDbDesignerCommands } from './dbDesigner/dbDesigner';
+import { registerDbDesignerCommands } from './features/dbDesigner';
 
 const baseConfig = require('./config.json');
 const outputChannel = vscode.window.createOutputChannel(Constants.serviceName);
