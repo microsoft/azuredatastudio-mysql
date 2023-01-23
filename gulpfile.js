@@ -10,12 +10,12 @@ var config = require('./tasks/config');
 var cproc = require('child_process');
 var nls = require('vscode-nls-dev');
 const path = require('path');
-
+const es = require('event-stream');
 require('./tasks/packagetasks')
 
 const languages = [
-    { id: 'zh-tw', folderName: 'cht', transifexId: 'zh-hant' },
-    { id: 'zh-cn', folderName: 'chs', transifexId: 'zh-hans' },
+    { id: 'zh-Hant', folderName: 'cht', transifexId: 'zh-hant' },
+    { id: 'zh-Hans', folderName: 'chs', transifexId: 'zh-hans' },
     { id: 'ja', folderName: 'jpn' },
     { id: 'ko', folderName: 'kor' },
     { id: 'de', folderName: 'deu' },
@@ -27,7 +27,7 @@ const languages = [
     // These language-pack languages are included for VS but excluded from the vscode package
     { id: 'cs', folderName: 'csy' },
     { id: 'tr', folderName: 'trk' },
-    { id: 'pt-br', folderName: 'ptb', transifexId: 'pt-BR' },
+    { id: 'pt-BR', folderName: 'ptb', transifexId: 'pt-BR' },
     { id: 'pl', folderName: 'plk' }
 ];
 
@@ -50,6 +50,7 @@ gulp.task('ext:lint', () => {
 
 const addI18nTask = function() {
 	return gulp.src(['package.nls.json'])
+        // .pipe(nls.createAdditionalLanguageFiles(languages, 'i18n'))
 		.pipe(gulp.dest('.'));
 };
 
@@ -66,6 +67,7 @@ gulp.task('ext:compile-src', (done) => {
                     }
                 })
                 .pipe(nls.rewriteLocalizeCalls())
+                // .pipe(nls.createAdditionalLanguageFiles(languages, 'i18n', 'out'))
                 .pipe(nls.bundleMetaDataFiles('mysql-extension', 'out'))
                 .pipe(nls.bundleLanguageFiles())
                 .pipe(srcmap.write('.', {
@@ -79,6 +81,14 @@ const exporti18n = function() {
 			.pipe(nls.createXlfFiles("l10n", "l10n-sample"))
 			.pipe(gulp.dest(path.join('src')));
 };
+
+const importi18n = function() {
+    return Promise.resolve(es.merge(languages.map(language => {
+        return gulp.src(`src/l10n/transXlf/l10n-sample.${language.id}.xlf`, { allowEmpty: true })
+                .pipe(nls.prepareJsonFiles())
+                .pipe(gulp.dest(path.join('./i18n', language.folderName)));
+    })));
+}
 
 gulp.task('ext:compile-tests', (done) => {
     return gulp.src([
@@ -99,7 +109,9 @@ gulp.task('ext:compile-tests', (done) => {
 
 });
 
-gulp.task('ext:compile', gulp.series(cleanTask, 'ext:compile-src', addI18nTask, exporti18n, 'ext:compile-tests'));
+gulp.task('ext:compile', gulp.series(cleanTask, 'ext:compile-src', addI18nTask, exporti18n, importi18n, 'ext:compile-tests'));
+
+gulp.task('ext:import', importi18n);
 
 gulp.task('ext:copy-tests', () => {
     return gulp.src(config.paths.project.root + '/test/resources/**/*')

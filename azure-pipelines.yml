@@ -1,0 +1,63 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: none
+
+pr: none
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: OneLocBuild@2
+  env:
+    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+  inputs:
+    locProj: 'src/LocProject.json'
+    outDir: '$(Build.ArtifactStagingDirectory)'
+    isCreatePrSelected: true
+    prSourceBranchPrefix: 'locfiles'
+    packageSourceAuth: 'patAuth'
+    patVariable: '$(OneLocBuildPat)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
+
+
+# yaml file from pipeline
+
+# # Variable 'githubPatToken' was defined in the Variables tab
+# # Variable 'OneLocBuildPat' was defined in the Variables tab
+# resources:
+#   repositories:
+#   - repository: self
+#     type: git
+#     ref: nitishsharma/localization-generation
+# jobs:
+# - job: Job_1
+#   displayName: Agent job 1
+#   pool:
+#     vmImage: windows-2019
+#   steps:
+#   - checkout: self
+#     clean: true
+#     fetchTags: true
+#   - task: OneLocBuild@2
+#     displayName: 'Localization Build: src/LocProject.json'
+#     inputs:
+#       locProj: src/LocProject.json
+#       isCreatePrSelected: true
+#       repoType: gitHub
+#       gitHubPatVariable: $(githubPatToken)
+#       isAutoCompletePrSelected: false
+#       packageSourceAuth: patAuth
+#       patVariable: $(OneLocBuildPat)
+#   - task: PublishBuildArtifacts@1
+#     displayName: 'Publish Artifact: drop'
+# ...

@@ -276,47 +276,47 @@
     <body>
       <trans-unit id="unsupportedPlatformMsg">
         <source xml:lang="en">Unsupported platform</source>
-        <target state="new">Unsupported platform</target>
+        <target state="new">Plate-forme non prise en charge</target>
       </trans-unit>
       <trans-unit id="serviceStartedStatusMsg">
         <source xml:lang="en">{0} service started</source>
-        <target state="new">{0} service started</target>
+        <target state="new">{0} service démarré</target>
       </trans-unit>
       <trans-unit id="startingServiceStatusMsg">
         <source xml:lang="en">Starting {0} service</source>
-        <target state="new">Starting {0} service</target>
+        <target state="new">Démarrage du service {0}</target>
       </trans-unit>
       <trans-unit id="failedToStartServiceErrorMsg">
         <source xml:lang="en">Failed to start {0} tools service</source>
-        <target state="new">Failed to start {0} tools service</target>
+        <target state="new">Échec du démarrage du service d'outils {0}</target>
       </trans-unit>
       <trans-unit id="installingServiceChannelMsg">
         <source xml:lang="en">Installing {0} to {1}</source>
-        <target state="new">Installing {0} to {1}</target>
+        <target state="new">Installation de {0} à {1}</target>
       </trans-unit>
       <trans-unit id="installingServiceStatusMsg">
         <source xml:lang="en">Installing {0}</source>
-        <target state="new">Installing {0}</target>
+        <target state="new">Installation {0}</target>
       </trans-unit>
       <trans-unit id="installedServiceChannelMsg">
         <source xml:lang="en">Installed {0}</source>
-        <target state="new">Installed {0}</target>
+        <target state="new">Installé {0}</target>
       </trans-unit>
       <trans-unit id="downloadingServiceChannelMsg">
         <source xml:lang="en">Downloading {0}</source>
-        <target state="new">Downloading {0}</target>
+        <target state="new">Téléchargement de {0}</target>
       </trans-unit>
       <trans-unit id="downloadingServiceSizeChannelMsg">
         <source xml:lang="en">({0} KB)</source>
-        <target state="new">({0} KB)</target>
+        <target state="new">({0} Ko)</target>
       </trans-unit>
       <trans-unit id="downloadingServiceStatusMsg">
         <source xml:lang="en">Downloading {0}</source>
-        <target state="new">Downloading {0}</target>
+        <target state="new">Téléchargement de {0}</target>
       </trans-unit>
       <trans-unit id="downloadServiceDoneChannelMsg">
         <source xml:lang="en">Done!</source>
-        <target state="new">Done!</target>
+        <target state="new">Fait!</target>
       </trans-unit>
     </body>
   </file>
@@ -324,11 +324,11 @@
     <body>
       <trans-unit id="viewKnownIssuesText">
         <source xml:lang="en">View Known Issues</source>
-        <target state="new">View Known Issues</target>
+        <target state="new">Afficher les problèmes connus</target>
       </trans-unit>
       <trans-unit id="serviceCrashMessage">
         <source xml:lang="en">{0} component exited unexpectedly. Please restart Azure Data Studio.</source>
-        <target state="new">{0} component exited unexpectedly. Please restart Azure Data Studio.</target>
+        <target state="new">Le composant {0} s'est fermé de manière inattendue. Veuillez redémarrer Azure Data Studio.</target>
       </trans-unit>
     </body>
   </file>
