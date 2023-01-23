@@ -19,7 +19,7 @@ import * as Constants from './constants';
 
 const localize = nls.loadMessageBundle()
 const packageJson = require('../package.json');
-const viewKnownIssuesAction = localize('viewKnownIssuesText', "{0}", Constants.serviceCrashButton)
+const viewKnownIssuesAction = localize('viewKnownIssuesText', "View Known Issues")
 
 export interface ITelemetryEventProperties {
 	[key: string]: string;
@@ -173,7 +173,7 @@ export class LanguageClientErrorHandler implements ErrorHandler {
 	showOnErrorPrompt(): void {
 		Telemetry.sendTelemetryEvent(Constants.serviceName + 'Crash');
 		vscode.window.showErrorMessage(
-			localize('serviceCrashMessage', "{0}", Constants.serviceCrashMessage),
+			localize('serviceCrashMessage', "{0} component exited unexpectedly. Please restart Azure Data Studio.", Constants.serviceName),
 			viewKnownIssuesAction).then(action => {
 				if (action && action === viewKnownIssuesAction) {
 					opener(Constants.serviceCrashLink);

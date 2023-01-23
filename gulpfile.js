@@ -9,8 +9,32 @@ var srcmap = require('gulp-sourcemaps');
 var config = require('./tasks/config');
 var cproc = require('child_process');
 var nls = require('vscode-nls-dev');
+const path = require('path');
 
 require('./tasks/packagetasks')
+
+const languages = [
+    { id: 'zh-tw', folderName: 'cht', transifexId: 'zh-hant' },
+    { id: 'zh-cn', folderName: 'chs', transifexId: 'zh-hans' },
+    { id: 'ja', folderName: 'jpn' },
+    { id: 'ko', folderName: 'kor' },
+    { id: 'de', folderName: 'deu' },
+    { id: 'fr', folderName: 'fra' },
+    { id: 'es', folderName: 'esn' },
+    { id: 'ru', folderName: 'rus' },
+    { id: 'it', folderName: 'ita' },
+
+    // These language-pack languages are included for VS but excluded from the vscode package
+    { id: 'cs', folderName: 'csy' },
+    { id: 'tr', folderName: 'trk' },
+    { id: 'pt-br', folderName: 'ptb', transifexId: 'pt-BR' },
+    { id: 'pl', folderName: 'plk' }
+];
+
+const cleanTask = function() {
+	return del(['out/**', 'package.nls.*.json']);
+}
+
 
 gulp.task('ext:lint', () => {
     return gulp.src([
@@ -23,6 +47,11 @@ gulp.task('ext:lint', () => {
     })))
     .pipe(tslint.report());
 });
+
+const addI18nTask = function() {
+	return gulp.src(['package.nls.json'])
+		.pipe(gulp.dest('.'));
+};
 
 gulp.task('ext:compile-src', (done) => {
     return gulp.src([
@@ -37,12 +66,19 @@ gulp.task('ext:compile-src', (done) => {
                     }
                 })
                 .pipe(nls.rewriteLocalizeCalls())
-                .pipe(nls.createAdditionalLanguageFiles(nls.coreLanguages, config.paths.project.root + '/localization/i18n', undefined, false))
+                .pipe(nls.bundleMetaDataFiles('mysql-extension', 'out'))
+                .pipe(nls.bundleLanguageFiles())
                 .pipe(srcmap.write('.', {
                    sourceRoot: function(file){ return file.cwd + '/src'; }
                 }))
                 .pipe(gulp.dest('out/'));
 });
+
+const exporti18n = function() {
+	return gulp.src(['package.nls.json', 'out/nls.metadata.header.json', 'out/nls.metadata.json'])
+			.pipe(nls.createXlfFiles("l10n", "l10n-sample"))
+			.pipe(gulp.dest(path.join('src')));
+};
 
 gulp.task('ext:compile-tests', (done) => {
     return gulp.src([
@@ -63,7 +99,7 @@ gulp.task('ext:compile-tests', (done) => {
 
 });
 
-gulp.task('ext:compile', gulp.series('ext:compile-src', 'ext:compile-tests'));
+gulp.task('ext:compile', gulp.series(cleanTask, 'ext:compile-src', addI18nTask, exporti18n, 'ext:compile-tests'));
 
 gulp.task('ext:copy-tests', () => {
     return gulp.src(config.paths.project.root + '/test/resources/**/*')
