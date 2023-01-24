@@ -242,6 +242,7 @@
             "displayName": "%mysql.connectionOptions.port.displayName%",
             "description": "%mysql.connectionOptions.port.description%",
             "valueType": "number",
+            "isIdentity": true,
             "groupName": "%mysql.connectionOptions.groupName.server%",
             "defaultValue": 3306
           },
