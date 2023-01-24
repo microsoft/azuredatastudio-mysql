@@ -4,15 +4,15 @@
     <body>
       <trans-unit id="json.schemas.desc">
         <source xml:lang="en">Associate schemas to JSON files in the current project</source>
-        <target state="new">Associate schemas to JSON files in the current project</target>
+        <target state="new">Associer des schémas aux fichiers JSON dans le projet en cours</target>
       </trans-unit>
       <trans-unit id="json.schemas.url.desc">
         <source xml:lang="en">A URL to a schema or a relative path to a schema in the current directory</source>
-        <target state="new">A URL to a schema or a relative path to a schema in the current directory</target>
+        <target state="new">Une URL vers un schéma ou un chemin relatif vers un schéma dans le répertoire courant</target>
       </trans-unit>
       <trans-unit id="json.schemas.fileMatch.desc">
         <source xml:lang="en">An array of file patterns to match against when resolving JSON files to schemas.</source>
-        <target state="new">An array of file patterns to match against when resolving JSON files to schemas.</target>
+        <target state="new">Un tableau de modèles de fichiers à comparer lors de la résolution de fichiers JSON en schémas.</target>
       </trans-unit>
       <trans-unit id="json.schemas.fileMatch.item.desc">
         <source xml:lang="en">A file pattern that can contain '*' to match against when resolving JSON files to schemas.</source>
