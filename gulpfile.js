@@ -14,8 +14,8 @@ const es = require('event-stream');
 require('./tasks/packagetasks')
 
 const languages = [
-    { id: 'zh-Hant', folderName: 'cht', transifexId: 'zh-hant' },
-    { id: 'zh-Hans', folderName: 'chs', transifexId: 'zh-hans' },
+    { id: 'zh-Hant', folderName: 'cht'},
+    { id: 'zh-Hans', folderName: 'chs'},
     { id: 'ja', folderName: 'jpn' },
     { id: 'ko', folderName: 'kor' },
     { id: 'de', folderName: 'deu' },
@@ -23,10 +23,7 @@ const languages = [
     { id: 'es', folderName: 'esn' },
     { id: 'ru', folderName: 'rus' },
     { id: 'it', folderName: 'ita' },
-
-    // These language-pack languages are included for VS but excluded from the vscode package
-    { id: 'tr', folderName: 'trk' },
-    { id: 'pt-BR', folderName: 'ptb', transifexId: 'pt-BR' },
+    { id: 'pt-BR', folderName: 'ptb'}
 ];
 
 const cleanTask = function() {
