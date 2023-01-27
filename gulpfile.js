@@ -39,7 +39,7 @@ const addI18nTask = function() {
 // Creates an xlf file containing all the localized strings. This file is picked by translation pipeline.
 const exporti18n = function() {
 	return gulp.src(['package.nls.json', 'out/nls.metadata.header.json', 'out/nls.metadata.json'])
-			.pipe(nls.createXlfFiles("l10n", "l10n-sample"))
+			.pipe(nls.createXlfFiles("l10n", "l10n"))
 			.pipe(gulp.dest(path.join('src')));
 };
 
