@@ -46,7 +46,7 @@ const exporti18n = function() {
 // Use the returned xlf files for all languages and fill i18n dir with respective lang files in respective lang dir.
 const importi18n = function() {
     return Promise.resolve(es.merge(languages.map(language => {
-        return gulp.src(`src/l10n/transXlf/l10n-sample.${language.id}.xlf`, { allowEmpty: true })
+        return gulp.src(`src/l10n/transXlf/l10n.${language.id}.xlf`, { allowEmpty: true })
                 .pipe(nls.prepareJsonFiles())
                 .pipe(gulp.dest(path.join('./i18n', language.folderName)));
     })));
