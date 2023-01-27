@@ -1,15 +1,13 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
-- nitishsharma/localization-generation
+  batch: true
+  branches:
+    include:
+    - nitishsharma/localization-generation
+  paths:
+    include:
+    - src/l10n/l10n.xlf
 
 pr: none
-
-pool:
-  vmImage: 'windows-latest'
 
 resources:
   repositories:
@@ -21,7 +19,7 @@ jobs:
 - job: localization
   displayName: localization
   pool:
-    vmImage: windows-2019
+    vmImage: windows-latest
   steps:
   - checkout: self
     clean: true

@@ -125,7 +125,7 @@ gulp.task('ext:compile-tests', (done) => {
 
 });
 
-gulp.task('ext:localize', gulp.series('generate-metadata', exporti18n));
+gulp.task('ext:localize', gulp.series(cleanTask, 'generate-metadata', exporti18n));
 
 gulp.task('ext:import', importi18n);
 
