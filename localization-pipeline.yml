@@ -18,8 +18,8 @@ resources:
     ref: nitishsharma/localization-generation
 
 jobs:
-- job: Job_1
-  displayName: Agent job 1
+- job: localization
+  displayName: localization
   pool:
     vmImage: windows-2019
   steps:
