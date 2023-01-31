@@ -13,7 +13,7 @@ import { ServerOptions, TransportKind } from 'vscode-languageclient';
 import * as Constants from './constants';
 import ContextProvider from './contextProvider';
 import * as Utils from './utils';
-import { Telemetry, LanguageClientErrorHandler } from './telemetry';
+import { TelemetryReporter, LanguageClientErrorHandler } from './telemetry';
 import { TelemetryFeature } from './features/telemetry';
 
 const baseConfig = require('./config.json');
@@ -67,7 +67,7 @@ export async function activate(context: vscode.ExtensionContext) {
 			setTimeout(() => {
 				statusView.hide();
 			}, 1500);
-			Telemetry.sendTelemetryEvent('startup/LanguageClientStarted', {
+			TelemetryReporter.sendTelemetryEvent('startup/LanguageClientStarted', {
 				installationTime: String(installationComplete - installationStart),
 				processStartupTime: String(processEnd - processStart),
 				totalTime: String(processEnd - installationStart),
@@ -78,7 +78,7 @@ export async function activate(context: vscode.ExtensionContext) {
 		statusView.text = 'Starting ' + Constants.providerId +  ' service';
 		languageClient.start();
 	}, e => {
-		Telemetry.sendTelemetryEvent('ServiceInitializingFailed');
+		TelemetryReporter.sendTelemetryEvent('ServiceInitializingFailed');
 		vscode.window.showErrorMessage('Failed to start ' + Constants.providerId + ' tools service');
 	});
 
@@ -161,5 +161,5 @@ function generateHandleServerProviderEvent() {
 
 // this method is called when your extension is deactivated
 export function deactivate(): void {
-	Telemetry.dispose()
+	TelemetryReporter.dispose()
 }

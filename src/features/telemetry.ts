@@ -1,8 +1,13 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the Source EULA. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
 import { SqlOpsDataClient } from "dataprotocol-client";
 import { ClientCapabilities, StaticFeature } from "vscode-languageclient";
 import * as Utils from '../utils';
 import * as contracts from './contracts';
-import { Telemetry } from "../telemetry";
+import { TelemetryReporter } from "../telemetry";
 
 export class TelemetryFeature implements StaticFeature {
 
@@ -14,7 +19,7 @@ export class TelemetryFeature implements StaticFeature {
 
     initialize(): void {
         this._client.onNotification(contracts.TelemetryErrorNotification.type, e => {
-            Telemetry.sendErrorTelemetry(e.params.view, e.params.name, e.params.errorCode, e.params.errorType, e.params.providerName);
+            TelemetryReporter.sendTelemetryEvent(e.params.eventName, e.params.properties, e.params.measures);
         });
     }
 }

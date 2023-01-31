@@ -89,10 +89,10 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
   integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
 
-"@types/azdata@1.40.0":
-  version "1.40.0"
-  resolved "https://registry.yarnpkg.com/@types/azdata/-/azdata-1.40.0.tgz#0a454d9261a6eadbb70692515184bcea5bbb9d61"
-  integrity sha512-CGsuH9wY6616UGskR1bMd3KcOTHhh43dQz9ruSji3EmzUG6EYJCE+6D3+UZ6M+Ub73XzDeYXobe/rk+fGkaYlg==
+"@types/azdata@^1.40.0":
+  version "1.41.0"
+  resolved "https://registry.yarnpkg.com/@types/azdata/-/azdata-1.41.0.tgz#503d7d6a9c4aa719d05aa39a33aa76eaed8334fc"
+  integrity sha512-6mw3UyZVirk5iTMNIwuv5TLr0SUxiHTmYnYieAPNakWJwz+gY+ZleoDrCQq7wnHyUMXFcZN5y2Z7kWUMuOdcWg==
   dependencies:
     "@types/vscode" "*"
 
@@ -752,9 +752,9 @@ d@1, d@^1.0.1:
     es5-ext "^0.10.50"
     type "^1.0.1"
 
-"dataprotocol-client@github:Microsoft/sqlops-dataprotocolclient#1.3.1":
-  version "1.3.1"
-  resolved "https://codeload.github.com/Microsoft/sqlops-dataprotocolclient/tar.gz/2df6982e07c0208c2b8a5f8cd4b3d65944138d15"
+"dataprotocol-client@github:Microsoft/sqlops-dataprotocolclient#1.3.2":
+  version "1.3.2"
+  resolved "https://codeload.github.com/Microsoft/sqlops-dataprotocolclient/tar.gz/e3be16cffbac882ef545e4da9654a82dc010d1b7"
   dependencies:
     vscode-languageclient "5.2.1"
 
@@ -2426,11 +2426,6 @@ once@^1.3.0, once@^1.3.1, once@^1.3.2, once@^1.4.0:
   integrity sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==
   dependencies:
     wrappy "1"
-
-opener@^1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/opener/-/opener-1.5.2.tgz#5d37e1f35077b9dcac4301372271afdeb2a13598"
-  integrity sha512-ur5UIdyw5Y7yEj9wLzhqXiy6GZ3Mwx0yGI+5sMn2r0N0v3cKJvUmFH5yPP+WXh9e0xfyzyJX95D8l088DNFj7A==
 
 ordered-read-streams@^1.0.0:
   version "1.0.1"
