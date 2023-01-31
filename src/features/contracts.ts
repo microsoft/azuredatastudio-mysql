@@ -13,7 +13,7 @@ import * as telemetry from '@microsoft/ads-extension-telemetry';
  * Event sent when the language service send a telemetry event
  */
 
-export namespace TelemetryErrorNotification {
+export namespace TelemetryNotification {
     export const type = new NotificationType<TelemetryParams, void>('telemetry/mysqlevent');
 }
 

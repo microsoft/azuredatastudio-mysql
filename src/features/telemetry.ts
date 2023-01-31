@@ -18,7 +18,7 @@ export class TelemetryFeature implements StaticFeature {
     }
 
     initialize(): void {
-        this._client.onNotification(contracts.TelemetryErrorNotification.type, e => {
+        this._client.onNotification(contracts.TelemetryNotification.type, e => {
             TelemetryReporter.sendTelemetryEvent(e.params.eventName, e.params.properties, e.params.measures);
         });
     }
