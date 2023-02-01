@@ -84,7 +84,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
 	let contextProvider = new ContextProvider();
 	context.subscriptions.push(contextProvider);
-
+	context.subscriptions.push(TelemetryReporter);
 	context.subscriptions.push({ dispose: () => languageClient.stop() });
 }
 
@@ -161,5 +161,4 @@ function generateHandleServerProviderEvent() {
 
 // this method is called when your extension is deactivated
 export function deactivate(): void {
-	TelemetryReporter.dispose()
 }

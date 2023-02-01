@@ -42,10 +42,10 @@
     normalize-path "^2.0.1"
     through2 "^2.0.3"
 
-"@microsoft/ads-extension-telemetry@^1.3.3":
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/@microsoft/ads-extension-telemetry/-/ads-extension-telemetry-1.3.3.tgz#0b122cd620d33706f7a2c6b2e662b2b8b64e67b0"
-  integrity sha512-H0LSl0NwbsSpNn36JDOc0NPHp4JOyHNeUbQYbJzHIiaUcZe1w7E2WBCNSjb20jjmwMC2e7Bb/Vmet/sIUrT7Gg==
+"@microsoft/ads-extension-telemetry@^1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@microsoft/ads-extension-telemetry/-/ads-extension-telemetry-1.3.4.tgz#25d34cff39171a79663816faa6ba889e07dfb5ab"
+  integrity sha512-XTkMUA4BsTVNETjrKE4M3xaXlmk7m93Xy/eQHxHhzf8POjtPTvlw+8i96W8lTiRPnN81yAVE7YOB3GExsur6RA==
   dependencies:
     "@vscode/extension-telemetry" "0.6.1"
 
