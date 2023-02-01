@@ -2,7 +2,7 @@ trigger:
   batch: true
   branches:
     include:
-    - nitishsharma/localization-generation
+    - main
   paths:
     include:
     - src/l10n/l10n.xlf
@@ -13,7 +13,7 @@ resources:
   repositories:
   - repository: self
     type: git
-    ref: nitishsharma/localization-generation
+    ref: refs/heads/main
 
 jobs:
 - job: localization
