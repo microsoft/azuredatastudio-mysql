@@ -13,7 +13,8 @@ import { ServerOptions, TransportKind } from 'vscode-languageclient';
 import * as Constants from './constants';
 import ContextProvider from './contextProvider';
 import * as Utils from './utils';
-import { Telemetry, LanguageClientErrorHandler } from './telemetry';
+import { TelemetryReporter, LanguageClientErrorHandler } from './telemetry';
+import { TelemetryFeature } from './features/telemetry';
 import { registerDbDesignerCommands } from './features/dbDesigner';
 
 const baseConfig = require('./config.json');
@@ -48,6 +49,11 @@ export async function activate(context: vscode.ExtensionContext) {
 		synchronize: {
 			configurationSection: Constants.providerId
 		},
+		features: [
+			// we only want to add new features
+			...SqlOpsDataClient.defaultFeatures,
+			TelemetryFeature
+		]
 	};
 
 	const installationStart = Date.now();
@@ -62,7 +68,7 @@ export async function activate(context: vscode.ExtensionContext) {
 			setTimeout(() => {
 				statusView.hide();
 			}, 1500);
-			Telemetry.sendTelemetryEvent('startup/LanguageClientStarted', {
+			TelemetryReporter.sendTelemetryEvent('startup/LanguageClientStarted', {
 				installationTime: String(installationComplete - installationStart),
 				processStartupTime: String(processEnd - processStart),
 				totalTime: String(processEnd - installationStart),
@@ -74,13 +80,13 @@ export async function activate(context: vscode.ExtensionContext) {
 		registerDbDesignerCommands(languageClient);
 		languageClient.start();
 	}, e => {
-		Telemetry.sendTelemetryEvent('ServiceInitializingFailed');
+		TelemetryReporter.sendTelemetryEvent('ServiceInitializingFailed');
 		vscode.window.showErrorMessage('Failed to start ' + Constants.providerId + ' tools service');
 	});
 
 	let contextProvider = new ContextProvider();
 	context.subscriptions.push(contextProvider);
-
+	context.subscriptions.push(TelemetryReporter);
 	context.subscriptions.push({ dispose: () => languageClient.stop() });
 }
 
