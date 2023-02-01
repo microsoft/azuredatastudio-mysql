@@ -270,6 +270,10 @@
         <source xml:lang="en">Learn More.</source>
         <target state="new">Learn More.</target>
       </trans-unit>
+      <trans-unit id="testpipeline">
+        <source xml:lang="en">Testing Pipeline</source>
+        <target state="new">Testing Pipeline</target>
+      </trans-unit>
     </body>
   </file>
   <file original="out/main" source-language="en" datatype="plaintext" target-language="ru">
