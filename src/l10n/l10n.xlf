@@ -202,9 +202,6 @@
     <trans-unit id="learnMore">
       <source xml:lang="en">Learn More.</source>
     </trans-unit>
-    <trans-unit id="testpipeline">
-      <source xml:lang="en">Testing Pipeline</source>
-    </trans-unit>
   </body></file>
   <file original="out/main" source-language="en" datatype="plaintext"><body>
     <trans-unit id="unsupportedPlatformMsg">
