@@ -15,6 +15,7 @@ import ContextProvider from './contextProvider';
 import * as Utils from './utils';
 import { TelemetryReporter, LanguageClientErrorHandler } from './telemetry';
 import { TelemetryFeature } from './features/telemetry';
+import { registerDbDesignerCommands } from './features/dbDesigner';
 
 const baseConfig = require('./config.json');
 const outputChannel = vscode.window.createOutputChannel(Constants.serviceName);
@@ -75,7 +76,8 @@ export async function activate(context: vscode.ExtensionContext) {
 			});
 		});
 		statusView.show();
-		statusView.text = 'Starting ' + Constants.providerId +  ' service';
+		statusView.text = 'Starting ' + Constants.providerId + ' service';
+		registerDbDesignerCommands(languageClient);
 		languageClient.start();
 	}, e => {
 		TelemetryReporter.sendTelemetryEvent('ServiceInitializingFailed');
@@ -124,7 +126,7 @@ function generateServerOptions(executablePath: string): ServerOptions {
 
 	serverArgs.push('provider=' + Constants.providerId);
 	// run the service host
-	return  {  command: serverCommand, args: serverArgs, transport: TransportKind.stdio  };
+	return { command: serverCommand, args: serverArgs, transport: TransportKind.stdio };
 }
 
 function generateHandleServerProviderEvent() {
