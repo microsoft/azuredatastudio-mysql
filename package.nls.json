@@ -66,5 +66,6 @@
 	"mysql.resourceDeployment.helpTexts.template" : "Azure Database for MySQL Flexible Server is a relational database service powered by the MySQL community edition. It's a fully managed database as a service offering that can handle mission-critical workloads with predictable performance and dynamic scalability. Additionally, it is designed for more granular control and flexibility over database management functions and configuration settings. {0}",
 	"microsoft.azure.termsOfUse" : "Microsoft Azure terms of use",
 	"microsoft.privacy.statement" : "Microsoft Privacy Statement",
-	"learnMore" : "Learn More."
+	"learnMore" : "Learn More.",
+	"mysql.createDatabase" : "New Database"
 }
