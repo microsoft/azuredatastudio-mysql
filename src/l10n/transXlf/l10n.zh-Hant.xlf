@@ -270,6 +270,10 @@
         <source xml:lang="en">Learn More.</source>
         <target state="new">Learn More.</target>
       </trans-unit>
+      <trans-unit id="mysql.createDatabase">
+        <source xml:lang="en">New Database</source>
+        <target state="new">New Database</target>
+      </trans-unit>
     </body>
   </file>
   <file original="out/main" source-language="en" datatype="plaintext" target-language="zh-Hant">
