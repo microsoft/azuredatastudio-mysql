@@ -202,6 +202,9 @@
     <trans-unit id="learnMore">
       <source xml:lang="en">Learn More.</source>
     </trans-unit>
+    <trans-unit id="mysql.createDatabase">
+      <source xml:lang="en">New Database</source>
+    </trans-unit>
   </body></file>
   <file original="out/main" source-language="en" datatype="plaintext"><body>
     <trans-unit id="unsupportedPlatformMsg">
