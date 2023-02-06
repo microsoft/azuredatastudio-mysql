@@ -1,4 +1,5 @@
 ossdbtoolsservice
 node_modules
 out
+*nls.*.json
 *.vsix

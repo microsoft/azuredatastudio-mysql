@@ -5,13 +5,18 @@
 
 'use strict';
 import * as vscode from 'vscode';
+
+import * as nls from 'vscode-nls';
+const localize = nls.loadMessageBundle()
 import AdsTelemetryReporter from '@microsoft/ads-extension-telemetry';
 import { ErrorAction, ErrorHandler, Message, CloseAction } from 'vscode-languageclient';
 import * as Utils from './utils';
 import * as Constants from './constants';
-
 const packageJson = require('../package.json');
+
+const viewKnownIssuesAction = localize('viewKnownIssuesText', "View Known Issues")
 let packageInfo = Utils.getPackageInfo(packageJson);
+
 
 export const TelemetryReporter = new AdsTelemetryReporter<string, string>(packageInfo.name, packageInfo.version, packageInfo.aiKey);
 
@@ -28,9 +33,9 @@ export class LanguageClientErrorHandler implements ErrorHandler {
 	showOnErrorPrompt(): void {
 		TelemetryReporter.sendTelemetryEvent(Constants.serviceName + 'Crash');
 		void vscode.window.showErrorMessage(
-			Constants.serviceCrashMessage,
-			Constants.serviceCrashButton).then(action => {
-				if (action && action === Constants.serviceCrashButton) {
+			localize('serviceCrashMessage', "{0} component exited unexpectedly. Please restart Azure Data Studio.", Constants.serviceName),
+			viewKnownIssuesAction).then(action => {
+				if (action && action === viewKnownIssuesAction) {
 					void vscode.env.openExternal(vscode.Uri.parse(Constants.serviceCrashLink));
 				}
 			});
