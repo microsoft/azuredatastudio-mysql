@@ -3421,16 +3421,10 @@ vscode-languageserver-types@3.14.0:
   resolved "https://registry.yarnpkg.com/vscode-languageserver-types/-/vscode-languageserver-types-3.14.0.tgz#d3b5952246d30e5241592b6dde8280e03942e743"
   integrity sha512-lTmS6AlAlMHOvPQemVwo3CezxBp0sNB95KNPkqp3Nxd5VFEnuG1ByM0zlRWos0zjO3ZWtkvhal0COgiV1xIA4A==
 
-vscode-languageserver-types@3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/vscode-languageserver-types/-/vscode-languageserver-types-3.5.0.tgz#e48d79962f0b8e02de955e3f524908e2b19c0374"
-  integrity sha512-D4rUfu/oKYdc9Tmec0nEfedj+uXO2tZHR+eoHs9rE9G/QpRyZaHuug8ZUNGTGdO+ALLGgenL6bRpY8y3J9acHg==
-
 vscode-nls-dev@^4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/vscode-nls-dev/-/vscode-nls-dev-4.0.3.tgz#e55e8a7bd35c719454af17c0c5c3516ff2971d15"
   integrity sha512-Y+wUSLwmBwLD8uN+6hBbR4MICuURQ1DoW5k3Z34kPyDlr9ZRQxCPIWaK64IFzPpjloMbb0ORIHkpI8qjMd4L8w==
-
   dependencies:
     ansi-colors "^4.1.1"
     clone "^2.1.2"
@@ -3444,11 +3438,6 @@ vscode-nls-dev@^4.0.0:
     vinyl "^2.2.1"
     xml2js "^0.4.23"
     yargs "^17.3.0"
-
-vscode-nls@^5.0.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/vscode-nls/-/vscode-nls-5.2.0.tgz#3cb6893dd9bd695244d8a024bdf746eea665cc3f"
-  integrity sha512-RAaHx7B14ZU04EU31pT+rKz2/zSl7xMsfIZuo8pd+KZO6PXtQmpevpq3vxvWNcrGbdmhM/rr5Uw5Mz+NBfhVng==
 
 vscode-nls@^5.0.0:
   version "5.2.0"
