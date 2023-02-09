@@ -20,6 +20,14 @@ let packageInfo = Utils.getPackageInfo(packageJson);
 
 export const TelemetryReporter = new AdsTelemetryReporter<string, string>(packageInfo.name, packageInfo.version, packageInfo.aiKey);
 
+export enum TelemetryViews {
+	NewDatabaseDialog = 'NewDatabaseDialog'
+}
+
+export enum TelemetryActions {
+	Click = 'Click'
+}
+
 /**
  * Handle Language Service client errors
  * @class LanguageClientErrorHandler

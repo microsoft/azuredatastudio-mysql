@@ -6,6 +6,7 @@
 import * as vscode from 'vscode';
 import { SqlOpsDataClient } from 'dataprotocol-client';
 import { NewDatabaseDialog } from '../dialogs/newDatabaseDialog';
+import { TelemetryActions, TelemetryReporter, TelemetryViews } from '../telemetry';
 
 export function registerDbDesignerCommands(client: SqlOpsDataClient) {
 
@@ -15,6 +16,7 @@ export function registerDbDesignerCommands(client: SqlOpsDataClient) {
 }
 
 async function createNewDatabaseDialog(client: SqlOpsDataClient) {
+    TelemetryReporter.sendActionEvent(TelemetryViews.NewDatabaseDialog, TelemetryActions.Click);
     let newDatabaseDialog = new NewDatabaseDialog(client);
     await newDatabaseDialog.openDialog();
     return newDatabaseDialog;
