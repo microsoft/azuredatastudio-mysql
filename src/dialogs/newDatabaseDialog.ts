@@ -5,6 +5,7 @@
 import * as azdata from 'azdata';
 import { SqlOpsDataClient } from 'dataprotocol-client';
 import * as vscode from 'vscode';
+import { CharsetInfo } from '../models/newDatabaseModels';
 import { CancelButtonLabel, CreateButtonLabel, DatabaseCharsetDropDownLabel, DatabaseCharsetLabel, DatabaseCollationDropDownLabel, DatabaseCollationLabel, DatabaseNameLabel, DatabaseNameTextBoxLabel, DatabaseNameTextBoxPlaceHolder, NewDatabaseDetailsTitle, NewDatabaseDialogName, NewDatabaseTitle } from '../uiConstants';
 import { Deferred } from '../utils/PromiseUtils';
 import { ToolsServiceUtils } from '../utils/toolsserviceUtils';
@@ -20,8 +21,11 @@ export class NewDatabaseDialog {
 	private formBuilder: azdata.FormBuilder | undefined;
 	private toDispose: vscode.Disposable[] = [];
 	private initDialogComplete: Deferred = new Deferred();
-	private DEFAULT_CHARSET: string = "Default Charset";
-	private DEFAULT_COLLATION: string = "Default Collation"
+	private DEFAULT_CHARSET_VALUE = "utf8";
+	private DEFAULT_COLLATION_VALUE = "utf8_general_ci"
+	private charsetsCache: string[] = [];
+	private defaultCollationCache: Map<string, string> = new Map<string, string>();
+	private collationsCache: Map<string, string[]> =  new Map<string, string[]>();
 
 	constructor(client: SqlOpsDataClient) {
 		this.client = client;
@@ -49,12 +53,15 @@ export class NewDatabaseDialog {
 	private async loadDialogData(): Promise<void> {
 		await this.loadConnectionOwnerUri();
 		await this.loadAndUpdateCharsetValues();
+		await this.tryUpdateCollationDropDown(this.DEFAULT_CHARSET_VALUE);
 	}
 
 	private onLoadingComplete(): void {
-		this.databaseCharsetDropDown.loading = false;
 		this.databaseNameTextBox.enabled = true;
+		this.databaseCharsetDropDown.loading = false;
 		this.databaseCharsetDropDown.enabled = true;
+		this.databaseCollationDropDown.loading = false;
+		this.databaseCollationDropDown.enabled = true;
 	}
 
 	private async loadConnectionOwnerUri(): Promise<void> {
@@ -64,8 +71,12 @@ export class NewDatabaseDialog {
 
 	private async loadAndUpdateCharsetValues(): Promise<void> {
 		try {
-			var charsetValues = [this.DEFAULT_CHARSET];
-			this.databaseCharsetDropDown.values = charsetValues.concat(await ToolsServiceUtils.getCharsets(this.connectionOwnerUri, this.client));
+			var charsets: CharsetInfo[] = await ToolsServiceUtils.getCharsets(this.connectionOwnerUri, this.client);
+			charsets.forEach(charset => {
+				this.charsetsCache.push(charset.name);
+				this.defaultCollationCache.set(charset.name, charset.defaultCollation);
+			});
+			this.databaseCharsetDropDown.values = this.charsetsCache;
 		}
 		catch (e) {
 			// Log the error message and keep the values of charset as default.
@@ -140,8 +151,8 @@ export class NewDatabaseDialog {
 
 	private createDatabaseCharsetRow(view: azdata.ModelView): azdata.FlexContainer {
 		this.databaseCharsetDropDown = view.modelBuilder.dropDown().withProps({
-			values: [this.DEFAULT_CHARSET],
-			value: this.DEFAULT_CHARSET,
+			values: [this.DEFAULT_CHARSET_VALUE],
+			value: this.DEFAULT_CHARSET_VALUE,
 			ariaLabel: DatabaseCharsetDropDownLabel,
 			required: false,
 			width: '310px',
@@ -150,7 +161,7 @@ export class NewDatabaseDialog {
 		}).component();
 
 		this.databaseCharsetDropDown.onValueChanged(() => {
-			this.tryUpdateCollationDropDown(this.databaseCharsetDropDown.value);
+			this.tryUpdateCollationDropDown(this.getCurrentCharset());
 		});
 
 		const databaseCharsetLabel = view.modelBuilder.text().withProps({
@@ -164,10 +175,13 @@ export class NewDatabaseDialog {
 		return databaseCharsetRow;
 	}
 
-	private async getCollationValues(charset_name: string | azdata.CategoryValue): Promise<string[]> {
-		let collationValues = [this.DEFAULT_COLLATION];
+	private async getCollationValues(charset: string): Promise<string[]> {
+		let collationValues = [this.defaultCollationCache[charset]];
 		try {
-			collationValues = collationValues.concat(await ToolsServiceUtils.getCollations(this.connectionOwnerUri, charset_name, this.client));
+			if (!this.collationsCache.has(charset)) {
+				this.collationsCache.set(charset, (await ToolsServiceUtils.getCollations(this.connectionOwnerUri, charset, this.client)));
+			}
+			collationValues = this.collationsCache[charset];
 		}
 		catch (e) {
 			// Log the error message and keep the values of collation value as default.
@@ -178,8 +192,8 @@ export class NewDatabaseDialog {
 
 	private createDatabaseCollationRow(view: azdata.ModelView): azdata.FlexContainer {
 		this.databaseCollationDropDown = view.modelBuilder.dropDown().withProps({
-			values: [this.DEFAULT_COLLATION],
-			value: this.DEFAULT_COLLATION,
+			values: [this.DEFAULT_COLLATION_VALUE],
+			value: this.DEFAULT_COLLATION_VALUE,
 			ariaLabel: DatabaseCollationDropDownLabel,
 			required: false,
 			width: '310px',
@@ -197,19 +211,11 @@ export class NewDatabaseDialog {
 		return databaseCharsetRow;
 	}
 
-	private async tryUpdateCollationDropDown(charset_name: string | azdata.CategoryValue): Promise<void> {
-		if (this.databaseCharsetDropDown.value != this.DEFAULT_CHARSET) {
-			this.databaseCollationDropDown.value = this.DEFAULT_COLLATION;
-			this.databaseCollationDropDown.loading = true;
-			this.databaseCollationDropDown.values = (await this.getCollationValues(charset_name));
-			this.databaseCollationDropDown.loading = false;
-			this.databaseCollationDropDown.enabled = true;
-		}
-		else {
-			this.databaseCollationDropDown.enabled = false;
-			this.databaseCollationDropDown.value = this.DEFAULT_COLLATION;
-			this.databaseCollationDropDown.values = [this.DEFAULT_COLLATION];
-		}
+	private async tryUpdateCollationDropDown(charset_name: string): Promise<void> {
+		this.databaseCollationDropDown.value = this.defaultCollationCache[charset_name];
+		this.databaseCollationDropDown.loading = true;
+		this.databaseCollationDropDown.values = (await this.getCollationValues(charset_name));
+		this.databaseCollationDropDown.loading = false;
 	}
 
 	private tryEnableCreateButton(): void {
@@ -228,8 +234,8 @@ export class NewDatabaseDialog {
 		try {
 			await ToolsServiceUtils.createDatabase(
 				this.databaseNameTextBox.value,
-				this.databaseCharsetDropDown.value == this.DEFAULT_CHARSET ? '' : this.databaseCharsetDropDown.value,
-				this.databaseCollationDropDown.value == this.DEFAULT_COLLATION ? '' : this.databaseCollationDropDown.value,
+				this.getCurrentCharset(),
+				this.getCurrentCollation(),
 				this.connectionOwnerUri,
 				this.client);
 			return true;
@@ -238,6 +244,18 @@ export class NewDatabaseDialog {
 			this.showErrorMessage(e.message)
 		}
 		return false;
+	}
+
+	private getCurrentCharset(): string {
+		let charset = this.databaseCharsetDropDown.value;
+		let charsetValue = (typeof charset === 'string') ? charset : charset.name;
+		return charsetValue;
+	}
+
+	private getCurrentCollation(): string {
+		let collation = this.databaseCollationDropDown.value;
+		let collationValue = (typeof collation === 'string') ? collation : collation.name;
+		return collationValue;
 	}
 
 	protected showErrorMessage(message: string): void {

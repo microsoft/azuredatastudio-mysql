@@ -14,8 +14,13 @@ export interface GetCharsetsRequestParams {
     ownerUri: string
 }
 
+export interface CharsetInfo {
+    name: string,
+    defaultCollation: string
+}
+
 export interface GetCharsetsResponse {
-    charsets: string[]
+    charsets: CharsetInfo[]
 }
 
 export interface GetCollationsRequestParams {

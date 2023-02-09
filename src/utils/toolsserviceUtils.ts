@@ -7,27 +7,24 @@ import * as azdata from "azdata";
 import { SqlOpsDataClient } from "dataprotocol-client";
 import { SimpleExecuteRequest } from "dataprotocol-client/lib/protocol";
 import { CreateDatabaseRequest, GetCharsetsRequest, GetCollationsRequest } from "../contracts/contracts";
-import { CreateDatabaseRequestParams, GetCharsetsRequestParams, GetCharsetsResponse, GetCollationsRequestParams, GetCollationsResponse } from "../models/newDatabaseModels";
+import { CharsetInfo, CreateDatabaseRequestParams, GetCharsetsRequestParams, GetCharsetsResponse, GetCollationsRequestParams, GetCollationsResponse } from "../models/newDatabaseModels";
 
 export class ToolsServiceUtils {
 
-  public static async getCharsets(ownerUri: string, client: SqlOpsDataClient): Promise<string[]> {
+  public static async getCharsets(ownerUri: string, client: SqlOpsDataClient): Promise<CharsetInfo[]> {
     let params: GetCharsetsRequestParams = {ownerUri: ownerUri};
     let result: GetCharsetsResponse = (await client.sendRequest(GetCharsetsRequest.type, params));
     return result.charsets;
   }
 
-  public static async getCollations(ownerUri:string, charset: string | azdata.CategoryValue, client: SqlOpsDataClient): Promise<string[]> {
-    let charsetvalue = (typeof charset === 'string') ? charset : charset.name;
-    let params: GetCollationsRequestParams = {ownerUri: ownerUri, charset: charsetvalue};
+  public static async getCollations(ownerUri:string, charset: string, client: SqlOpsDataClient): Promise<string[]> {
+    let params: GetCollationsRequestParams = {ownerUri: ownerUri, charset: charset};
     let result: GetCollationsResponse = (await client.sendRequest(GetCollationsRequest.type, params));
     return result.collations;
   }
 
-  public static async createDatabase(dbname: string, charset: string | azdata.CategoryValue, collation: string | azdata.CategoryValue, ownerUri: string, client: SqlOpsDataClient): Promise<void> {
-    let charsetvalue = (typeof charset === 'string') ? charset : charset.name;
-    let collationvalue = (typeof collation === 'string') ? collation : collation.name;
-    let params: CreateDatabaseRequestParams = {ownerUri: ownerUri, dbName: dbname, charset: charsetvalue, collation: collationvalue};
+  public static async createDatabase(dbname: string, charset: string, collation: string, ownerUri: string, client: SqlOpsDataClient): Promise<void> {
+    let params: CreateDatabaseRequestParams = {ownerUri: ownerUri, dbName: dbname, charset: charset, collation: collation};
     await client.sendRequest(CreateDatabaseRequest.type, params);
   }
 
