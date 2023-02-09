@@ -176,12 +176,13 @@ export class NewDatabaseDialog {
 	}
 
 	private async getCollationValues(charset: string): Promise<string[]> {
-		let collationValues = [this.defaultCollationCache[charset]];
+		let collationValues = [this.defaultCollationCache.get(charset)];
 		try {
 			if (!this.collationsCache.has(charset)) {
-				this.collationsCache.set(charset, (await ToolsServiceUtils.getCollations(this.connectionOwnerUri, charset, this.client)));
+				let collations = await ToolsServiceUtils.getCollations(this.connectionOwnerUri, charset, this.client);
+				this.collationsCache.set(charset, collations);
 			}
-			collationValues = this.collationsCache[charset];
+			collationValues = this.collationsCache.get(charset);
 		}
 		catch (e) {
 			// Log the error message and keep the values of collation value as default.
@@ -197,7 +198,8 @@ export class NewDatabaseDialog {
 			ariaLabel: DatabaseCollationDropDownLabel,
 			required: false,
 			width: '310px',
-			enabled: false
+			enabled: false,
+			loading: true
 		}).component();
 
 		const databaseCollationLabel = view.modelBuilder.text().withProps({
@@ -212,8 +214,8 @@ export class NewDatabaseDialog {
 	}
 
 	private async tryUpdateCollationDropDown(charset_name: string): Promise<void> {
-		this.databaseCollationDropDown.value = this.defaultCollationCache[charset_name];
 		this.databaseCollationDropDown.loading = true;
+		this.databaseCollationDropDown.value = this.defaultCollationCache.get(charset_name);
 		this.databaseCollationDropDown.values = (await this.getCollationValues(charset_name));
 		this.databaseCollationDropDown.loading = false;
 	}
