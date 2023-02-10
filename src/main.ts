@@ -18,7 +18,6 @@ import * as Utils from './utils';
 import { TelemetryReporter, LanguageClientErrorHandler } from './telemetry';
 import { TelemetryFeature } from './features/telemetry';
 import { registerDbDesignerCommands } from './features/dbDesigner';
-import { FireWallFeature } from './features/firewall'
 
 const baseConfig = require('./config.json');
 const outputChannel = vscode.window.createOutputChannel(Constants.serviceName);
@@ -55,9 +54,8 @@ export async function activate(context: vscode.ExtensionContext) {
 		features: [
 			// we only want to add new features
 			...SqlOpsDataClient.defaultFeatures,
-			TelemetryFeature,
-			FireWallFeature
-		],
+			TelemetryFeature
+		]
 	};
 
 	const installationStart = Date.now();
