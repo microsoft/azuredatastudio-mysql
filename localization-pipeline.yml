@@ -1,19 +1,11 @@
-trigger:
-  batch: true
-  branches:
-    include:
-    - main
-  paths:
-    include:
-    - src/l10n/l10n.xlf
-
+trigger: none
 pr: none
 
 resources:
   repositories:
   - repository: self
     type: git
-    ref: refs/heads/main
+    ref: refs/heads/nitishsharma/localize-test
 
 jobs:
 - job: localization
