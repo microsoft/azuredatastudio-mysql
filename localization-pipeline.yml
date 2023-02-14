@@ -17,9 +17,9 @@ jobs:
     clean: true
     fetchTags: true
   - task: cesve.one-loc-build.one-loc-build.OneLocBuild@2
-    displayName: 'Localization Build: src/LocProject.json'
+    displayName: 'Localization Build: Localize/LocProject.json'
     inputs:
-      locProj: src/LocProject.json
+      locProj: Localize/LocProject.json
       isCreatePrSelected: true
       repoType: gitHub
       gitHubPatVariable: $(githubPatToken)

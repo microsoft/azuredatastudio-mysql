@@ -6,8 +6,7 @@
           {
             "SourceFile": "src\\l10n\\l10n.xlf",
             "CopyOption": "LangIDOnName",
-            "OutputPath": "src\\l10n\\transXlf",
-            "LclFile": "src\\loc\\{Lang}\\src\\l10n\\l10n.xlf.lcl"
+            "OutputPath": "src\\l10n\\transXlf"
           }
         ]
       }
