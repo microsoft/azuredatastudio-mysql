@@ -28,7 +28,7 @@
       </trans-unit>
       <trans-unit id="mysql.description">
         <source xml:lang="en">MySQL extension for Azure Data Studio</source>
-        <target state="new">MySQL extension for Azure Data Studio</target>
+        <target state="translated">適用於 Azure Data Studio 的 MySQL 延伸模組</target>
       </trans-unit>
       <trans-unit id="mysql.logDebugInfo.description">
         <source xml:lang="en">[Optional] Log debug output to the VS Code console (Help -&gt; Toggle Developer Tools)</source>
@@ -36,47 +36,47 @@
       </trans-unit>
       <trans-unit id="mysql.configuration.title">
         <source xml:lang="en">MySQL configuration</source>
-        <target state="new">MySQL configuration</target>
+        <target state="translated">MySQL 設定</target>
       </trans-unit>
       <trans-unit id="mysql.enabled.description">
         <source xml:lang="en">[Optional] Enable MySQL support (currently in development)</source>
-        <target state="new">[Optional] Enable MySQL support (currently in development)</target>
+        <target state="translated">[選擇性] 啟用 MySQL 支援 (目前正在開發中)</target>
       </trans-unit>
       <trans-unit id="mysql.debugSourcePath.description">
         <source xml:lang="en">[Optional] Path to the source directory of the MySQL Tools Service, for debugging</source>
-        <target state="new">[Optional] Path to the source directory of the MySQL Tools Service, for debugging</target>
+        <target state="translated">[選擇性] MySQL 工具服務的來源目錄路徑，用於進行偵錯</target>
       </trans-unit>
       <trans-unit id="mysql.useDebugSource.description">
         <source xml:lang="en">[Optional] Enable running the MySQL extension via the path set in MySQL.debugSourcePath</source>
-        <target state="new">[Optional] Enable running the MySQL extension via the path set in MySQL.debugSourcePath</target>
+        <target state="translated">[選擇性] 透過 MySQL.debugSourcePath 中設定的路徑，啟用 MySQL 延伸模組的執行</target>
       </trans-unit>
       <trans-unit id="mysql.enableStartupDebugging.description">
         <source xml:lang="en">[Optional] Whether to make the MySQL Tools Service wait for a debugger to attach when starting</source>
-        <target state="new">[Optional] Whether to make the MySQL Tools Service wait for a debugger to attach when starting</target>
+        <target state="translated">[選擇性] 是否要讓 MySQL 工具服務在啟動時等候偵錯工具連結</target>
       </trans-unit>
       <trans-unit id="mysql.debugServerPort.description">
         <source xml:lang="en">[Optional] The port to run the MySQL Tools Service remote debugger on (default 3000)</source>
-        <target state="new">[Optional] The port to run the MySQL Tools Service remote debugger on (default 3000)</target>
+        <target state="translated">[選擇性] 要在其上執行 MySQL 工具服務遠端偵錯程式的連接埠 (預設為 3000)</target>
       </trans-unit>
       <trans-unit id="mysql.defaultDatabase.description">
         <source xml:lang="en">The default database to use when creating a new MySQL connection</source>
-        <target state="new">The default database to use when creating a new MySQL connection</target>
+        <target state="translated">建立新的 MySQL 連線時要使用的預設資料庫</target>
       </trans-unit>
       <trans-unit id="mysql.format.keywordCase.description">
         <source xml:lang="en">[Optional] Changes how keywords are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.</source>
-        <target state="new">[Optional] Changes how keywords are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.</target>
+        <target state="translated">[選擇性] 變更關鍵字的格式。允許的值為 'upper', 'lower' 和 'capitalize'。</target>
       </trans-unit>
       <trans-unit id="mysql.format.identifierCase.description">
         <source xml:lang="en">[Optional] Changes how identifiers are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.</source>
-        <target state="new">[Optional] Changes how identifiers are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.</target>
+        <target state="translated">[選擇性] 變更識別碼的格式。允許的值為 'upper', 'lower' 和 'capitalize'。</target>
       </trans-unit>
       <trans-unit id="mysql.format.stripComments.description">
         <source xml:lang="en">[Optional] If true comments are removed from the statements</source>
-        <target state="new">[Optional] If true comments are removed from the statements</target>
+        <target state="translated">[選擇性] 如果為 True，則會從陳述式中移除註解</target>
       </trans-unit>
       <trans-unit id="mysql.format.reindent.description">
         <source xml:lang="en">[Optional] If true the indentations of the statements are changed.</source>
-        <target state="new">[Optional] If true the indentations of the statements are changed.</target>
+        <target state="translated">[選擇性] 如果為 True，則會變更陳述式的縮排。</target>
       </trans-unit>
       <trans-unit id="mysql.provider.displayName">
         <source xml:lang="en">MySQL</source>
@@ -116,7 +116,7 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.host.description">
         <source xml:lang="en">Name of the MySQL server</source>
-        <target state="new">Name of the MySQL server</target>
+        <target state="translated">MySQL 伺服器的名稱</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.authenticationType.displayName">
         <source xml:lang="en">Authentication type</source>
@@ -124,7 +124,7 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.authenticationType.description">
         <source xml:lang="en">How to authenticate with server</source>
-        <target state="new">How to authenticate with server</target>
+        <target state="translated">如何向伺服器驗證</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.authenticationType.password">
         <source xml:lang="en">Password</source>
@@ -160,11 +160,11 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.port.displayName">
         <source xml:lang="en">Port</source>
-        <target state="translated">通訊埠</target>
+        <target state="translated">連接埠</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.port.description">
         <source xml:lang="en">Port number for the server</source>
-        <target state="new">Port number for the server</target>
+        <target state="translated">伺服器的連接埠號碼</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.connectTimeout.displayName">
         <source xml:lang="en">Connect timeout</source>
@@ -172,23 +172,23 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.connectTimeout.description">
         <source xml:lang="en">Seconds to wait before timing out when connecting</source>
-        <target state="new">Seconds to wait before timing out when connecting</target>
+        <target state="translated">連線逾時前要等待的秒數</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.clientFlag.displayName">
         <source xml:lang="en">Capability flags</source>
-        <target state="new">Capability flags</target>
+        <target state="translated">功能旗標</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.clientFlag.description">
         <source xml:lang="en">Custom flags to send to the MySQL server</source>
-        <target state="new">Custom flags to send to the MySQL server</target>
+        <target state="translated">要傳送到 MySQL 伺服器的自訂旗標</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.sqlMode.displayName">
         <source xml:lang="en">SQL_MODE</source>
-        <target state="new">SQL_MODE</target>
+        <target state="translated">SQL_MODE</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.sqlMode.description">
         <source xml:lang="en">Default SQL_MODE to use</source>
-        <target state="new">Default SQL_MODE to use</target>
+        <target state="translated">要使用的預設 SQL_MODE</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.displayName">
         <source xml:lang="en">SSL mode</source>
@@ -196,7 +196,7 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.description">
         <source xml:lang="en">The SSL mode to use when connecting</source>
-        <target state="new">The SSL mode to use when connecting</target>
+        <target state="translated">連線時要使用的 SSL 模式</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.mode.disable">
         <source xml:lang="en">Disable</source>
@@ -204,39 +204,39 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.mode.require">
         <source xml:lang="en">Require</source>
-        <target state="translated">必要項</target>
+        <target state="translated">必要</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.mode.verify_ca">
         <source xml:lang="en">Verify-CA</source>
-        <target state="new">Verify-CA</target>
+        <target state="translated">Verify-CA</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.mode.verify_identity">
         <source xml:lang="en">Verify-Identity</source>
-        <target state="new">Verify-Identity</target>
+        <target state="translated">Verify-Identity</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.key.displayName">
         <source xml:lang="en">SSL key</source>
-        <target state="new">SSL key</target>
+        <target state="translated">SSL 金鑰</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.key.description">
         <source xml:lang="en">The path name of the client private key to use for the SSL certificate</source>
-        <target state="new">The path name of the client private key to use for the SSL certificate</target>
+        <target state="translated">要用於 SSL 憑證的用戶端私密金鑰路徑名稱</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.cert.displayName">
         <source xml:lang="en">SSL client certificate</source>
-        <target state="new">SSL client certificate</target>
+        <target state="translated">SSL 用戶端憑證</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.cert.description">
         <source xml:lang="en">The path of the SSL client certificate file</source>
-        <target state="new">The path of the SSL client certificate file</target>
+        <target state="translated">SSL 用戶端憑證檔案的路徑</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.ca.displayName">
         <source xml:lang="en">SSL CA certificate</source>
-        <target state="new">SSL CA certificate</target>
+        <target state="translated">SSL CA 憑證</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.ca.description">
         <source xml:lang="en">The path of the SSL CA certificate file</source>
-        <target state="new">The path of the SSL CA certificate file</target>
+        <target state="translated">SSL 用戶端憑證檔案的路徑</target>
       </trans-unit>
       <trans-unit id="mysql.resourceDeployment.displayName">
         <source xml:lang="en">Azure Database for MySQL</source>
@@ -244,7 +244,7 @@
       </trans-unit>
       <trans-unit id="mysql.resourceDeployment.description">
         <source xml:lang="en">Create an Azure Database for MySQL flexible server - a fully managed MySQL database as a service on Azure.</source>
-        <target state="new">Create an Azure Database for MySQL flexible server - a fully managed MySQL database as a service on Azure.</target>
+        <target state="translated">建立適用於 MySQL 的 Azure 資料庫彈性伺服器 - 完全受控的 MySQL 資料庫，作為 Azure 上的服務。</target>
       </trans-unit>
       <trans-unit id="mysql.resourceDeployment.okButtonText">
         <source xml:lang="en">Create in Azure portal</source>
@@ -252,15 +252,15 @@
       </trans-unit>
       <trans-unit id="mysql.resourceDeployment.agreements.template">
         <source xml:lang="en">I accept the {0} and {1}.</source>
-        <target state="new">I accept the {0} and {1}.</target>
+        <target state="translated">我接受{0}和{1}。</target>
       </trans-unit>
       <trans-unit id="mysql.resourceDeployment.helpTexts.template">
         <source xml:lang="en">Azure Database for MySQL Flexible Server is a relational database service powered by the MySQL community edition. It's a fully managed database as a service offering that can handle mission-critical workloads with predictable performance and dynamic scalability. Additionally, it is designed for more granular control and flexibility over database management functions and configuration settings. {0}</source>
-        <target state="new">Azure Database for MySQL Flexible Server is a relational database service powered by the MySQL community edition. It's a fully managed database as a service offering that can handle mission-critical workloads with predictable performance and dynamic scalability. Additionally, it is designed for more granular control and flexibility over database management functions and configuration settings. {0}</target>
+        <target state="translated">適用於 MySQL 的 Azure 資料庫彈性伺服器是由 MySQL 社群版本所提供的關聯式資料庫服務。這是完全受控的資料庫，作為服務供應項目，可處理具有可預測效能和動態可擴縮性的任務關鍵工作負載。此外，它的設計目的是針對資料庫管理功能和組態設定進行更細微的控制與彈性。{0}</target>
       </trans-unit>
       <trans-unit id="microsoft.azure.termsOfUse">
         <source xml:lang="en">Microsoft Azure terms of use</source>
-        <target state="new">Microsoft Azure terms of use</target>
+        <target state="translated">Microsoft Azure 使用規定</target>
       </trans-unit>
       <trans-unit id="microsoft.privacy.statement">
         <source xml:lang="en">Microsoft Privacy Statement</source>
@@ -284,15 +284,15 @@
       </trans-unit>
       <trans-unit id="serviceStartedStatusMsg">
         <source xml:lang="en">{0} service started</source>
-        <target state="new">{0} service started</target>
+        <target state="translated">{0} 服務已啟動</target>
       </trans-unit>
       <trans-unit id="startingServiceStatusMsg">
         <source xml:lang="en">Starting {0} service</source>
-        <target state="new">Starting {0} service</target>
+        <target state="translated">正在啟動 {0} 服務</target>
       </trans-unit>
       <trans-unit id="failedToStartServiceErrorMsg">
         <source xml:lang="en">Failed to start {0} tools service</source>
-        <target state="new">Failed to start {0} tools service</target>
+        <target state="translated">無法啟動 {0} 工具服務</target>
       </trans-unit>
       <trans-unit id="installingServiceChannelMsg">
         <source xml:lang="en">Installing {0} to {1}</source>
