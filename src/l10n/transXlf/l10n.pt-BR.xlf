@@ -4,27 +4,27 @@
     <body>
       <trans-unit id="json.schemas.desc">
         <source xml:lang="en">Associate schemas to JSON files in the current project</source>
-        <target state="new">Associate schemas to JSON files in the current project</target>
+        <target state="translated">Esquemas associados a arquivos JSON no projeto atual</target>
       </trans-unit>
       <trans-unit id="json.schemas.url.desc">
         <source xml:lang="en">A URL to a schema or a relative path to a schema in the current directory</source>
-        <target state="new">A URL to a schema or a relative path to a schema in the current directory</target>
+        <target state="translated">Uma URL para um esquema ou um caminho relativo a um esquema no diretório atual</target>
       </trans-unit>
       <trans-unit id="json.schemas.fileMatch.desc">
         <source xml:lang="en">An array of file patterns to match against when resolving JSON files to schemas.</source>
-        <target state="new">An array of file patterns to match against when resolving JSON files to schemas.</target>
+        <target state="translated">Uma matriz de padrões de arquivos para fazer correspondência ao resolver arquivos JSON para esquemas.</target>
       </trans-unit>
       <trans-unit id="json.schemas.fileMatch.item.desc">
         <source xml:lang="en">A file pattern that can contain '*' to match against when resolving JSON files to schemas.</source>
-        <target state="new">A file pattern that can contain '*' to match against when resolving JSON files to schemas.</target>
+        <target state="translated">Um padrão de arquivos que pode conter '*' para fazer a correspondência ao resolver arquivos JSON para esquemas.</target>
       </trans-unit>
       <trans-unit id="json.schemas.schema.desc">
         <source xml:lang="en">The schema definition for the given URL. The schema only needs to be provided to avoid accesses to the schema URL.</source>
-        <target state="new">The schema definition for the given URL. The schema only needs to be provided to avoid accesses to the schema URL.</target>
+        <target state="translated">A definição de esquema para a URL fornecida. O esquema precisa ser fornecido apenas para evitar acessos à URL do esquema.</target>
       </trans-unit>
       <trans-unit id="json.format.enable.desc">
         <source xml:lang="en">Enable/disable default JSON formatter (requires restart)</source>
-        <target state="new">Enable/disable default JSON formatter (requires restart)</target>
+        <target state="translated">Habilitar/desabilitar o formatador JSON padrão (requer reinicialização)</target>
       </trans-unit>
       <trans-unit id="mysql.description">
         <source xml:lang="en">MySQL extension for Azure Data Studio</source>
@@ -32,7 +32,7 @@
       </trans-unit>
       <trans-unit id="mysql.logDebugInfo.description">
         <source xml:lang="en">[Optional] Log debug output to the VS Code console (Help -&gt; Toggle Developer Tools)</source>
-        <target state="new">[Optional] Log debug output to the VS Code console (Help -&gt; Toggle Developer Tools)</target>
+        <target state="translated">[Opcional] Registre a saída de depuração no console do VS Code (Ajuda -&gt; Alternar Ferramentas para Desenvolvedores)</target>
       </trans-unit>
       <trans-unit id="mysql.configuration.title">
         <source xml:lang="en">MySQL configuration</source>
@@ -80,39 +80,39 @@
       </trans-unit>
       <trans-unit id="mysql.provider.displayName">
         <source xml:lang="en">MySQL</source>
-        <target state="new">MySQL</target>
+        <target state="translated">MySQL</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.groupName.source">
         <source xml:lang="en">Source</source>
-        <target state="new">Source</target>
+        <target state="translated">Fonte</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.groupName.security">
         <source xml:lang="en">Security</source>
-        <target state="new">Security</target>
+        <target state="translated">Segurança</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.groupName.server">
         <source xml:lang="en">Server</source>
-        <target state="new">Server</target>
+        <target state="translated">Servidor</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.groupName.client">
         <source xml:lang="en">Client</source>
-        <target state="new">Client</target>
+        <target state="translated">Cliente</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.groupName.ssl">
         <source xml:lang="en">SSL</source>
-        <target state="new">SSL</target>
+        <target state="translated">SSL</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.connectionName.displayName">
         <source xml:lang="en">Name (optional)</source>
-        <target state="new">Name (optional)</target>
+        <target state="translated">Nome (opcional)</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.connectionName.description">
         <source xml:lang="en">Custom name of the connection</source>
-        <target state="new">Custom name of the connection</target>
+        <target state="translated">Nome personalizado da conexão</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.host.displayName">
         <source xml:lang="en">Server name</source>
-        <target state="new">Server name</target>
+        <target state="translated">Nome do servidor</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.host.description">
         <source xml:lang="en">Name of the MySQL server</source>
@@ -120,7 +120,7 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.authenticationType.displayName">
         <source xml:lang="en">Authentication type</source>
-        <target state="new">Authentication type</target>
+        <target state="translated">Tipo de autenticação</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.authenticationType.description">
         <source xml:lang="en">How to authenticate with server</source>
@@ -128,39 +128,39 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.authenticationType.password">
         <source xml:lang="en">Password</source>
-        <target state="new">Password</target>
+        <target state="translated">Senha</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.authenticationType.azuremfaanduser">
         <source xml:lang="en">Azure Active Directory</source>
-        <target state="new">Azure Active Directory</target>
+        <target state="translated">Azure Active Directory</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.dbname.displayName">
         <source xml:lang="en">Database name</source>
-        <target state="new">Database name</target>
+        <target state="translated">Nome do Banco de Dados</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.dbname.description">
         <source xml:lang="en">The name of the initial catalog or database in the data source</source>
-        <target state="new">The name of the initial catalog or database in the data source</target>
+        <target state="translated">O nome do catálogo ou banco de dados inicial na fonte de dados</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.user.displayName">
         <source xml:lang="en">User name</source>
-        <target state="new">User name</target>
+        <target state="translated">Nome de usuário</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.user.description">
         <source xml:lang="en">Indicates the user ID to be used when connecting to the data source</source>
-        <target state="new">Indicates the user ID to be used when connecting to the data source</target>
+        <target state="translated">Indica a ID de usuário a ser usada ao conectar-se à fonte de dados</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.password.displayName">
         <source xml:lang="en">Password</source>
-        <target state="new">Password</target>
+        <target state="translated">Senha</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.password.description">
         <source xml:lang="en">Indicates the password to be used when connecting to the data source</source>
-        <target state="new">Indicates the password to be used when connecting to the data source</target>
+        <target state="translated">Indica a senha a ser usada ao conectar-se à fonte de dados</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.port.displayName">
         <source xml:lang="en">Port</source>
-        <target state="new">Port</target>
+        <target state="translated">Porta</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.port.description">
         <source xml:lang="en">Port number for the server</source>
@@ -168,7 +168,7 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.connectTimeout.displayName">
         <source xml:lang="en">Connect timeout</source>
-        <target state="new">Connect timeout</target>
+        <target state="translated">Tempo limite de conexão</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.connectTimeout.description">
         <source xml:lang="en">Seconds to wait before timing out when connecting</source>
@@ -192,7 +192,7 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.displayName">
         <source xml:lang="en">SSL mode</source>
-        <target state="new">SSL mode</target>
+        <target state="translated">Modo SSL</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.description">
         <source xml:lang="en">The SSL mode to use when connecting</source>
@@ -200,11 +200,11 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.mode.disable">
         <source xml:lang="en">Disable</source>
-        <target state="new">Disable</target>
+        <target state="translated">Desabilitar</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.mode.require">
         <source xml:lang="en">Require</source>
-        <target state="new">Require</target>
+        <target state="translated">Exigir</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.mode.verify_ca">
         <source xml:lang="en">Verify-CA</source>
@@ -240,7 +240,7 @@
       </trans-unit>
       <trans-unit id="mysql.resourceDeployment.displayName">
         <source xml:lang="en">Azure Database for MySQL</source>
-        <target state="new">Azure Database for MySQL</target>
+        <target state="translated">Banco de Dados do Azure para MySQL</target>
       </trans-unit>
       <trans-unit id="mysql.resourceDeployment.description">
         <source xml:lang="en">Create an Azure Database for MySQL flexible server - a fully managed MySQL database as a service on Azure.</source>
@@ -248,7 +248,7 @@
       </trans-unit>
       <trans-unit id="mysql.resourceDeployment.okButtonText">
         <source xml:lang="en">Create in Azure portal</source>
-        <target state="new">Create in Azure portal</target>
+        <target state="translated">Criar no portal do Azure</target>
       </trans-unit>
       <trans-unit id="mysql.resourceDeployment.agreements.template">
         <source xml:lang="en">I accept the {0} and {1}.</source>
@@ -264,15 +264,15 @@
       </trans-unit>
       <trans-unit id="microsoft.privacy.statement">
         <source xml:lang="en">Microsoft Privacy Statement</source>
-        <target state="new">Microsoft Privacy Statement</target>
+        <target state="translated">Política de Privacidade da Microsoft</target>
       </trans-unit>
       <trans-unit id="learnMore">
         <source xml:lang="en">Learn More.</source>
-        <target state="new">Learn More.</target>
+        <target state="translated">Saiba Mais.</target>
       </trans-unit>
       <trans-unit id="mysql.createDatabase">
         <source xml:lang="en">New Database</source>
-        <target state="new">New Database</target>
+        <target state="translated">Novo Banco de Dados</target>
       </trans-unit>
     </body>
   </file>
@@ -280,7 +280,7 @@
     <body>
       <trans-unit id="unsupportedPlatformMsg">
         <source xml:lang="en">Unsupported platform</source>
-        <target state="new">Unsupported platform</target>
+        <target state="translated">Plataforma não suportada</target>
       </trans-unit>
       <trans-unit id="serviceStartedStatusMsg">
         <source xml:lang="en">{0} service started</source>
@@ -296,31 +296,31 @@
       </trans-unit>
       <trans-unit id="installingServiceChannelMsg">
         <source xml:lang="en">Installing {0} to {1}</source>
-        <target state="new">Installing {0} to {1}</target>
+        <target state="translated">Instalando {0} para {1}</target>
       </trans-unit>
       <trans-unit id="installingServiceStatusMsg">
         <source xml:lang="en">Installing {0}</source>
-        <target state="new">Installing {0}</target>
+        <target state="translated">Instalando {0}</target>
       </trans-unit>
       <trans-unit id="installedServiceChannelMsg">
         <source xml:lang="en">Installed {0}</source>
-        <target state="new">Installed {0}</target>
+        <target state="translated">Instalado {0}</target>
       </trans-unit>
       <trans-unit id="downloadingServiceChannelMsg">
         <source xml:lang="en">Downloading {0}</source>
-        <target state="new">Downloading {0}</target>
+        <target state="translated">Baixando {0}</target>
       </trans-unit>
       <trans-unit id="downloadingServiceSizeChannelMsg">
         <source xml:lang="en">({0} KB)</source>
-        <target state="new">({0} KB)</target>
+        <target state="translated">({0} KB)</target>
       </trans-unit>
       <trans-unit id="downloadingServiceStatusMsg">
         <source xml:lang="en">Downloading {0}</source>
-        <target state="new">Downloading {0}</target>
+        <target state="translated">Baixando {0}</target>
       </trans-unit>
       <trans-unit id="downloadServiceDoneChannelMsg">
         <source xml:lang="en">Done!</source>
-        <target state="new">Done!</target>
+        <target state="translated">Concluído!</target>
       </trans-unit>
     </body>
   </file>
@@ -328,11 +328,11 @@
     <body>
       <trans-unit id="viewKnownIssuesText">
         <source xml:lang="en">View Known Issues</source>
-        <target state="new">View Known Issues</target>
+        <target state="translated">Exibir Problemas Conhecidos</target>
       </trans-unit>
       <trans-unit id="serviceCrashMessage">
         <source xml:lang="en">{0} component exited unexpectedly. Please restart Azure Data Studio.</source>
-        <target state="new">{0} component exited unexpectedly. Please restart Azure Data Studio.</target>
+        <target state="translated">O componente {0} foi encerrado inesperadamente. Reinicie o Azure Data Studio.</target>
       </trans-unit>
     </body>
   </file>
