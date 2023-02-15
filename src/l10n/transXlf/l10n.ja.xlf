@@ -28,7 +28,7 @@
       </trans-unit>
       <trans-unit id="mysql.description">
         <source xml:lang="en">MySQL extension for Azure Data Studio</source>
-        <target state="new">MySQL extension for Azure Data Studio</target>
+        <target state="translated">Azure Data Studio 用の MySQL の拡張機能</target>
       </trans-unit>
       <trans-unit id="mysql.logDebugInfo.description">
         <source xml:lang="en">[Optional] Log debug output to the VS Code console (Help -&gt; Toggle Developer Tools)</source>
@@ -36,47 +36,47 @@
       </trans-unit>
       <trans-unit id="mysql.configuration.title">
         <source xml:lang="en">MySQL configuration</source>
-        <target state="new">MySQL configuration</target>
+        <target state="translated">MySQL 構成</target>
       </trans-unit>
       <trans-unit id="mysql.enabled.description">
         <source xml:lang="en">[Optional] Enable MySQL support (currently in development)</source>
-        <target state="new">[Optional] Enable MySQL support (currently in development)</target>
+        <target state="translated">[省略可能] MySQL サポートを有効にする (現在開発中)</target>
       </trans-unit>
       <trans-unit id="mysql.debugSourcePath.description">
         <source xml:lang="en">[Optional] Path to the source directory of the MySQL Tools Service, for debugging</source>
-        <target state="new">[Optional] Path to the source directory of the MySQL Tools Service, for debugging</target>
+        <target state="translated">[省略可能] MySQL ツール サービスのソース ディレクトリへのパス (デバッグ用)</target>
       </trans-unit>
       <trans-unit id="mysql.useDebugSource.description">
         <source xml:lang="en">[Optional] Enable running the MySQL extension via the path set in MySQL.debugSourcePath</source>
-        <target state="new">[Optional] Enable running the MySQL extension via the path set in MySQL.debugSourcePath</target>
+        <target state="translated">[省略可能] MySQL.debugSourcePath で設定されたパスを使用して MySQL 拡張機能を実行できるようにする</target>
       </trans-unit>
       <trans-unit id="mysql.enableStartupDebugging.description">
         <source xml:lang="en">[Optional] Whether to make the MySQL Tools Service wait for a debugger to attach when starting</source>
-        <target state="new">[Optional] Whether to make the MySQL Tools Service wait for a debugger to attach when starting</target>
+        <target state="translated">[省略可能] 起動時にデバッガーがアタッチするのを MySQL ツール サービスに待機させるかどうか</target>
       </trans-unit>
       <trans-unit id="mysql.debugServerPort.description">
         <source xml:lang="en">[Optional] The port to run the MySQL Tools Service remote debugger on (default 3000)</source>
-        <target state="new">[Optional] The port to run the MySQL Tools Service remote debugger on (default 3000)</target>
+        <target state="translated">[省略可能] MySQL ツール サービス リモート デバッガーを実行するポート (既定 3000)</target>
       </trans-unit>
       <trans-unit id="mysql.defaultDatabase.description">
         <source xml:lang="en">The default database to use when creating a new MySQL connection</source>
-        <target state="new">The default database to use when creating a new MySQL connection</target>
+        <target state="translated">新しい MySQL 接続の作成時に使用する既定のデータベース</target>
       </trans-unit>
       <trans-unit id="mysql.format.keywordCase.description">
         <source xml:lang="en">[Optional] Changes how keywords are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.</source>
-        <target state="new">[Optional] Changes how keywords are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.</target>
+        <target state="translated">[省略可能] キーワードの書式を変更します。使用できる値は 'upper'、'lower'、'capitalize' です。</target>
       </trans-unit>
       <trans-unit id="mysql.format.identifierCase.description">
         <source xml:lang="en">[Optional] Changes how identifiers are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.</source>
-        <target state="new">[Optional] Changes how identifiers are formatted. Allowed values are 'upper', 'lower' and 'capitalize'.</target>
+        <target state="translated">[省略可能] 識別子の書式を変更します。使用できる値は 'upper'、'lower'、'capitalize' です。</target>
       </trans-unit>
       <trans-unit id="mysql.format.stripComments.description">
         <source xml:lang="en">[Optional] If true comments are removed from the statements</source>
-        <target state="new">[Optional] If true comments are removed from the statements</target>
+        <target state="translated">[省略可能] true の場合、コメントがステートメントから削除されます</target>
       </trans-unit>
       <trans-unit id="mysql.format.reindent.description">
         <source xml:lang="en">[Optional] If true the indentations of the statements are changed.</source>
-        <target state="new">[Optional] If true the indentations of the statements are changed.</target>
+        <target state="translated">[省略可能] true の場合、ステートメントのインデントが変更されます。</target>
       </trans-unit>
       <trans-unit id="mysql.provider.displayName">
         <source xml:lang="en">MySQL</source>
@@ -116,7 +116,7 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.host.description">
         <source xml:lang="en">Name of the MySQL server</source>
-        <target state="new">Name of the MySQL server</target>
+        <target state="translated">MySQL サーバーの名前</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.authenticationType.displayName">
         <source xml:lang="en">Authentication type</source>
@@ -124,11 +124,11 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.authenticationType.description">
         <source xml:lang="en">How to authenticate with server</source>
-        <target state="new">How to authenticate with server</target>
+        <target state="translated">サーバーの認証方法</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.authenticationType.password">
         <source xml:lang="en">Password</source>
-        <target state="translated">Password</target>
+        <target state="translated">パスワード</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.authenticationType.azuremfaanduser">
         <source xml:lang="en">Azure Active Directory</source>
@@ -152,7 +152,7 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.password.displayName">
         <source xml:lang="en">Password</source>
-        <target state="translated">Password</target>
+        <target state="translated">パスワード</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.password.description">
         <source xml:lang="en">Indicates the password to be used when connecting to the data source</source>
@@ -164,7 +164,7 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.port.description">
         <source xml:lang="en">Port number for the server</source>
-        <target state="new">Port number for the server</target>
+        <target state="translated">サーバーのポート番号</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.connectTimeout.displayName">
         <source xml:lang="en">Connect timeout</source>
@@ -172,23 +172,23 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.connectTimeout.description">
         <source xml:lang="en">Seconds to wait before timing out when connecting</source>
-        <target state="new">Seconds to wait before timing out when connecting</target>
+        <target state="translated">接続時にタイムアウトするまでの待機時間 (秒)</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.clientFlag.displayName">
         <source xml:lang="en">Capability flags</source>
-        <target state="new">Capability flags</target>
+        <target state="translated">機能フラグ</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.clientFlag.description">
         <source xml:lang="en">Custom flags to send to the MySQL server</source>
-        <target state="new">Custom flags to send to the MySQL server</target>
+        <target state="translated">MySQL サーバーに送信するカスタム フラグ</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.sqlMode.displayName">
         <source xml:lang="en">SQL_MODE</source>
-        <target state="new">SQL_MODE</target>
+        <target state="translated">SQL_MODE</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.sqlMode.description">
         <source xml:lang="en">Default SQL_MODE to use</source>
-        <target state="new">Default SQL_MODE to use</target>
+        <target state="translated">使用する既定の SQL_MODE</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.displayName">
         <source xml:lang="en">SSL mode</source>
@@ -196,7 +196,7 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.description">
         <source xml:lang="en">The SSL mode to use when connecting</source>
-        <target state="new">The SSL mode to use when connecting</target>
+        <target state="translated">接続時に使用する SSL モード</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.mode.disable">
         <source xml:lang="en">Disable</source>
@@ -208,35 +208,35 @@
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.mode.verify_ca">
         <source xml:lang="en">Verify-CA</source>
-        <target state="new">Verify-CA</target>
+        <target state="translated">Verify-CA</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.mode.verify_identity">
         <source xml:lang="en">Verify-Identity</source>
-        <target state="new">Verify-Identity</target>
+        <target state="translated">Verify-Identity</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.key.displayName">
         <source xml:lang="en">SSL key</source>
-        <target state="new">SSL key</target>
+        <target state="translated">SSL キー</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.key.description">
         <source xml:lang="en">The path name of the client private key to use for the SSL certificate</source>
-        <target state="new">The path name of the client private key to use for the SSL certificate</target>
+        <target state="translated">SSL 証明書に使用するクライアント秘密キーのパス名</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.cert.displayName">
         <source xml:lang="en">SSL client certificate</source>
-        <target state="new">SSL client certificate</target>
+        <target state="translated">SSL クライアント証明書</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.cert.description">
         <source xml:lang="en">The path of the SSL client certificate file</source>
-        <target state="new">The path of the SSL client certificate file</target>
+        <target state="translated">SSL クライアント証明書ファイルのパス</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.ca.displayName">
         <source xml:lang="en">SSL CA certificate</source>
-        <target state="new">SSL CA certificate</target>
+        <target state="translated">SSL CA 証明書</target>
       </trans-unit>
       <trans-unit id="mysql.connectionOptions.ssl.ca.description">
         <source xml:lang="en">The path of the SSL CA certificate file</source>
-        <target state="new">The path of the SSL CA certificate file</target>
+        <target state="translated">SSL CA 証明書ファイルのパス</target>
       </trans-unit>
       <trans-unit id="mysql.resourceDeployment.displayName">
         <source xml:lang="en">Azure Database for MySQL</source>
@@ -244,7 +244,7 @@
       </trans-unit>
       <trans-unit id="mysql.resourceDeployment.description">
         <source xml:lang="en">Create an Azure Database for MySQL flexible server - a fully managed MySQL database as a service on Azure.</source>
-        <target state="new">Create an Azure Database for MySQL flexible server - a fully managed MySQL database as a service on Azure.</target>
+        <target state="translated">Azure Database for MySQL フレキシブル サーバー (Azure 上のサービスとしてのフル マネージド MySQL データベース) を作成します。</target>
       </trans-unit>
       <trans-unit id="mysql.resourceDeployment.okButtonText">
         <source xml:lang="en">Create in Azure portal</source>
@@ -252,15 +252,15 @@
       </trans-unit>
       <trans-unit id="mysql.resourceDeployment.agreements.template">
         <source xml:lang="en">I accept the {0} and {1}.</source>
-        <target state="new">I accept the {0} and {1}.</target>
+        <target state="translated">{0} と {1} に同意します。</target>
       </trans-unit>
       <trans-unit id="mysql.resourceDeployment.helpTexts.template">
         <source xml:lang="en">Azure Database for MySQL Flexible Server is a relational database service powered by the MySQL community edition. It's a fully managed database as a service offering that can handle mission-critical workloads with predictable performance and dynamic scalability. Additionally, it is designed for more granular control and flexibility over database management functions and configuration settings. {0}</source>
-        <target state="new">Azure Database for MySQL Flexible Server is a relational database service powered by the MySQL community edition. It's a fully managed database as a service offering that can handle mission-critical workloads with predictable performance and dynamic scalability. Additionally, it is designed for more granular control and flexibility over database management functions and configuration settings. {0}</target>
+        <target state="translated">Azure Database for MySQL フレキシブル サーバーは、MySQL コミュニティ エディションを利用したリレーショナル データベース サービスです。これは、予測可能なパフォーマンスと動的なスケーラビリティを使用してミッション クリティカルなワークロードを処理できるサービスとしてのフル マネージド データベース オファリングです。また、データベース管理機能と構成設定をより細かく制御し、柔軟性を高める設計になっています。{0}</target>
       </trans-unit>
       <trans-unit id="microsoft.azure.termsOfUse">
         <source xml:lang="en">Microsoft Azure terms of use</source>
-        <target state="new">Microsoft Azure terms of use</target>
+        <target state="translated">Microsoft Azure 利用規約</target>
       </trans-unit>
       <trans-unit id="microsoft.privacy.statement">
         <source xml:lang="en">Microsoft Privacy Statement</source>
@@ -284,15 +284,15 @@
       </trans-unit>
       <trans-unit id="serviceStartedStatusMsg">
         <source xml:lang="en">{0} service started</source>
-        <target state="new">{0} service started</target>
+        <target state="translated">{0} サービスが開始しました</target>
       </trans-unit>
       <trans-unit id="startingServiceStatusMsg">
         <source xml:lang="en">Starting {0} service</source>
-        <target state="new">Starting {0} service</target>
+        <target state="translated">{0} サービスを開始しています</target>
       </trans-unit>
       <trans-unit id="failedToStartServiceErrorMsg">
         <source xml:lang="en">Failed to start {0} tools service</source>
-        <target state="new">Failed to start {0} tools service</target>
+        <target state="translated">{0} ツール サービスを開始できませんでした</target>
       </trans-unit>
       <trans-unit id="installingServiceChannelMsg">
         <source xml:lang="en">Installing {0} to {1}</source>
