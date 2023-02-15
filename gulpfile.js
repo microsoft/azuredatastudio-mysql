@@ -14,8 +14,8 @@ const es = require('event-stream');
 require('./tasks/packagetasks')
 
 const languages = [
-    { id: 'zh-Hant', folderName: 'cht'},
-    { id: 'zh-Hans', folderName: 'chs'},
+    { id: 'zh-tw', folderName: 'cht', localeId: 'zh-Hant'},
+    { id: 'zh-cn', folderName: 'chs', localeId: 'zh-Hans'},
     { id: 'ja', folderName: 'jpn' },
     { id: 'ko', folderName: 'kor' },
     { id: 'de', folderName: 'deu' },
@@ -46,7 +46,8 @@ const exporti18n = function() {
 // Use the returned xlf files for all languages and fill i18n dir with respective lang files in respective lang dir.
 const importi18n = function() {
     return Promise.resolve(es.merge(languages.map(language => {
-        return gulp.src(`src/l10n/transXlf/l10n.${language.id}.xlf`, { allowEmpty: true })
+        let languageId = language.localeId || language.id;
+        return gulp.src(`src/l10n/transXlf/l10n.${languageId}.xlf`, { allowEmpty: true })
                 .pipe(nls.prepareJsonFiles())
                 .pipe(gulp.dest(path.join('./i18n', language.folderName)));
     })));
