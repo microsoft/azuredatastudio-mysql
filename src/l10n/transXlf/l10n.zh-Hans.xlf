@@ -336,4 +336,56 @@
       </trans-unit>
     </body>
   </file>
+  <file original="out/uiConstants" source-language="en" datatype="plaintext" target-language="zh-Hans">
+    <body>
+      <trans-unit id="newDatabaseTitle">
+        <source xml:lang="en">New Database</source>
+        <target state="new">New Database</target>
+      </trans-unit>
+      <trans-unit id="newDatabaseDialogName">
+        <source xml:lang="en">newDatabaseDialog</source>
+        <target state="new">newDatabaseDialog</target>
+      </trans-unit>
+      <trans-unit id="createButtonLabel">
+        <source xml:lang="en">Create</source>
+        <target state="new">Create</target>
+      </trans-unit>
+      <trans-unit id="cancelButtonLabel">
+        <source xml:lang="en">Cancel</source>
+        <target state="new">Cancel</target>
+      </trans-unit>
+      <trans-unit id="newDatabaseDetailsTitle">
+        <source xml:lang="en">New Database Details</source>
+        <target state="new">New Database Details</target>
+      </trans-unit>
+      <trans-unit id="databaseNameTextBoxLabel">
+        <source xml:lang="en">Database Name TextBox</source>
+        <target state="new">Database Name TextBox</target>
+      </trans-unit>
+      <trans-unit id="newDatabaseNameTextBoxPlaceHolder">
+        <source xml:lang="en">Enter New Database Name</source>
+        <target state="new">Enter New Database Name</target>
+      </trans-unit>
+      <trans-unit id="databaseNameLabel">
+        <source xml:lang="en">Name</source>
+        <target state="new">Name</target>
+      </trans-unit>
+      <trans-unit id="databaseCharsetDropDownLabel">
+        <source xml:lang="en">Database Charset Dropdown</source>
+        <target state="new">Database Charset Dropdown</target>
+      </trans-unit>
+      <trans-unit id="databaseCharsetLabel">
+        <source xml:lang="en">Charset</source>
+        <target state="new">Charset</target>
+      </trans-unit>
+      <trans-unit id="databaseCollationDropDownLabel">
+        <source xml:lang="en">Database Collation Dropdown</source>
+        <target state="new">Database Collation Dropdown</target>
+      </trans-unit>
+      <trans-unit id="databaseCollationLabel">
+        <source xml:lang="en">Collation</source>
+        <target state="new">Collation</target>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>
