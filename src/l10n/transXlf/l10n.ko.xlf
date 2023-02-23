@@ -340,51 +340,51 @@
     <body>
       <trans-unit id="newDatabaseTitle">
         <source xml:lang="en">New Database</source>
-        <target state="new">New Database</target>
+        <target state="translated">새 데이터베이스</target>
       </trans-unit>
       <trans-unit id="newDatabaseDialogName">
         <source xml:lang="en">newDatabaseDialog</source>
-        <target state="new">newDatabaseDialog</target>
+        <target state="translated">newDatabaseDialog</target>
       </trans-unit>
       <trans-unit id="createButtonLabel">
         <source xml:lang="en">Create</source>
-        <target state="new">Create</target>
+        <target state="translated">만들기</target>
       </trans-unit>
       <trans-unit id="cancelButtonLabel">
         <source xml:lang="en">Cancel</source>
-        <target state="new">Cancel</target>
+        <target state="translated">취소</target>
       </trans-unit>
       <trans-unit id="newDatabaseDetailsTitle">
         <source xml:lang="en">New Database Details</source>
-        <target state="new">New Database Details</target>
+        <target state="translated">새 데이터베이스 세부 정보</target>
       </trans-unit>
       <trans-unit id="databaseNameTextBoxLabel">
         <source xml:lang="en">Database Name TextBox</source>
-        <target state="new">Database Name TextBox</target>
+        <target state="translated">데이터베이스 이름 텍스트 상자</target>
       </trans-unit>
       <trans-unit id="newDatabaseNameTextBoxPlaceHolder">
         <source xml:lang="en">Enter New Database Name</source>
-        <target state="new">Enter New Database Name</target>
+        <target state="translated">새 데이터베이스 이름 입력</target>
       </trans-unit>
       <trans-unit id="databaseNameLabel">
         <source xml:lang="en">Name</source>
-        <target state="new">Name</target>
+        <target state="translated">이름</target>
       </trans-unit>
       <trans-unit id="databaseCharsetDropDownLabel">
         <source xml:lang="en">Database Charset Dropdown</source>
-        <target state="new">Database Charset Dropdown</target>
+        <target state="translated">데이터베이스 문자 집합 드롭다운</target>
       </trans-unit>
       <trans-unit id="databaseCharsetLabel">
         <source xml:lang="en">Charset</source>
-        <target state="new">Charset</target>
+        <target state="translated">문자 집합</target>
       </trans-unit>
       <trans-unit id="databaseCollationDropDownLabel">
         <source xml:lang="en">Database Collation Dropdown</source>
-        <target state="new">Database Collation Dropdown</target>
+        <target state="translated">데이터베이스 데이터 정렬 드롭다운</target>
       </trans-unit>
       <trans-unit id="databaseCollationLabel">
         <source xml:lang="en">Collation</source>
-        <target state="new">Collation</target>
+        <target state="translated">데이터 정렬</target>
       </trans-unit>
     </body>
   </file>

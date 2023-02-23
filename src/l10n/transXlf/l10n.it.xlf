@@ -340,51 +340,51 @@
     <body>
       <trans-unit id="newDatabaseTitle">
         <source xml:lang="en">New Database</source>
-        <target state="new">New Database</target>
+        <target state="translated">Nuovo database</target>
       </trans-unit>
       <trans-unit id="newDatabaseDialogName">
         <source xml:lang="en">newDatabaseDialog</source>
-        <target state="new">newDatabaseDialog</target>
+        <target state="translated">newDatabaseDialog</target>
       </trans-unit>
       <trans-unit id="createButtonLabel">
         <source xml:lang="en">Create</source>
-        <target state="new">Create</target>
+        <target state="translated">Crea</target>
       </trans-unit>
       <trans-unit id="cancelButtonLabel">
         <source xml:lang="en">Cancel</source>
-        <target state="new">Cancel</target>
+        <target state="translated">Annulla</target>
       </trans-unit>
       <trans-unit id="newDatabaseDetailsTitle">
         <source xml:lang="en">New Database Details</source>
-        <target state="new">New Database Details</target>
+        <target state="translated">Dettagli nuovo database</target>
       </trans-unit>
       <trans-unit id="databaseNameTextBoxLabel">
         <source xml:lang="en">Database Name TextBox</source>
-        <target state="new">Database Name TextBox</target>
+        <target state="translated">Casella di testo Nome database</target>
       </trans-unit>
       <trans-unit id="newDatabaseNameTextBoxPlaceHolder">
         <source xml:lang="en">Enter New Database Name</source>
-        <target state="new">Enter New Database Name</target>
+        <target state="translated">Immettere il nome del nuovo database</target>
       </trans-unit>
       <trans-unit id="databaseNameLabel">
         <source xml:lang="en">Name</source>
-        <target state="new">Name</target>
+        <target state="translated">Nome</target>
       </trans-unit>
       <trans-unit id="databaseCharsetDropDownLabel">
         <source xml:lang="en">Database Charset Dropdown</source>
-        <target state="new">Database Charset Dropdown</target>
+        <target state="translated">Elenco a discesa set di caratteri del database</target>
       </trans-unit>
       <trans-unit id="databaseCharsetLabel">
         <source xml:lang="en">Charset</source>
-        <target state="new">Charset</target>
+        <target state="translated">Set di caratteri</target>
       </trans-unit>
       <trans-unit id="databaseCollationDropDownLabel">
         <source xml:lang="en">Database Collation Dropdown</source>
-        <target state="new">Database Collation Dropdown</target>
+        <target state="translated">Elenco a discesa Regole di confronto del database</target>
       </trans-unit>
       <trans-unit id="databaseCollationLabel">
         <source xml:lang="en">Collation</source>
-        <target state="new">Collation</target>
+        <target state="translated">Regole di confronto</target>
       </trans-unit>
     </body>
   </file>
