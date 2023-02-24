@@ -340,7 +340,7 @@
     <body>
       <trans-unit id="newDatabaseTitle">
         <source xml:lang="en">New Database</source>
-        <target state="new">New Database</target>
+        <target state="translated">新建数据库</target>
       </trans-unit>
       <trans-unit id="newDatabaseDialogName">
         <source xml:lang="en">newDatabaseDialog</source>
@@ -348,11 +348,11 @@
       </trans-unit>
       <trans-unit id="createButtonLabel">
         <source xml:lang="en">Create</source>
-        <target state="new">Create</target>
+        <target state="translated">创建</target>
       </trans-unit>
       <trans-unit id="cancelButtonLabel">
         <source xml:lang="en">Cancel</source>
-        <target state="new">Cancel</target>
+        <target state="translated">取消</target>
       </trans-unit>
       <trans-unit id="newDatabaseDetailsTitle">
         <source xml:lang="en">New Database Details</source>
@@ -368,7 +368,7 @@
       </trans-unit>
       <trans-unit id="databaseNameLabel">
         <source xml:lang="en">Name</source>
-        <target state="new">Name</target>
+        <target state="translated">名称</target>
       </trans-unit>
       <trans-unit id="databaseCharsetDropDownLabel">
         <source xml:lang="en">Database Charset Dropdown</source>
@@ -384,7 +384,7 @@
       </trans-unit>
       <trans-unit id="databaseCollationLabel">
         <source xml:lang="en">Collation</source>
-        <target state="new">Collation</target>
+        <target state="translated">排序规则</target>
       </trans-unit>
     </body>
   </file>
