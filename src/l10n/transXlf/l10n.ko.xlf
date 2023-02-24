@@ -386,6 +386,10 @@
         <source xml:lang="en">Collation</source>
         <target state="translated">데이터 정렬</target>
       </trans-unit>
+      <trans-unit id="azureMysqlResourceProviderName">
+        <source xml:lang="en">Azure MySQL Resource Provider</source>
+        <target state="new">Azure MySQL Resource Provider</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -344,7 +344,7 @@
       </trans-unit>
       <trans-unit id="newDatabaseDialogName">
         <source xml:lang="en">newDatabaseDialog</source>
-        <target state="new">newDatabaseDialog</target>
+        <target state="translated">newDatabaseDialog</target>
       </trans-unit>
       <trans-unit id="createButtonLabel">
         <source xml:lang="en">Create</source>
@@ -356,15 +356,15 @@
       </trans-unit>
       <trans-unit id="newDatabaseDetailsTitle">
         <source xml:lang="en">New Database Details</source>
-        <target state="new">New Database Details</target>
+        <target state="translated">Neue Datenbankdetails</target>
       </trans-unit>
       <trans-unit id="databaseNameTextBoxLabel">
         <source xml:lang="en">Database Name TextBox</source>
-        <target state="new">Database Name TextBox</target>
+        <target state="translated">Database Name TextBox</target>
       </trans-unit>
       <trans-unit id="newDatabaseNameTextBoxPlaceHolder">
         <source xml:lang="en">Enter New Database Name</source>
-        <target state="new">Enter New Database Name</target>
+        <target state="translated">Neuen Datenbanknamen eingeben</target>
       </trans-unit>
       <trans-unit id="databaseNameLabel">
         <source xml:lang="en">Name</source>
@@ -372,19 +372,23 @@
       </trans-unit>
       <trans-unit id="databaseCharsetDropDownLabel">
         <source xml:lang="en">Database Charset Dropdown</source>
-        <target state="new">Database Charset Dropdown</target>
+        <target state="translated">Dropdownliste "Datenbank-Zeichensatz"</target>
       </trans-unit>
       <trans-unit id="databaseCharsetLabel">
         <source xml:lang="en">Charset</source>
-        <target state="new">Charset</target>
+        <target state="translated">Zeichensatz</target>
       </trans-unit>
       <trans-unit id="databaseCollationDropDownLabel">
         <source xml:lang="en">Database Collation Dropdown</source>
-        <target state="new">Database Collation Dropdown</target>
+        <target state="translated">Dropdownliste "Datenbanksortierung"</target>
       </trans-unit>
       <trans-unit id="databaseCollationLabel">
         <source xml:lang="en">Collation</source>
         <target state="translated">Sortierung</target>
+      </trans-unit>
+      <trans-unit id="azureMysqlResourceProviderName">
+        <source xml:lang="en">Azure MySQL Resource Provider</source>
+        <target state="new">Azure MySQL Resource Provider</target>
       </trans-unit>
     </body>
   </file>
