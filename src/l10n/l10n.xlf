@@ -286,5 +286,8 @@
     <trans-unit id="databaseCollationLabel">
       <source xml:lang="en">Collation</source>
     </trans-unit>
+    <trans-unit id="azureMysqlResourceProviderName">
+      <source xml:lang="en">Azure MySQL Resource Provider</source>
+    </trans-unit>
   </body></file>
 </xliff>

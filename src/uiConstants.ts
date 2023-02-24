@@ -18,3 +18,4 @@ export const DatabaseCharsetDropDownLabel = localize('databaseCharsetDropDownLab
 export const DatabaseCharsetLabel = localize('databaseCharsetLabel', 'Charset')
 export const DatabaseCollationDropDownLabel = localize('databaseCollationDropDownLabel', 'Database Collation Dropdown')
 export const DatabaseCollationLabel = localize('databaseCollationLabel', 'Collation')
+export const AzureMysqlResourceProviderName = localize('azureMysqlResourceProviderName', 'Azure MySQL Resource Provider')

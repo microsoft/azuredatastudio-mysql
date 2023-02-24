@@ -4,6 +4,7 @@ import { ClientCapabilities, Disposable, RPCMessageType, ServerCapabilities } fr
 import { CreateFirewallRuleParams, CreateFirewallRuleRequest, HandleFirewallRuleParams, HandleFirewallRuleRequest } from "./contracts";
 import * as UUID from 'vscode-languageclient/lib/utils/uuid';
 import * as Utils from '../utils';
+import { AzureMysqlResourceProviderName } from '../uiConstants';
 
 
 
@@ -42,7 +43,7 @@ export class FireWallFeature extends SqlOpsFeature<any> {
 		};
 
 		return azdata.resources.registerResourceProvider({
-			displayName: 'Azure MySQL Resource Provider', // TODO Localize
+			displayName: AzureMysqlResourceProviderName,
 			id: 'Microsoft.Azure.MySQL.ResourceProvider',
 			settings: {
 
