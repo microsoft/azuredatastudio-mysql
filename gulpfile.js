@@ -128,9 +128,7 @@ gulp.task('ext:compile-tests', (done) => {
 
 gulp.task('ext:localize', gulp.series(cleanTask, 'generate-metadata', exporti18n));
 
-gulp.task('ext:import', importi18n);
-
-gulp.task('ext:compile', gulp.series(cleanTask, 'ext:compile-src', addI18nTask, 'ext:compile-tests'));
+gulp.task('ext:compile', gulp.series(importi18n, cleanTask, 'ext:compile-src', addI18nTask, 'ext:compile-tests'));
 
 gulp.task('ext:copy-tests', () => {
     return gulp.src(config.paths.project.root + '/test/resources/**/*')
