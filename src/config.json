@@ -8,7 +8,7 @@
 		"Linux": "linux-x64.tar.gz",
 		"Ubuntu_22": "ubuntu22-x64.tar.gz"
 	},
-	"installDirectory": "ossdbtoolsservice/{#platform#}/{#version#}",
+	"installDirectory": "bin/{#platform#}/{#version#}",
 	"executableFiles": [
 		"mysqltoolsservice/ossdbtoolsservice_main",
 		"mysqltoolsservice/ossdbtoolsservice_main.exe"
