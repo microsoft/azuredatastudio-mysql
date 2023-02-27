@@ -50,7 +50,7 @@ function doPackageSync(packageName) {
 function cleanServiceInstallFolder() {
     return new Promise((resolve, reject) => {
        const config = getServiceInstallConfig();
-       let root = path.join(__dirname, '../out/' + 'ossdbtoolsservice');
+       let root = path.join(__dirname, '../out/' + 'bin');
         console.log('Deleting Service Install folder: ' + root);
         del(root + '/*').then(() => {
             resolve();
