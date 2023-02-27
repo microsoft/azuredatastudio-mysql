@@ -24,13 +24,13 @@ steps:
   inputs:
     script: |
       sudo npm install -g yarn
+      yarn install
+      yarn run compile
       sudo npm install -g vsce
 - task: CmdLine@2
   displayName: 'Building vsix packages'
   inputs:
     script: |
-      yarn install
-      yarn run compile
       yarn run package
       yarn run package-offline
 - task: CopyFiles@2
