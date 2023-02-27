@@ -13,8 +13,8 @@ resources:
     ref: refs/heads/release-pipelines-1
 
 jobs:
-- job: pre-localization
-  displayName: pre-localization
+- job: pre localization
+  displayName: pre localization
   pool:
     vmImage: ubuntu-latest
   steps:
