@@ -17,22 +17,22 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '14.x'
+    versionSpec: '16.x'
   displayName: 'Install Node.js'
-- script: sudo npm install -g yarn
-  displayName: 'install yarn'
-- script: sudo chown -R $USER:$GROUP ~/.config
-  displayName: 'fix filesystem permissions'
-- script: yarn
-  displayName: 'yarn'
-- script: yarn run compile
-  displayName: 'yarn compile'
-- script: sudo npm install -g vsce
-  displayName: 'install vsce'
-- script: yarn run package
-  displayName: 'yarn run package'
-- script: yarn run package-offline
-  displayName: 'yarn run package-offline'
+- task: CmdLine@2
+  displayName: 'Installing dependencies'
+  inputs:
+    script: |
+      sudo npm install -g yarn
+      sudo npm install -g vsce
+- task: CmdLine@2
+  displayName: 'Building vsix packages'
+  inputs:
+    script: |
+      yarn install
+      yarn run compile
+      yarn run package
+      yarn run package-offline
 - task: CopyFiles@2
   inputs:
     sourceFolder: '$(Build.SourcesDirectory)'
