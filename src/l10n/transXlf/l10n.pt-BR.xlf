@@ -386,6 +386,10 @@
         <source xml:lang="en">Collation</source>
         <target state="translated">Ordenação</target>
       </trans-unit>
+      <trans-unit id="azureMysqlResourceProviderName">
+        <source xml:lang="en">Azure MySQL Resource Provider</source>
+        <target state="translated">Provedor de recursos MySQL do Azure</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
