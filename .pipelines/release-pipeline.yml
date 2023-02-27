@@ -12,7 +12,7 @@ resources:
     ref: refs/heads/nitishsharma/release-pipelines-1
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 steps:
 - task: NodeTool@0
