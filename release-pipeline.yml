@@ -15,20 +15,32 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: CmdLine@2
+- task: NodeTool@0
   inputs:
-    script: |
-      yarn install
-      yarn run compile
-      yarn run package
-      yarn run package-offline
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+- script: sudo npm install -g yarn
+  displayName: 'install yarn'
+- script: sudo chown -R $USER:$GROUP ~/.config
+  displayName: 'fix filesystem permissions'
+- script: yarn
+  displayName: 'yarn'
+- script: yarn run compile
+  displayName: 'yarn compile'
+- script: sudo npm install -g vsce
+  displayName: 'install vsce'
+- script: yarn run package
+  displayName: 'yarn run package'
+- script: yarn run package-offline
+  displayName: 'yarn run package-offline'
 - task: CopyFiles@2
   inputs:
     sourceFolder: '$(Build.SourcesDirectory)'
-    contents: |
-      azuredatastudio-mysql*
+    contents: '*.vsix'
     targetFolder: '$(Build.ArtifactStagingDirectory)'
+  displayName: 'copy files'
 - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: '$(Build.ArtifactStagingDirectory)'
     artifactName: build
+  displayName: 'publish artifacts'
