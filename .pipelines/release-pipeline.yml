@@ -19,7 +19,6 @@ steps:
   inputs:
     script: |
       yarn install
-      yarn run compile
       yarn run package
       yarn run package-offline
 - task: CopyFiles@2
