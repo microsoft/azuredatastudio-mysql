@@ -1,0 +1,34 @@
+trigger:
+  branches:
+    include:
+    - nitishsharma/release-pipelines-1
+
+pr: none
+
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: refs/heads/nitishsharma/release-pipelines-1
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: CmdLine@2
+  inputs:
+    script: |
+      yarn install
+      yarn run compile
+      yarn run package
+      yarn run package-offline
+- task: CopyFiles@2
+  inputs:
+    sourceFolder: '$(Build.SourcesDirectory)'
+    contents: |
+      azuredatastudio-mysql*
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: build
