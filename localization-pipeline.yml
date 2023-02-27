@@ -2,11 +2,7 @@ trigger:
   batch: true
   branches:
     include:
-    - main
-  paths:
-    include:
-    - src/l10n/l10n.xlf
-    - src/loc
+    - nitishsharma/release-pipelines-1
 
 pr: none
 
@@ -14,7 +10,7 @@ resources:
   repositories:
   - repository: self
     type: git
-    ref: refs/heads/main
+    ref: refs/heads/release-pipelines-1
 
 jobs:
 - job: localization
@@ -25,6 +21,10 @@ jobs:
   - checkout: self
     clean: true
     fetchTags: true
+  - task: CmdLine@2
+    displayName: 'Generating xlf files'
+    inputs:
+      script: yarn run localize
   - task: cesve.one-loc-build.one-loc-build.OneLocBuild@2
     displayName: 'Localization Build: src/LocProject.json'
     inputs:
