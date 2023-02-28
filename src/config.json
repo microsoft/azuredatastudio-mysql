@@ -1,6 +1,6 @@
 {
 	"downloadUrl": "https://github.com/microsoft/mysqltoolsservice/releases/download/{#version#}/mysqltoolsservice-{#fileName#}",
-	"version": "v0.1.0",
+	"version": "v0.1.1",
 	"downloadFileNames": {
 		"Windows_64": "win-x64.zip",
 		"OSX": "osx.tar.gz",
