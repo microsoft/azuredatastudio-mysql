@@ -28,6 +28,28 @@ steps:
     FolderPath: '$(Build.SourcesDirectory)'
     Pattern: '*.vsix'
     signConfigType: 'inlineSignParams'
+    inlineOperation: |
+      [
+        {
+          "keyCode": "CP-233016",
+          "operationSetCode": "OpcSign",
+          "parameters": [
+            {
+              "parameterName": "FileDigest",
+              "parameterValue": "/fd \"SHA256\""
+            }
+          ],
+          "toolName": "sign",
+          "toolVersion": "1.0"
+        },
+        {
+          "keyCode": "CP-233016",
+          "operationSetCode": "OpcVerify",
+          "parameters": [],
+          "toolName": "sign",
+          "toolVersion": "1.0"
+        }
+      ]
     SessionTimeout: '60'
     MaxConcurrency: '50'
     MaxRetryAttempts: '5'
