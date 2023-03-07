@@ -22,6 +22,15 @@ steps:
       yarn run compile
       yarn run package
       yarn run package-offline
+- task: EsrpCodeSigning@2
+  inputs:
+    ConnectedServiceName: 'OrcaSQL ESRP Code Sign'
+    FolderPath: '$(Build.SourcesDirectory)'
+    Pattern: '*.vsix'
+    signConfigType: 'inlineSignParams'
+    SessionTimeout: '60'
+    MaxConcurrency: '50'
+    MaxRetryAttempts: '5'
 - task: CopyFiles@2
   inputs:
     sourceFolder: '$(Build.SourcesDirectory)'
