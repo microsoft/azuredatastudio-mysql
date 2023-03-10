@@ -32,7 +32,7 @@ steps:
     inlineOperation: |
       [
         {
-            "KeyCode" : "CP-231522",
+            "KeyCode" : "CP-230012",
             "OperationCode" : "SigntoolSign",
             "Parameters" : {
                 "OpusName" : "Microsoft",
