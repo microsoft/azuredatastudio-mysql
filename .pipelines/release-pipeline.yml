@@ -23,7 +23,7 @@ steps:
 - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@2
   displayName: 'Code Signing'
   inputs:
-    ConnectedServiceName: 'Database System ESRP Connectir'
+    ConnectedServiceName: 'Database System ESRP Connector'
     FolderPath: '$(Build.SourcesDirectory)/out'
     Pattern: |
       **
