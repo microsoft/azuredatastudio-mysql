@@ -22,7 +22,7 @@ steps:
       yarn run compile
       yarn run package
       yarn run package-offline
-- task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@2
+- task: EsrpCodeSigning@2
   displayName: 'Code Signing'
   inputs:
     ConnectedServiceName: 'Database System ESRP Connector'
