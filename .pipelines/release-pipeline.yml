@@ -22,6 +22,7 @@ steps:
       yarn run compile
       yarn run package
       yarn run package-offline
+      npm cache clean --force
 - task: EsrpCodeSigning@2
   displayName: 'Code Signing'
   inputs:
