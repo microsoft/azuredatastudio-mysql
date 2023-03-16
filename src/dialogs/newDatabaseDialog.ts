@@ -21,8 +21,8 @@ export class NewDatabaseDialog {
 	private formBuilder: azdata.FormBuilder | undefined;
 	private toDispose: vscode.Disposable[] = [];
 	private initDialogComplete: Deferred = new Deferred();
-	private DEFAULT_CHARSET_VALUE = "utf8";
-	private DEFAULT_COLLATION_VALUE = "utf8_general_ci"
+	private DEFAULT_CHARSET_VALUE = "utf8mb4";
+	private DEFAULT_COLLATION_VALUE = "utf8mb4_general_ci"
 	private charsetsCache: string[] = [];
 	private defaultCollationCache: Map<string, string> = new Map<string, string>();
 	private collationsCache: Map<string, string[]> =  new Map<string, string[]>();
@@ -43,7 +43,7 @@ export class NewDatabaseDialog {
 		this.toDispose.push(this.dialog.okButton.onClick(async () => await this.handleCreateButtonClick()));
 
 		this.dialog.cancelButton.label = CancelButtonLabel;
-
+		await this.loadConnectionOwnerUri();
 		azdata.window.openDialog(this.dialog);
 		await this.initDialogComplete.promise;
 		await this.loadDialogData();
@@ -51,7 +51,6 @@ export class NewDatabaseDialog {
 	}
 
 	private async loadDialogData(): Promise<void> {
-		await this.loadConnectionOwnerUri();
 		await this.loadAndUpdateCharsetValues();
 		await this.tryUpdateCollationDropDown(this.DEFAULT_CHARSET_VALUE);
 	}
