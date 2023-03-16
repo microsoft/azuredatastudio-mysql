@@ -21,8 +21,8 @@ export class NewDatabaseDialog {
 	private formBuilder: azdata.FormBuilder | undefined;
 	private toDispose: vscode.Disposable[] = [];
 	private initDialogComplete: Deferred = new Deferred();
-	private DEFAULT_CHARSET_VALUE = "utf8mb3";
-	private DEFAULT_COLLATION_VALUE = "utf8mb3_general_ci"
+	private DEFAULT_CHARSET_VALUE = "utf8mb4";
+	private DEFAULT_COLLATION_VALUE = "utf8mb4_general_ci"
 	private charsetsCache: string[] = [];
 	private defaultCollationCache: Map<string, string> = new Map<string, string>();
 	private collationsCache: Map<string, string[]> =  new Map<string, string[]>();
