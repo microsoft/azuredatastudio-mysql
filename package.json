@@ -1,448 +1,454 @@
 {
-  "name": "azuredatastudio-mysql",
-  "displayName": "MySQL",
-  "version": "0.2.8",
-  "publisher": "Microsoft",
-  "description": "%mysql.description%",
-  "aiKey": "29a207bb14f84905966a8f22524cb730-25407f35-11b6-4d4e-8114-ab9e843cb52f-7380",
-  "preview": true,
-  "icon": "images/extension-icon.png",
-  "repository": {
-    "url": "https://github.com/microsoft/azuredatastudio-mysql"
-  },
-  "license": "MIT",
-  "activationEvents": [
-    "*"
-  ],
-  "engines": {
-    "vscode": "*",
-    "azdata": ">=1.40.0"
-  },
-  "main": "./out/main",
-  "extensionDependencies": [
-    "vscode.sql"
-  ],
-  "scripts": {
-    "localize": "gulp ext:localize",
-    "compile": "gulp build",
-    "package": "gulp package:online",
-    "package-offline": "gulp package:offline"
-  },
-  "contributes": {
-    "grammars": [
-      {
-        "injectTo": [ "source.sql" ],
-        "scopeName": "source.mysql-injection.sql",
-        "path": "./syntaxes/mysql-injection.json"
-      }
-    ],
-    "commands": [
-      {
-        "command": "mySql.createDatabase",
-        "title": "%mysql.createDatabase%",
-        "category": "%mysql.createDatabase%",
-        "icon": "images/new-database.svg"
-      }
-    ],
-    "menus": {
-      "dashboard/toolbar": [
-        {
-          "command": "mySql.createDatabase",
-          "when": "connectionProvider == 'MySQL' && dashboardContext == 'server'"
-        }
-      ],
-      "objectExplorer/item/context": [
-        {
-          "command": "mySql.createDatabase",
-          "when": "connectionProvider == MySQL && nodeType =~ /^(Database|Server)$/",
-          "group": "mysqlNewDatabase"
-        }
-      ]
-    },
-    "languages": [
-      {
-        "id": "sql",
-        "extensions": [
-          ".sql"
-        ],
-        "aliases": [
-          "SQL"
-        ]
-      }
-    ],
-    "snippets": [
-      {
-        "language": "sql",
-        "path": "./snippets/mysql.json"
-      }
-    ],
-    "outputChannels": [
-      "MySQL"
-    ],
-    "configuration":
-    {
-      "type": "object",
-      "title": "%mysql.configuration.title%",
-      "properties": {
-        "MySQL.logDebugInfo": {
-          "type": "boolean",
-          "default": false,
-          "description": "%mysql.logDebugInfo.description%"
-        },
-        "MySQL.enabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "%mysql.enabled.description%"
-        },
-        "MySQL.debugSourcePath": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "default": null,
-          "description": "%mysql.debugSourcePath.description%"
-        },
-        "MySQL.useDebugSource": {
-          "type": "boolean",
-          "default": false,
-          "description": "%mysql.useDebugSource.description%"
-        },
-        "MySQL.enableStartupDebugging": {
-          "type": "boolean",
-          "default": false,
-          "description": "%mysql.enableStartupDebugging.description%"
-        },
-        "MySQL.debugServerPort": {
-          "type": "number",
-          "default": 3000,
-          "description": "%mysql.debugServerPort.description%"
-        },
-        "MySQL.defaultDatabase": {
-          "type": "string",
-          "default": "",
-          "description": "%mysql.defaultDatabase.description%"
-        },
-        "MySQL.format.keywordCase": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "%mysql.format.keywordCase.description%",
-          "default": null,
-          "enum": [
-            null,
-            "upper",
-            "lower",
-            "capitalize"
-          ]
-        },
-        "MySQL.format.identifierCase": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "%mysql.format.identifierCase.description%",
-          "default": null,
-          "enum": [
-            null,
-            "upper",
-            "lower",
-            "capitalize"
-          ]
-        },
-        "MySQL.format.stripComments": {
-          "type": "boolean",
-          "default": false,
-          "description": "%mysql.format.stripComments.description%"
-        },
-        "MySQL.format.reindent": {
-          "type": "boolean",
-          "default": true,
-          "description": "%mysql.format.reindent.description%"
-        }
-      }
-    },
-    "connectionProvider": {
-        "protocolVersion": "1.0",
-        "providerName": "MySQL",
-        "providerId": "MySQL",
-        "displayName": "%mysql.provider.displayName%",
-        "azureResource": "OssRdbms",
-        "iconPath": [
-          {
-            "id": "mysql",
-            "path": {
-              "light": "./images/light/mysql.svg",
-              "dark": "./images/dark/mysql_inverse.svg"
-            },
-            "default": true
-          }
-        ],
-        "connectionOptions": [
-          {
-            "specialValueType": "connectionName",
-            "isIdentity": true,
-            "name": "connectionName",
-            "displayName": "%mysql.connectionOptions.connectionName.displayName%",
-            "description": "%mysql.connectionOptions.connectionName.description%",
-            "groupName": "%mysql.connectionOptions.groupName.source%",
-            "valueType": "string",
-            "defaultValue": null,
-            "objectType": null,
-            "categoryValues": null,
-            "isRequired": false,
-            "isArray": false
-          },
-          {
-            "name": "host",
-            "displayName": "%mysql.connectionOptions.host.displayName%",
-            "description": "%mysql.connectionOptions.host.description%",
-            "valueType": "string",
-            "specialValueType": "serverName",
-            "isIdentity": true,
-            "isRequired": true,
-            "groupName": "%mysql.connectionOptions.groupName.source%",
-            "defaultValue": null,
-            "objectType": null,
-            "categoryValues": null,
-            "isArray": false
-          },
-          {
-            "specialValueType": "authType",
-            "isIdentity": true,
-            "name": "authenticationType",
-            "displayName": "%mysql.connectionOptions.authenticationType.displayName%",
-            "description": "%mysql.connectionOptions.authenticationType.description%",
-            "groupName": "%mysql.connectionOptions.groupName.security%",
-            "valueType": "category",
-            "defaultValue": "SqlLogin",
-            "objectType": null,
-            "categoryValues": [
-              {
-                "displayName": "%mysql.connectionOptions.authenticationType.password%",
-                "name": "SqlLogin"
-              },
-              {
-                "displayName": "%mysql.connectionOptions.authenticationType.azuremfaanduser%",
-                "name": "AzureMFAAndUser"
-              }
-            ],
-            "isRequired": true,
-            "isArray": false
-          },
-          {
-            "name": "dbname",
-            "displayName": "%mysql.connectionOptions.dbname.displayName%",
-            "description": "%mysql.connectionOptions.dbname.description%",
-            "valueType": "string",
-            "specialValueType": "databaseName",
-            "isIdentity": true,
-            "isRequired": false,
-            "groupName": "%mysql.connectionOptions.groupName.source%",
-            "defaultValue": null
-          },
-          {
-            "name": "user",
-            "displayName": "%mysql.connectionOptions.user.displayName%",
-            "description": "%mysql.connectionOptions.user.description%",
-            "valueType": "string",
-            "specialValueType": "userName",
-            "isIdentity": true,
-            "isRequired": true,
-            "groupName": "%mysql.connectionOptions.groupName.security%"
-          },
-          {
-            "name": "password",
-            "displayName": "%mysql.connectionOptions.password.displayName%",
-            "description": "%mysql.connectionOptions.password.description%",
-            "valueType": "password",
-            "specialValueType": "password",
-            "isIdentity": true,
-            "isRequired": true,
-            "groupName": "%mysql.connectionOptions.groupName.security%"
-          },
-          {
-            "name": "port",
-            "displayName": "%mysql.connectionOptions.port.displayName%",
-            "description": "%mysql.connectionOptions.port.description%",
-            "valueType": "number",
-            "isIdentity": true,
-            "groupName": "%mysql.connectionOptions.groupName.server%",
-            "defaultValue": 3306
-          },
-          {
-            "name": "connectTimeout",
-            "displayName": "%mysql.connectionOptions.connectTimeout.displayName%",
-            "description": "%mysql.connectionOptions.connectTimeout.description%",
-            "valueType": "number",
-            "groupName": "%mysql.connectionOptions.groupName.client%",
-            "defaultValue": 10
-          },
-          {
-            "name": "clientFlag",
-            "displayName": "%mysql.connectionOptions.clientFlag.displayName%",
-            "description": "%mysql.connectionOptions.clientFlag.description%",
-            "valueType": "string",
-            "groupName": "%mysql.connectionOptions.groupName.server%",
-            "defaultValue": null
-          },
-          {
-            "name": "sqlMode",
-            "displayName": "%mysql.connectionOptions.sqlMode.displayName%",
-            "description": "%mysql.connectionOptions.sqlMode.description%",
-            "valueType": "string",
-            "groupName": "%mysql.connectionOptions.groupName.server%",
-            "defaultValue": null
-          },
-          {
-            "name": "ssl",
-            "displayName": "%mysql.connectionOptions.ssl.displayName%",
-            "description": "%mysql.connectionOptions.ssl.description%",
-            "valueType": "category",
-            "groupName": "%mysql.connectionOptions.groupName.ssl%",
-            "categoryValues": [
-              {
-                "displayName": "%mysql.connectionOptions.ssl.mode.disable%",
-                "name": "disable"
-              },
-              {
-                "displayName": "%mysql.connectionOptions.ssl.mode.require%",
-                "name": "require"
-              },
-              {
-                "displayName": "%mysql.connectionOptions.ssl.mode.verify_ca%",
-                "name": "verify_ca"
-              },
-              {
-                "displayName": "%mysql.connectionOptions.ssl.mode.verify_identity%",
-                "name": "verify_identity"
-              }
-            ],
-            "defaultValue": "require"
-          },
-          {
-            "name": "ssl.key",
-            "displayName": "%mysql.connectionOptions.ssl.key.displayName%",
-            "description": "%mysql.connectionOptions.ssl.key.description%",
-            "valueType": "string",
-            "groupName": "%mysql.connectionOptions.groupName.ssl%",
-            "defaultValue": null
-          },
-          {
-            "name": "ssl.cert",
-            "displayName": "%mysql.connectionOptions.ssl.cert.displayName%",
-            "description": "%mysql.connectionOptions.ssl.cert.description%",
-            "valueType": "string",
-            "groupName": "%mysql.connectionOptions.groupName.ssl%",
-            "defaultValue": null
-          },
-          {
-            "name": "ssl.ca",
-            "displayName": "%mysql.connectionOptions.ssl.ca.displayName%",
-            "description": "%mysql.connectionOptions.ssl.ca.description%",
-            "valueType": "string",
-            "groupName": "%mysql.connectionOptions.groupName.ssl%",
-            "defaultValue": null
-          }
-        ]
-      },
-      "resourceDeploymentTypes": [
-        {
-          "name": "mysql-azure-database",
-          "displayName": "%mysql.resourceDeployment.displayName%",
-          "description": "%mysql.resourceDeployment.description%",
-          "platforms": "*",
-          "icon": "./images/extension-icon.png",
-          "tags": [
-            "Azure Database for MySQL",
-            "Cloud"
-          ],
-          "okButtonText": [
-            {
-              "value": "%mysql.resourceDeployment.okButtonText%"
-            }
-          ],
-          "providers": [
-            {
-              "name": "mysql-azure-database-server",
-              "webPageUrl": "https://portal.azure.com/#create/Microsoft.MySQLFlexibleServer",
-              "requiredTools" : [
-              ]
-            }
-          ],
-          "agreements": [
-            {
-              "template": "%mysql.resourceDeployment.agreements.template%",
-              "links": [
-                {
-                  "text": "%microsoft.azure.termsOfUse%",
-                  "url": "https://azure.microsoft.com/support/legal/"
-                },
-                {
-                  "text": "%microsoft.privacy.statement%",
-                  "url": "https://privacy.microsoft.com/privacystatement"
-                }
-              ],
-              "when": "true"
-            }
-          ],
-          "helpTexts": [
-            {
-              "template": "%mysql.resourceDeployment.helpTexts.template%",
-              "links": [
-                {
-                  "text": "%learnMore%",
-                  "url": "https://docs.microsoft.com/azure/mysql/flexible-server/overview"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-  },
-  "dependencies": {
-    "crypto": "^1.0.1",
-    "dataprotocol-client": "github:Microsoft/sqlops-dataprotocolclient#1.3.2",
-    "@microsoft/ads-service-downloader": "^1.1.0",
-    "@microsoft/ads-extension-telemetry": "^1.3.4",
-    "tmp": "0.2.1 ",
-    "vscode-languageclient": "5.2.1",
-    "vscode-nls": "^5.0.0"
-  },
-  "devDependencies": {
-    "@types/node": "^13.11.0",
-    "@types/vscode": "^1.39.0",
-    "@types/azdata": "^1.41.0",
-    "del": "^6.1.1",
-    "event-stream": "^4.0.1",
-    "gulp": "github:gulpjs/gulp#4.0.2",
-    "gulp-json-editor": "^2.5.6",
-    "gulp-rename": "^2.0.0",
-    "gulp-shell": "^0.8.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-tslint": "^8.1.4",
-    "gulp-typescript": "^5.0.1",
-    "typescript": "^4.8.3",
-    "tslint": "^6.1.3",
-    "vscode-nls-dev": "^4.0.0"
-  },
-  "resolutions": {
-    "gulp-cli": "^2.3.0",
-    "decompress": "^4.2.1",
-    "set-value": "^2.0.1",
-    "mixin-deep": "^1.3.2",
-    "ansi-regex": "^3.0.1",
-    "glob-parent": "^5.1.2",
-    "y18n": "^3.2.2",
-    "ini": "^1.3.6",
-    "kind-of": "^6.0.3",
-    "minimatch": "^3.0.2",
-    "minimist": "^1.2.3",
-    "copy-props": "^2.0.5",
-    "path-parse": "^1.0.7",
-    "hosted-git-info": "^2.8.9",
-    "yargs-parser": "^5.0.1",
-    "bl": "^1.2.3",
-    "lodash.template": "^4.5.0"
-  }
+	"name": "azuredatastudio-mysql",
+	"displayName": "MySQL",
+	"version": "0.2.8",
+	"publisher": "Microsoft",
+	"description": "%mysql.description%",
+	"aiKey": "29a207bb14f84905966a8f22524cb730-25407f35-11b6-4d4e-8114-ab9e843cb52f-7380",
+	"preview": true,
+	"icon": "images/extension-icon.png",
+	"repository": {
+		"url": "https://github.com/microsoft/azuredatastudio-mysql"
+	},
+	"license": "MIT",
+	"activationEvents": [
+		"*"
+	],
+	"engines": {
+		"vscode": "*",
+		"azdata": ">=1.40.0"
+	},
+	"main": "./out/main",
+	"extensionDependencies": [
+		"vscode.sql"
+	],
+	"scripts": {
+		"localize": "gulp ext:localize",
+		"compile": "gulp build",
+		"package": "gulp package:online",
+		"package-offline": "gulp package:offline"
+	},
+	"contributes": {
+		"grammars": [
+			{
+				"injectTo": [
+					"source.sql"
+				],
+				"scopeName": "source.mysql-injection.sql",
+				"path": "./syntaxes/mysql-injection.json"
+			}
+		],
+		"commands": [
+			{
+				"command": "mySql.createDatabase",
+				"title": "%mysql.createDatabase%",
+				"category": "%mysql.createDatabase%",
+				"icon": "images/new-database.svg"
+			}
+		],
+		"menus": {
+			"dashboard/toolbar": [
+				{
+					"command": "mySql.createDatabase",
+					"when": "connectionProvider == 'MySQL' && dashboardContext == 'server'"
+				}
+			],
+			"objectExplorer/item/context": [
+				{
+					"command": "mySql.createDatabase",
+					"when": "connectionProvider == MySQL && nodeType =~ /^(Database|Server)$/",
+					"group": "mysqlNewDatabase"
+				}
+			]
+		},
+		"languages": [
+			{
+				"id": "sql",
+				"extensions": [
+					".sql"
+				],
+				"aliases": [
+					"SQL"
+				]
+			}
+		],
+		"snippets": [
+			{
+				"language": "sql",
+				"path": "./snippets/mysql.json"
+			}
+		],
+		"outputChannels": [
+			"MySQL"
+		],
+		"configuration": {
+			"type": "object",
+			"title": "%mysql.configuration.title%",
+			"properties": {
+				"MySQL.logDebugInfo": {
+					"type": "boolean",
+					"default": false,
+					"description": "%mysql.logDebugInfo.description%"
+				},
+				"MySQL.enabled": {
+					"type": "boolean",
+					"default": true,
+					"description": "%mysql.enabled.description%"
+				},
+				"MySQL.debugSourcePath": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null,
+					"description": "%mysql.debugSourcePath.description%"
+				},
+				"MySQL.useDebugSource": {
+					"type": "boolean",
+					"default": false,
+					"description": "%mysql.useDebugSource.description%"
+				},
+				"MySQL.enableStartupDebugging": {
+					"type": "boolean",
+					"default": false,
+					"description": "%mysql.enableStartupDebugging.description%"
+				},
+				"MySQL.debugServerPort": {
+					"type": "number",
+					"default": 3000,
+					"description": "%mysql.debugServerPort.description%"
+				},
+				"MySQL.defaultDatabase": {
+					"type": "string",
+					"default": "",
+					"description": "%mysql.defaultDatabase.description%"
+				},
+				"MySQL.format.keywordCase": {
+					"type": [
+						"string",
+						"null"
+					],
+					"description": "%mysql.format.keywordCase.description%",
+					"default": null,
+					"enum": [
+						null,
+						"upper",
+						"lower",
+						"capitalize"
+					]
+				},
+				"MySQL.format.identifierCase": {
+					"type": [
+						"string",
+						"null"
+					],
+					"description": "%mysql.format.identifierCase.description%",
+					"default": null,
+					"enum": [
+						null,
+						"upper",
+						"lower",
+						"capitalize"
+					]
+				},
+				"MySQL.format.stripComments": {
+					"type": "boolean",
+					"default": false,
+					"description": "%mysql.format.stripComments.description%"
+				},
+				"MySQL.format.reindent": {
+					"type": "boolean",
+					"default": true,
+					"description": "%mysql.format.reindent.description%"
+				}
+			}
+		},
+		"connectionProvider": {
+			"protocolVersion": "1.0",
+			"providerName": "MySQL",
+			"providerId": "MySQL",
+			"displayName": "%mysql.provider.displayName%",
+			"azureResource": "OssRdbms",
+			"iconPath": [
+				{
+					"id": "mysql",
+					"path": {
+						"light": "./images/light/mysql.svg",
+						"dark": "./images/dark/mysql_inverse.svg"
+					},
+					"default": true
+				}
+			],
+			"connectionOptions": [
+				{
+					"specialValueType": "connectionName",
+					"isIdentity": true,
+					"name": "connectionName",
+					"displayName": "%mysql.connectionOptions.connectionName.displayName%",
+					"description": "%mysql.connectionOptions.connectionName.description%",
+					"groupName": "%mysql.connectionOptions.groupName.source%",
+					"valueType": "string",
+					"defaultValue": null,
+					"objectType": null,
+					"categoryValues": null,
+					"isRequired": false,
+					"isArray": false
+				},
+				{
+					"name": "host",
+					"displayName": "%mysql.connectionOptions.host.displayName%",
+					"description": "%mysql.connectionOptions.host.description%",
+					"valueType": "string",
+					"specialValueType": "serverName",
+					"isIdentity": true,
+					"isRequired": true,
+					"groupName": "%mysql.connectionOptions.groupName.source%",
+					"defaultValue": null,
+					"objectType": null,
+					"categoryValues": null,
+					"isArray": false
+				},
+				{
+					"specialValueType": "authType",
+					"isIdentity": true,
+					"name": "authenticationType",
+					"displayName": "%mysql.connectionOptions.authenticationType.displayName%",
+					"description": "%mysql.connectionOptions.authenticationType.description%",
+					"groupName": "%mysql.connectionOptions.groupName.security%",
+					"valueType": "category",
+					"defaultValue": "SqlLogin",
+					"objectType": null,
+					"categoryValues": [
+						{
+							"displayName": "%mysql.connectionOptions.authenticationType.password%",
+							"name": "SqlLogin"
+						},
+						{
+							"displayName": "%mysql.connectionOptions.authenticationType.azuremfaanduser%",
+							"name": "AzureMFAAndUser"
+						}
+					],
+					"isRequired": true,
+					"isArray": false
+				},
+				{
+					"name": "dbname",
+					"displayName": "%mysql.connectionOptions.dbname.displayName%",
+					"description": "%mysql.connectionOptions.dbname.description%",
+					"valueType": "string",
+					"specialValueType": "databaseName",
+					"isIdentity": true,
+					"isRequired": false,
+					"groupName": "%mysql.connectionOptions.groupName.source%",
+					"defaultValue": null
+				},
+				{
+					"name": "user",
+					"displayName": "%mysql.connectionOptions.user.displayName%",
+					"description": "%mysql.connectionOptions.user.description%",
+					"valueType": "string",
+					"specialValueType": "userName",
+					"isIdentity": true,
+					"isRequired": true,
+					"groupName": "%mysql.connectionOptions.groupName.security%"
+				},
+				{
+					"name": "password",
+					"displayName": "%mysql.connectionOptions.password.displayName%",
+					"description": "%mysql.connectionOptions.password.description%",
+					"valueType": "password",
+					"specialValueType": "password",
+					"isIdentity": true,
+					"isRequired": true,
+					"groupName": "%mysql.connectionOptions.groupName.security%"
+				},
+				{
+					"name": "port",
+					"displayName": "%mysql.connectionOptions.port.displayName%",
+					"description": "%mysql.connectionOptions.port.description%",
+					"valueType": "number",
+					"isIdentity": true,
+					"groupName": "%mysql.connectionOptions.groupName.server%",
+					"defaultValue": 3306
+				},
+				{
+					"name": "connectTimeout",
+					"displayName": "%mysql.connectionOptions.connectTimeout.displayName%",
+					"description": "%mysql.connectionOptions.connectTimeout.description%",
+					"valueType": "number",
+					"groupName": "%mysql.connectionOptions.groupName.client%",
+					"defaultValue": 10
+				},
+				{
+					"name": "clientFlag",
+					"displayName": "%mysql.connectionOptions.clientFlag.displayName%",
+					"description": "%mysql.connectionOptions.clientFlag.description%",
+					"valueType": "string",
+					"groupName": "%mysql.connectionOptions.groupName.server%",
+					"defaultValue": null
+				},
+				{
+					"name": "sqlMode",
+					"displayName": "%mysql.connectionOptions.sqlMode.displayName%",
+					"description": "%mysql.connectionOptions.sqlMode.description%",
+					"valueType": "string",
+					"groupName": "%mysql.connectionOptions.groupName.server%",
+					"defaultValue": null
+				},
+				{
+					"name": "ssl",
+					"displayName": "%mysql.connectionOptions.ssl.displayName%",
+					"description": "%mysql.connectionOptions.ssl.description%",
+					"valueType": "category",
+					"groupName": "%mysql.connectionOptions.groupName.ssl%",
+					"categoryValues": [
+						{
+							"displayName": "%mysql.connectionOptions.ssl.mode.disable%",
+							"name": "disable"
+						},
+						{
+							"displayName": "%mysql.connectionOptions.ssl.mode.require%",
+							"name": "require"
+						},
+						{
+							"displayName": "%mysql.connectionOptions.ssl.mode.verify_ca%",
+							"name": "verify_ca"
+						},
+						{
+							"displayName": "%mysql.connectionOptions.ssl.mode.verify_identity%",
+							"name": "verify_identity"
+						}
+					],
+					"defaultValue": "require"
+				},
+				{
+					"name": "ssl.key",
+					"displayName": "%mysql.connectionOptions.ssl.key.displayName%",
+					"description": "%mysql.connectionOptions.ssl.key.description%",
+					"valueType": "string",
+					"groupName": "%mysql.connectionOptions.groupName.ssl%",
+					"defaultValue": null
+				},
+				{
+					"name": "ssl.cert",
+					"displayName": "%mysql.connectionOptions.ssl.cert.displayName%",
+					"description": "%mysql.connectionOptions.ssl.cert.description%",
+					"valueType": "string",
+					"groupName": "%mysql.connectionOptions.groupName.ssl%",
+					"defaultValue": null
+				},
+				{
+					"name": "ssl.ca",
+					"displayName": "%mysql.connectionOptions.ssl.ca.displayName%",
+					"description": "%mysql.connectionOptions.ssl.ca.description%",
+					"valueType": "string",
+					"groupName": "%mysql.connectionOptions.groupName.ssl%",
+					"defaultValue": null
+				}
+			]
+		},
+		"resourceDeploymentTypes": [
+			{
+				"name": "mysql-azure-database",
+				"displayName": "%mysql.resourceDeployment.displayName%",
+				"description": "%mysql.resourceDeployment.description%",
+				"platforms": "*",
+				"icon": "./images/extension-icon.png",
+				"tags": [
+					"Azure Database for MySQL",
+					"Cloud"
+				],
+				"okButtonText": [
+					{
+						"value": "%mysql.resourceDeployment.okButtonText%"
+					}
+				],
+				"providers": [
+					{
+						"name": "mysql-azure-database-server",
+						"webPageUrl": "https://portal.azure.com/#create/Microsoft.MySQLFlexibleServer",
+						"requiredTools": []
+					}
+				],
+				"agreements": [
+					{
+						"template": "%mysql.resourceDeployment.agreements.template%",
+						"links": [
+							{
+								"text": "%microsoft.azure.termsOfUse%",
+								"url": "https://azure.microsoft.com/support/legal/"
+							},
+							{
+								"text": "%microsoft.privacy.statement%",
+								"url": "https://privacy.microsoft.com/privacystatement"
+							}
+						],
+						"when": "true"
+					}
+				],
+				"helpTexts": [
+					{
+						"template": "%mysql.resourceDeployment.helpTexts.template%",
+						"links": [
+							{
+								"text": "%learnMore%",
+								"url": "https://docs.microsoft.com/azure/mysql/flexible-server/overview"
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	"dependencies": {
+		"crypto": "^1.0.1",
+		"dataprotocol-client": "github:Microsoft/sqlops-dataprotocolclient#1.3.2",
+		"@microsoft/ads-service-downloader": "^1.2.1",
+		"@microsoft/ads-extension-telemetry": "^3.0.1",
+		"tmp": "0.2.1 ",
+		"vscode-languageclient": "5.2.1",
+		"vscode-nls": "^5.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "^13.11.0",
+		"@types/vscode": "^1.39.0",
+		"@types/azdata": "^1.41.0",
+		"del": "^6.1.1",
+		"event-stream": "^4.0.1",
+		"gulp": "github:gulpjs/gulp#4.0.2",
+		"gulp-json-editor": "^2.5.6",
+		"gulp-rename": "^2.0.0",
+		"gulp-shell": "^0.8.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"gulp-tslint": "^8.1.4",
+		"gulp-typescript": "^5.0.1",
+		"typescript": "^4.8.3",
+		"tslint": "^6.1.3",
+		"vscode-nls-dev": "^4.0.0"
+	},
+	"resolutions": {
+		"gulp-cli": "^2.3.0",
+		"decompress": "^4.2.1",
+		"set-value": "^2.0.1",
+		"mixin-deep": "^1.3.2",
+		"ansi-regex": "^3.0.1",
+		"glob-parent": "^5.1.2",
+		"y18n": "^3.2.2",
+		"ini": "^1.3.6",
+		"kind-of": "^6.0.3",
+		"minimatch": "^3.0.2",
+		"minimist": "^1.2.3",
+		"copy-props": "^2.0.5",
+		"path-parse": "^1.0.7",
+		"hosted-git-info": "^2.8.9",
+		"yargs-parser": "^5.0.1",
+		"bl": "^1.2.3",
+		"lodash.template": "^4.5.0"
+	},
+	"__metadata": {
+		"id": "93",
+		"publisherDisplayName": "Microsoft",
+		"publisherId": "Microsoft",
+		"isPreReleaseVersion": false
+	}
 }
