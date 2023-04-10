@@ -57,9 +57,7 @@ export class NewDatabaseDialog {
 
 	private onLoadingComplete(): void {
 		this.databaseNameTextBox.enabled = true;
-		this.databaseCharsetDropDown.loading = false;
 		this.databaseCharsetDropDown.enabled = true;
-		this.databaseCollationDropDown.loading = false;
 		this.databaseCollationDropDown.enabled = true;
 	}
 
@@ -70,6 +68,7 @@ export class NewDatabaseDialog {
 
 	private async loadAndUpdateCharsetValues(): Promise<void> {
 		try {
+			this.databaseCharsetDropDown.loading = true;
 			var charsets: CharsetInfo[] = await ToolsServiceUtils.getCharsets(this.connectionOwnerUri, this.client);
 			charsets.forEach(charset => {
 				this.charsetsCache.push(charset.name);
@@ -80,6 +79,9 @@ export class NewDatabaseDialog {
 		catch (e) {
 			// Log the error message and keep the values of charset as default.
 			console.warn("New Database Tab : Unable to fetch charset values. Using default charset.")
+		}
+		finally {
+			this.databaseCharsetDropDown.loading = false;
 		}
 	}
 
@@ -155,8 +157,7 @@ export class NewDatabaseDialog {
 			ariaLabel: DatabaseCharsetDropDownLabel,
 			required: false,
 			width: '310px',
-			enabled: false,
-			loading: true
+			enabled: false
 		}).component();
 
 		this.databaseCharsetDropDown.onValueChanged(() => {
@@ -197,8 +198,7 @@ export class NewDatabaseDialog {
 			ariaLabel: DatabaseCollationDropDownLabel,
 			required: false,
 			width: '310px',
-			enabled: false,
-			loading: true
+			enabled: false
 		}).component();
 
 		const databaseCollationLabel = view.modelBuilder.text().withProps({
