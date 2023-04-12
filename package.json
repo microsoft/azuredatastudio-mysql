@@ -442,6 +442,7 @@
     "hosted-git-info": "^2.8.9",
     "yargs-parser": "^5.0.1",
     "bl": "^1.2.3",
-    "lodash.template": "^4.5.0"
+    "lodash.template": "^4.5.0",
+    "xml2js": "^5.0.0"
   }
 }
