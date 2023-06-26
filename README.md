@@ -1,6 +1,6 @@
-# MySQL extension for Azure Data Studio (preview)
+# MySQL extension for Azure Data Studio
 
-Connect to, query, and manage MySQL databases with Azure Data Studio, a modern data editor available for Linux, MacOS, and Windows. This extension (preview) enables you to interact with MySQL using Azure Data Studio features like:
+Connect to, query, and manage MySQL databases with Azure Data Studio, a modern data editor available for Linux, MacOS, and Windows. This extension enables you to interact with MySQL using Azure Data Studio features like:
 
 * Connect to MySQL anywhere (on-premises, or VMs, on managed MySQL in other clouds or on Azure Database for MySQL - Flexible Server)
 * Searchable object explorer view for database objects, with auto-completion
@@ -16,7 +16,7 @@ See our [quickstart] for a step-by-step guide to get started with MySQL using Az
 
 ![Connection Dialog]
 
-## Install the MySQL extension (preview)
+## Install the MySQL extension
 
 If you don't already have Azure Data Studio installed, see its [install instructions](https://learn.microsoft.com/sql/azure-data-studio/download-azure-data-studio).
 
