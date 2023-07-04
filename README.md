@@ -3,6 +3,7 @@
 Connect to, query, and manage MySQL databases with Azure Data Studio, a modern data editor available for Linux, MacOS, and Windows. This extension enables you to interact with MySQL using Azure Data Studio features like:
 
 * Connect to MySQL anywhere (on-premises, or VMs, on managed MySQL in other clouds or on Azure Database for MySQL - Flexible Server)
+* Use your preferred authentication methods (MySQL authentication or Azure Active Directory authentication)
 * Searchable object explorer view for database objects, with auto-completion
 * Query authoring and editing with Intellisense, syntax highlighting and code snippets
 * View query results and save to csv, JSON, xml, or Excel
@@ -71,4 +72,4 @@ This extension is [licensed under the MIT License]. Please see the [third-party 
 [Code of Conduct FAQ]:https://opensource.microsoft.com/codeofconduct/faq/
 [opencode@microsoft.com]:mailto:opencode@microsoft.com
 
-[Connection Dialog]:https://user-images.githubusercontent.com/102506628/193454179-2aa2c9c6-808a-4ef3-a00f-1500cae5037d.png
+[Connection Dialog]:/images/connection-details-dialog.png
