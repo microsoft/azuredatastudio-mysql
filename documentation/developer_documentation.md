@@ -45,8 +45,8 @@ yarn run compile
 
 Install vsce by running `npm install -g vsce` to be able to be to create a vsix package
 
-* Create online package i.e. without installing pgtoolsservice `yarn run package`
-* Create offline package i.e. with pgtoolsservice installed `yarn run package-offline`
+- Create online package i.e. without installing pgtoolsservice `yarn run package`
+- Create offline package i.e. with pgtoolsservice installed `yarn run package-offline`
 
 ### Clean up build, npm modules and reset your local git repository to a clean state
 

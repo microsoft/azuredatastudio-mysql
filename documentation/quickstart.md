@@ -1,6 +1,6 @@
-# Quickstart: Use Azure Data Studio to connect and query MySQL (Preview)
+# Quickstart: Use Azure Data Studio to connect and query MySQL
 
-This quickstart shows how to use Azure Data Studio to connect to a MySQL server (hosted on-premises, on VMs, on managed MySQL in other clouds or on Azure Database for MySQL - FLexible Server), create a database, and use SQL statements to insert and query data in the database.
+This quickstart shows how to use Azure Data Studio to connect to a MySQL server (hosted on-premises, on VMs, on managed MySQL in other clouds or on Azure Database for MySQL - Flexible Server), create a database, and use SQL statements to insert and query data in the database.
 
 ## Prerequisites
 
@@ -9,7 +9,7 @@ To complete this quickstart, you need Azure Data Studio, the MySQL extension for
 - [Install Azure Data Studio](https://learn.microsoft.com/sql/azure-data-studio/download-azure-data-studio).
 - A MySQL server. You can either create a managed MySQL server on Azure using [Azure Database for MySQL - Flexible Server](https://learn.microsoft.com/azure/mysql/flexible-server/quickstart-create-server-portal.md) or [install MySQL locally](https://dev.mysql.com/downloads/mysql/).
 
-## Install the MySQL extension for Azure Data Studio (preview)
+## Install the MySQL extension for Azure Data Studio
 
 1. Select the extensions icon from the sidebar in Azure Data Studio.
 
@@ -18,8 +18,6 @@ To complete this quickstart, you need Azure Data Studio, the MySQL extension for
 2. Search for the **MySQL** extension and select it.
 
 3. Select **Install** to add the extension. Once installed, select **Reload** to enable the extension in Azure Data Studio (only required when installing an extension for the first time).
-
-**Note**: The extension is currently available in [Azure Data Studio (ADS) insider build](https://learn.microsoft.com/sql/azure-data-studio/download-azure-data-studio#download-the-insiders-build-of-azure-data-studio) only. It will be available in the next ADS stable build soon.
 
 ## Connect to MySQL
 
@@ -31,15 +29,16 @@ To complete this quickstart, you need Azure Data Studio, the MySQL extension for
 
 3. In the dialog window that pops up, go to **Connection type** and select **MySQL** from the drop-down.
 
-4. Enter your MySQL server name, user name, and password for authentication:
+4. Enter your MySQL server name, select your preferred authentication method and enter the credentials to connect to your MySQL server:
 
    ![New Connection Screen]
 
    | Setting       | Example value | Description |
    | ------------ | ------------------ | ------------------------------------------------- |
    | **Server name** | localhost / exampleserver.mysql.database.azure.con | The fully qualified server name. |
-   | **User name** | mysqluser | The user name you want to log in with. |
-   | **Password (SQL Login)** | *password* | The password for the user account you are logging in with. |
+   | **Authentication type** | Password | The authentication method for accessing your MySQL server. This option lets you choose between MySQL native authentication (Password) and Azure Active Directory authentication.|
+   | **User name** | exampleuser | The user name you want to log in with. |
+   | **Password** | *password* | The password for the account you are logging in with. |
    | **Remember Password** | *Check* | Check this box if you don't want to enter the password each time you connect. |
    | **Database name** | \<Default\> | Enter a database name if you want the connection to specify a database. |
    | **Server group** | \<Default\> | This option lets you assign this connection to a specific server group you create. |
@@ -133,7 +132,7 @@ Learn about the [scenarios available] for MySQL in Azure Data Studio.
 [Offline Installation]:../README.md#Offline-Installation
 
 [extension manager icon]:https://user-images.githubusercontent.com/20936410/88838718-d0640b00-d18e-11ea-9f63-226c8acd030e.png
-[New Connection Icon]:https://user-images.githubusercontent.com/20936410/88839725-49b02d80-d190-11ea-8d51-5d57e551e888.png
-[New Connection Screen]:https://user-images.githubusercontent.com/102506628/193454179-2aa2c9c6-808a-4ef3-a00f-1500cae5037d.png
+[New Connection Icon]:../images/new-connection.png
+[New Connection Screen]:../images/connection-details-dialog.png
 [Change Context]:https://user-images.githubusercontent.com/102506628/193454241-d50169e6-88a6-4874-b78f-de9f3fd21b71.PNG
 [View Results]:https://user-images.githubusercontent.com/102506628/193454261-aaed735f-0fb6-4f2d-b494-33923fac99d0.PNG
