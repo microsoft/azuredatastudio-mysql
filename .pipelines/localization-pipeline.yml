@@ -35,5 +35,8 @@ jobs:
       isAutoCompletePrSelected: false
       packageSourceAuth: patAuth
       patVariable: $(OneLocBuildPat)
+  - task: ManifestGeneratorTask@0
+    inputs:
+      BuildDropPath: '$(Build.ArtifactStagingDirectory)'
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: drop'
