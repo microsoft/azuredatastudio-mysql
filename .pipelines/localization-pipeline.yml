@@ -34,7 +34,7 @@ jobs:
       gitHubPatVariable: $(githubPatToken)
       isAutoCompletePrSelected: false
       packageSourceAuth: patAuth
-      patVariable: $(OneLocBuildPat)
+      dependencyPackageSource: 'https://msdata.pkgs.visualstudio.com/5603b9e3-ece0-4518-b9c8-1a36054d9970/_packaging/azuredatastudio-mysql-localization/nuget/v3/index.json'
   - task: ManifestGeneratorTask@0
     inputs:
       BuildDropPath: '$(Build.ArtifactStagingDirectory)'
