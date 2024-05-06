@@ -128,11 +128,11 @@ Alternatively, in the **SERVERS** sidebar, navigate down to the **customers** ta
 
 Learn about the [scenarios available] for MySQL in Azure Data Studio.
 
-[scenarios available]:../README.md
-[Offline Installation]:../README.md#Offline-Installation
+[scenarios available]:https://github.com/microsoft/azuredatastudio-mysql/blob/main/README.md
+[Offline Installation]:https://github.com/microsoft/azuredatastudio-mysql/blob/main/README.md#Offline-Installation
 
 [extension manager icon]:https://user-images.githubusercontent.com/20936410/88838718-d0640b00-d18e-11ea-9f63-226c8acd030e.png
-[New Connection Icon]:../images/new-connection.png
-[New Connection Screen]:../images/connection-details-dialog.png
+[New Connection Icon]:https://github.com/microsoft/azuredatastudio-mysql/blob/main/images/new-connection.png
+[New Connection Screen]:https://github.com/microsoft/azuredatastudio-mysql/blob/main/images/connection-details-dialog.png
 [Change Context]:https://user-images.githubusercontent.com/102506628/193454241-d50169e6-88a6-4874-b78f-de9f3fd21b71.PNG
 [View Results]:https://user-images.githubusercontent.com/102506628/193454261-aaed735f-0fb6-4f2d-b494-33923fac99d0.PNG
