@@ -58,18 +58,17 @@ To learn more about our Privacy Statement visit [this link](https://go.microsoft
 
 This extension is [licensed under the MIT License]. Please see the [third-party notices] file for additional copyright notices and license terms applicable to portions of the software.
 
-[quickstart]: /documentation/quickstart.md
+[quickstart]:https://github.com/microsoft/azuredatastudio-mysql/blob/main/documentation/quickstart.md
 [extension manager icon]:https://user-images.githubusercontent.com/20936410/88838718-d0640b00-d18e-11ea-9f63-226c8acd030e.png
 [Releases]: https://github.com/Microsoft/azuredatastudio-mysql/releases
 [GitHub Issue Tracker]:https://github.com/Microsoft/azuredatastudio-mysql/issues
 [bug report]:https://github.com/Microsoft/azuredatastudio-mysql/issues/new?labels=bug
 [feature suggestion]:https://github.com/Microsoft/azuredatastudio-mysql/issues/new?labels=feature-request
-[developer documentation]:/documentation/developer_documentation.md
+[developer documentation]:https://github.com/microsoft/azuredatastudio-mysql/blob/main/documentation/developer_documentation.md
 [Microsoft Enterprise and Developer Privacy Statement]:https://go.microsoft.com/fwlink/?LinkId=786907&lang=en7
 [licensed under the MIT License]: https://github.com/Microsoft/azuredatastudio-mysql/blob/master/LICENSE
 [third-party notices]: https://github.com/Microsoft/azuredatastudio-mysql/blob/master/ThirdPartyNotices.txt
 [Microsoft Open Source Code of Conduct]:https://opensource.microsoft.com/codeofconduct/
 [Code of Conduct FAQ]:https://opensource.microsoft.com/codeofconduct/faq/
 [opencode@microsoft.com]:mailto:opencode@microsoft.com
-
-[Connection Dialog]:/images/connection-details-dialog.png
+[Connection Dialog]:https://github.com/microsoft/azuredatastudio-mysql/blob/main/images/connection-details-dialog.png
